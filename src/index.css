@@ -1,0 +1,21 @@
+.app-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+h1 {
+    grid-column: span 2;
+    text-align: center;
+    background-color: rgb(53, 126, 53);
+    height: 100px;
+    color: aliceblue;
+}
+
+.sort-class {
+    text-align: center;
+}
+
+.cohort {
+    text-align: left;
+}
