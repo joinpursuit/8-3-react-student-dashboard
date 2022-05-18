@@ -4,6 +4,14 @@
 	text-align: center;
 }
 main {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
+	display: grid;
+	grid-template-columns: 3fr 7fr;
+}
+.student {
+	border: 2px solid red;
+	margin: 2px;
+}
+.student-photo {
+	width: 75px;
+	height: 75px;
 }

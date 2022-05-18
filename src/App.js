@@ -7,9 +7,12 @@ class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			currentCohort: "default",
+			currentCohort: "All Students",
 		};
 	}
+	changeCohort = (cohort) => {
+		this.setState({ currentCohort: cohort });
+	};
 	render() {
 		return (
 			<section>
@@ -17,8 +20,8 @@ class App extends React.Component {
 					<h1 className="title">Student Dashboard</h1>
 				</div>
 				<main>
-					<CohortDirectory info={this.props.object} />
-					<StudentDirectory info={this.props.object} />
+					<CohortDirectory info={this.props.object}  />
+					<StudentDirectory info={this.props.object} cohort={this.state.currentCohort} />
 				</main>
 			</section>
 		);
