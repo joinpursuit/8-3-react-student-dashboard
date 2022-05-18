@@ -1,5 +1,6 @@
 import React from 'react';
-import StudentDash from './data/StudentDash';
+import StudentDash from './StudentDash';
+import './Student.css';
 
 class App extends React.Component {
   // constructor() {

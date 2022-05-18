@@ -15,6 +15,7 @@ class StudentDash extends React.Component {
     return (
       <div>
         <h2>All Students</h2>
+        <h4>Total Students: {data.length}</h4>
         <ul className="stu-Cards"> {studentCards}</ul>
       </div>
     );
