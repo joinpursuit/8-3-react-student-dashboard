@@ -1,10 +1,26 @@
+import React from 'react';
+import StudentDash from './data/StudentDash';
 
-function App() {
-  return (
-    <div>
-      <h1>Student Dashboard</h1>
-    </div>
-  );
+class App extends React.Component {
+  // constructor() {
+  //   super();
+  // }
+
+  render() {
+    const { data } = this.props;
+
+    // console.log(data[0].id)
+    return (
+      <div>
+        <header>
+          {' '}
+          <h1>Student Dashboard</h1>
+        </header>
+
+        <StudentDash data={data} />
+      </div>
+    );
+  }
 }
 
 export default App;
