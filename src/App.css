@@ -1,0 +1,9 @@
+.header {
+	background-color: rgb(129, 166, 178);
+	justify-content: center;
+	text-align: center;
+}
+main {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
