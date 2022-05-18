@@ -1,8 +1,13 @@
 img{
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
 }
 
 article{
-    border: 2px solid green;
+    border: 1px solid green;
 }
+
+/* button{
+    background: transparent;
+    border: none;
+} */

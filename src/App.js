@@ -1,6 +1,9 @@
 import React from 'react';
 import StudentDash from './StudentDash';
 import './Student.css';
+import './App.css';
+import CohortList from './CohortList';
+import TopBar from './TopBar';
 
 class App extends React.Component {
   // constructor() {
@@ -10,18 +13,22 @@ class App extends React.Component {
   render() {
     const { data } = this.props;
 
-    // console.log(data[0].id)
     return (
-      <div>
-        <header>
-          {' '}
-          <h1>Student Dashboard</h1>
-        </header>
-
-        <StudentDash data={data} />
-      </div>
+      <>
+        <TopBar />
+        <div className="school-dash">
+          <CohortList />
+          <StudentDash data={data} />
+        </div>
+      </>
     );
   }
 }
 
 export default App;
+
+/*
+TODO
+app.css- header background, center
+cohort class by start date( likely need to use .filter )
+*/

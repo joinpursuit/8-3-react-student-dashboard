@@ -13,7 +13,7 @@ class Student extends React.Component {
           {names.preferredName} {names.middleName} {names.surname}
         </h3>
         <p> Birthday: {dob}</p>
-        <button> show More...</button>
+        <button> Show More...</button>
       </article>
     );
   }
