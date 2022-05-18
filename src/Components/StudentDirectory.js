@@ -2,7 +2,14 @@ import React from "react";
 import Student from "./Student";
 
 const StudentDirectory = (props) => {
-	return <div>hi</div>;
+	const { info } = props;
+	return (
+		<div>
+			{info.map((student) => {
+				return <Student key={student.id} studentInfo={student} />;
+			})}
+		</div>
+	);
 };
 
 export default StudentDirectory;

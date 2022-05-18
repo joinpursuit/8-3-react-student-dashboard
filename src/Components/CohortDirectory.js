@@ -18,7 +18,7 @@ const CohortDirectory = (props) => {
 						key={cohort}
 						onClick={console.log(`Change this.state.currentCohort to ${cohort}`)}
 					>
-						<a href="">{cohort}</a>
+						{cohort}
 					</li>
 				);
 			})}
