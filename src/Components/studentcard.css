@@ -1,0 +1,28 @@
+.card {
+
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    max-width: 600px;
+    background-color: rgb(60, 60, 201);
+}
+.other {
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke
+}
+.pic {
+    align-self: center;
+}
+.info {
+    padding: 20px;
+}
+  
+.name {
+    font-size: 24px;
+    color: whitesmoke;
+    line-height: 24px;
+}
+

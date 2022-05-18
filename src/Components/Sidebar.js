@@ -1,18 +1,25 @@
 import React from "react";
+import { studentData } from "../data/data";
 
 class Sidebar extends React.Component {
-  // startDateList = (obj) => {
-  //   console.log(obj[0].cohort.cohortStartDate);
-  //   const newArr = [];
-  //   for (let person of obj) {
-  //     const { cohortStartDate } = obj.cohort.cohortStartDate;
-  //   }
-  // };
+  startDateList() {
+    const startDates = studentData.map((student) => student.cohort.cohortCode);
+    return [...new Set(startDates)];
+  }
   render() {
+    const { filteredByClass } = this.props;
     return (
-      <div>
-        <h4 className="sidebar">Choose a Class by Start Date </h4>
-      </div>
+      <article>
+        <h4> Choose a Class by Start Date </h4>
+        <section className="sidebar">
+          <div onClick={() => filteredByClass(null)}>All Students</div>
+          {this.startDateList().map((date) => (
+            <div onClick={() => filteredByClass(date)} key={date}>
+              {date}
+            </div>
+          ))}
+        </section>
+      </article>
     );
   }
 }

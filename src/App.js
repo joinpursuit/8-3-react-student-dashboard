@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "./Components/Sidebar";
 import { studentData } from "./data/data.js";
 import StudentGallery from "./Components/StudentGallery.js";
+import "./app.css";
 
 class App extends React.Component {
   constructor() {
@@ -10,21 +11,26 @@ class App extends React.Component {
       filteredStudents: [...studentData],
     };
   }
+  filteredByClass = (date) => {
+    const selectedClass = studentData.filter(
+      (student) => student.cohort.cohortCode === date
+    );
+    this.setState({
+      filteredStudents: [...selectedClass],
+    });
+    if (date === null) {
+      this.setState({
+        filteredStudents: [...studentData],
+      });
+    }
+  };
   render() {
+    const { filteredStudents } = this.state;
     return (
       <div>
-        <h1>Student Dashboard</h1>
-        {/* {studentData.map((student) => {
-          const { id, dob } = student;
-          return (
-            <article className="studentCard" key={id}>
-              <h3>{id}</h3>
-              <p>{dob}</p>
-            </article>
-          );
-        })} */}
-        <Sidebar studentData={studentData} />
-        <StudentGallery />
+        <h1 className="banner">Student Dashboard</h1>
+        <Sidebar filteredByClass={this.filteredByClass} />
+        <StudentGallery filteredStudents={filteredStudents} />
       </div>
     );
   }
