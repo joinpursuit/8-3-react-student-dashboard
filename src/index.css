@@ -7,9 +7,10 @@
 h1 {
     grid-column: span 2;
     text-align: center;
-    background-color: rgb(53, 126, 53);
+    background-color: rgba(50, 102, 20, 0.77);
     height: 100px;
     color: aliceblue;
+    padding: 10px;
 }
 
 .sort-class {
@@ -17,5 +18,19 @@ h1 {
 }
 
 .cohort {
+    text-align: left;
+}
+
+img {
+    float: left;
+    height: 100px;
+    width: 100px;
+}
+
+.student-card{
+    border: 2px solid rgba(50, 102, 20, 0.77);
+}
+
+h3 {
     text-align: left;
 }
