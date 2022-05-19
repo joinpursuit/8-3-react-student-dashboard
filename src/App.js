@@ -21,6 +21,7 @@ class App extends React.Component {
 
   render() {
     console.log(this.state);
+    const { selectedCohort } = this.state;
     return (
       <div className="dashBoard">
         <Nav />
@@ -28,7 +29,7 @@ class App extends React.Component {
           data={Data}
           selectCohortHandler={this.selectCohortHandler}
         />
-        <StudentList />
+        <StudentList data={Data} selectedCohort={selectedCohort} />
       </div>
     );
   }

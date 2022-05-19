@@ -39,9 +39,13 @@ class CohortList extends React.Component {
     const sortedCohortArray = this.sortCohortArray(cohortArray);
     sortedCohortArray.unshift("AllStudents");
 
-    return sortedCohortArray.map((cohort) => {
+    return sortedCohortArray.map((cohort, index) => {
       return (
-        <Cohort cohort={cohort} selectCohortHandler={selectCohortHandler} />
+        <Cohort
+          cohort={cohort}
+          selectCohortHandler={selectCohortHandler}
+          key={index}
+        />
       );
     });
   };

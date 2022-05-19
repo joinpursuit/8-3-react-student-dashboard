@@ -3,12 +3,17 @@ import "./Student.css";
 
 class Student extends React.Component {
   render() {
+    const { studentInfo } = this.props;
+    const imgSrc = studentInfo.profilePhoto;
+    const name = `${studentInfo.names.preferredName} ${studentInfo.names.middleName[0]}. ${studentInfo.names.surname}`;
+    const email = studentInfo.username;
+    const Birthday = studentInfo.dob;
     return (
       <div className="student">
-        <img src="https://fakeface.rest/thumb/view?gender=male&minimum_age=38&maximum_age=48" />
-        <p>Israel B. Rodriguez</p>
-        <p>israel.rodriguez@pursuit.org"</p>
-        <p>Birthday: 2/3/1979</p>
+        <img src={imgSrc} />
+        <p>{name}</p>
+        <p>{email}</p>
+        <p>{Birthday}</p>
         <button>Show More</button>
       </div>
     );
