@@ -1,6 +1,6 @@
 import react from "react";
-import CohortList from "./Components/CohortList";
-import StudentList from "./Components/StudentList";
+import CohortList from "./Components/CohortList.js";
+import StudentList from "./Components/StudentList.js";
 
 class App extends react.Component {
   constructor(props) {
