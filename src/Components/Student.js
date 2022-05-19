@@ -11,7 +11,7 @@ export default function Student({ semester }) {
   return (
     <div className="studentBio">
       <img src={profilePicture} className="profilePic"></img>
-      <div>
+      <div className="studentInformation1">
         <p>
           <strong>
             {studentPreferredName +

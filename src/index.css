@@ -18,6 +18,8 @@
 
 .profilePic {
     max-width: 200px;
+    height: auto;
+    padding: 3em;
 }
 
 .studentBio {
@@ -85,4 +87,8 @@ h2 {
     padding-bottom: 1em;
     border-bottom: 2px solid darkcyan;
 
+}
+
+.studentInformation1 {
+    padding-top: 4em;
 }
