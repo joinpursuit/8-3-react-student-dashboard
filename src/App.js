@@ -27,10 +27,14 @@ class App extends React.Component {
   render() {
     const { filteredStudents } = this.state;
     return (
-      <div>
-        <h1 className="banner">Student Dashboard</h1>
+      <div className="main">
+        <h1 className="heading">Student Dashboard</h1>
+
         <Sidebar filteredByClass={this.filteredByClass} />
-        <StudentGallery filteredStudents={filteredStudents} />
+
+        <div classname="gallery">
+          <StudentGallery filteredStudents={filteredStudents} />
+        </div>
       </div>
     );
   }

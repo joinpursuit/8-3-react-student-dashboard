@@ -1,0 +1,13 @@
+.main {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-gap: 1em;
+  }
+.heading {
+    grid-column: 1 / span 2;
+    background: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

@@ -1,5 +1,6 @@
 import React from "react";
 import { studentData } from "../data/data";
+import "./sidebar.css";
 
 class Sidebar extends React.Component {
   startDateList() {
@@ -9,17 +10,19 @@ class Sidebar extends React.Component {
   render() {
     const { filteredByClass } = this.props;
     return (
-      <article>
-        <h4> Choose a Class by Start Date </h4>
-        <section className="sidebar">
-          <div onClick={() => filteredByClass(null)}>All Students</div>
-          {this.startDateList().map((date) => (
-            <div onClick={() => filteredByClass(date)} key={date}>
-              {date}
-            </div>
-          ))}
-        </section>
-      </article>
+      <div className="wrapper">
+        <article className="sidebar">
+          <h4 className="title"> Choose a Class by Start Date </h4>
+          <section className="dates">
+            <div onClick={() => filteredByClass(null)}>All Students</div>
+            {this.startDateList().map((date) => (
+              <div onClick={() => filteredByClass(date)} key={date}>
+                {date}
+              </div>
+            ))}
+          </section>
+        </article>
+      </div>
     );
   }
 }
