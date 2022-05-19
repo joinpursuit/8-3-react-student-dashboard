@@ -3,15 +3,14 @@ import CohortList from "./Components/CohortList.js";
 import StudentList from "./Components/StudentList.js";
 import "./App.css";
 
-const rawData = require("./data/data.json");
+const data = require("./data/data.json").slice();
 
 class App extends react.Component {
   constructor(props) {
     super(props);
     this.state = {
-      copyOfData: rawData.slice(),
-      numberOfStudents: rawData.legnth,
-      cohortsArray: createCohortsObj(rawData),
+      numberOfStudents: data.length,
+      cohortsArray: createCohortsObj(data),
     };
   }
 
@@ -22,12 +21,7 @@ class App extends react.Component {
         <main className="main">
           <CohortList
             cohortsArray={this.state.cohortsArray.map((element, i) => {
-              return (
-                <div>
-                  <button key={i}>{element}</button>
-                  <br></br>
-                </div>
-              );
+              return <button key={i}>{element}</button>;
             })}
           />
           <StudentList data={this.state.numberOfStudents} />
