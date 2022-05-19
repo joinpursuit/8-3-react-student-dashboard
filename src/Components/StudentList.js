@@ -1,4 +1,5 @@
 import StudentCard from "./StudentCard";
+import "./StudentList.css";
 
 function StudentList(props) {
   return (
