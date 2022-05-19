@@ -6,7 +6,7 @@ class GalleryCounter extends React.Component {
     return (
       <div>
         <h4>Class</h4>
-        Total Students: Number
+        Total Students: {filteredStudents.length}
       </div>
     );
   }

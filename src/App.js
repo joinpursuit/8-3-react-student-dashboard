@@ -32,7 +32,7 @@ class App extends React.Component {
 
         <Sidebar filteredByClass={this.filteredByClass} />
 
-        <div classname="gallery">
+        <div className="gallery">
           <StudentGallery filteredStudents={filteredStudents} />
         </div>
       </div>
