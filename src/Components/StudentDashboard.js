@@ -1,9 +1,14 @@
 import Student from './Student';
 
-function StudentDashboard({ cohort, allStudents }) {
-  console.log(cohort);
+function StudentDashboard({ code, cohort, allStudents }) {
 
-  const students = allStudents.map((student) => (
+  function byCohort(student) {
+    return code === 'AllStudents'
+      ? student
+      : student.cohort.cohortCode === code;
+  }
+
+  const students = allStudents.filter(byCohort).map((student) => (
     <div key={student.id}>
       <Student student={student} />
     </div>
@@ -12,7 +17,7 @@ function StudentDashboard({ cohort, allStudents }) {
   return (
     <section className="student dashboard">
       <h2>{cohort}</h2>
-      <p>Total Students: 250</p>
+      <p>Total Students: {students.length}</p>
       {students}
     </section>
   );

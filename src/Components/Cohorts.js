@@ -1,6 +1,6 @@
-import Cohort from './Cohort';
+import Cohort from './Semester';
 
-function Cohorts({ filterByClass, allStudents }) {
+function Cohorts({ filterByClass }) {
   return (
     <section className="sort-class">
       <h2>Choose a Class by Start Date</h2>

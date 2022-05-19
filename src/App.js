@@ -8,7 +8,7 @@ class App extends Component {
     super();
     this.state = {
       cohort: 'All Students',
-      code: '',
+      code: 'AllStudents',
     };
   }
 
@@ -30,7 +30,6 @@ class App extends Component {
           <h1>Student Dashboard</h1>
           <Cohorts
             filterByClass={this.filterByClass}
-            allStudents={allStudents}
           />
           <StudentDashboard
             code={code}

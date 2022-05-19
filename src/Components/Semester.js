@@ -1,5 +1,5 @@
-function Cohort({ handleClick }) {
-  const allCohorts = [
+function Semester({ handleClick }) {
+  const allSemesters = [
     'All Students',
     'Winter 2026',
     'Fall 2026',
@@ -11,15 +11,14 @@ function Cohort({ handleClick }) {
     'Spring 2025',
   ];
 
-  const displayCohorts = allCohorts.map((semester) => (
+  const displaySemesters = allSemesters.map((semester) => (
     <div>
-      <h3 key={semester} onClick={handleClick}>
+      <h3 id={`${semester}`} onClick={handleClick}>
         {semester}
       </h3>
       <hr></hr>
     </div>
   ));
-
-  return <section>{displayCohorts}</section>;
+  return <section>{displaySemesters}</section>;
 }
-export default Cohort;
+export default Semester;
