@@ -34,32 +34,25 @@ class CohortList extends React.Component {
     });
   };
 
-  parseCohortArray = (cohortArray) => {
-    return cohortArray.map((cohort) => {
-      return `${cohort.substring(0, cohort.length - 4)} ${cohort.substring(
-        cohort.length - 4
-      )}`;
-    });
-  };
-
-  displayCohort = (data) => {
+  displayCohort = (data, selectCohortHandler) => {
     const cohortArray = this.getCohortArray(data);
     const sortedCohortArray = this.sortCohortArray(cohortArray);
-    const parsedCohortArray = this.parseCohortArray(sortedCohortArray);
-    parsedCohortArray.unshift("All Students");
+    sortedCohortArray.unshift("AllStudents");
 
-    return parsedCohortArray.map((cohort) => {
-      return <Cohort cohort={cohort} />;
+    return sortedCohortArray.map((cohort) => {
+      return (
+        <Cohort cohort={cohort} selectCohortHandler={selectCohortHandler} />
+      );
     });
   };
 
   render() {
-    const { data } = this.props;
+    const { data, selectCohortHandler } = this.props;
 
     return (
       <div className="cohortList">
         <h2>Choose a Class by Start Date</h2>
-        {this.displayCohort(data)}
+        {this.displayCohort(data, selectCohortHandler)}
       </div>
     );
   }

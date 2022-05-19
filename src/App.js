@@ -6,11 +6,28 @@ import CohortList from "./Components/CohortList";
 import StudentList from "./Components/StudentList";
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedCohort: "AllStudents",
+    };
+  }
+
+  selectCohortHandler = (selectedCohort) => {
+    this.setState({
+      selectedCohort: selectedCohort,
+    });
+  };
+
   render() {
+    console.log(this.state);
     return (
       <div className="dashBoard">
         <Nav />
-        <CohortList data={Data} />
+        <CohortList
+          data={Data}
+          selectCohortHandler={this.selectCohortHandler}
+        />
         <StudentList />
       </div>
     );
