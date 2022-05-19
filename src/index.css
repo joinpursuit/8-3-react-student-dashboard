@@ -1,0 +1,88 @@
+#header {
+    background-color:#764f51;
+    padding-top: 1em
+}
+
+#title {
+    font-family:'Courier New', Courier, monospace;
+    color:white;
+    text-align: center;
+    padding-bottom: 1em;
+    font-size: 40px
+}
+
+#main {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.profilePic {
+    max-width: 200px;
+}
+
+.studentBio {
+    display: grid;
+    grid-template-columns: 33% 66%;
+    border: #764f51;
+}
+
+.oneStudent {
+    border-style: solid;
+    margin-right: 1em;
+    margin-bottom: 0.75em;
+    border-color: #764f51;
+}
+
+.StudentList {
+    position: relative;
+    right: 37px;
+}
+
+#classSize {
+    color: darkcyan;
+}
+
+#showMore {
+    color: darkcyan;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    position: relative;
+    right: 5px;
+}
+
+#cohortList {
+    margin-right: 5em;
+}
+
+#cohortListTitle {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-stretch: expanded;
+    font-size: 29px;
+    padding-left: 8px;
+
+}
+
+h2 {
+    font-family:'Courier New', Courier, monospace;
+}
+
+.cohortListHeading {
+    font-weight: bold;
+    font-size: large;
+    border-bottom: 2px, solid, darkcyan;
+}
+
+.allStudents{
+    padding-bottom: 1em;
+    border-bottom: 2px solid darkcyan;
+}
+
+.eachSemester{
+    margin-top: 1.1em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid darkcyan;
+
+}
