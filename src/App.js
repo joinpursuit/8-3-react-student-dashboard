@@ -1,8 +1,13 @@
-
 function App() {
   return (
     <div>
-      <h1>Student Dashboard</h1>
+      <header className="header">
+        <h1>Student Dashboard</h1>
+      </header>
+      <div>
+        <CohortList />
+        <StudentList />
+      </div>
     </div>
   );
 }
