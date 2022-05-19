@@ -10,7 +10,7 @@ class App extends React.Component {
     return (
       <div className="dashBoard">
         <Nav />
-        <CohortList />
+        <CohortList data={Data} />
         <StudentList />
       </div>
     );

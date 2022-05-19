@@ -3,7 +3,9 @@ import "./Cohort.css";
 
 class Cohort extends React.Component {
   render() {
-    return <div className="cohort">All Students</div>;
+    console.log("hello");
+    const { cohort } = this.props;
+    return <div className="cohort">{cohort}</div>;
   }
 }
 
