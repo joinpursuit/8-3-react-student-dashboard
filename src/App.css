@@ -21,5 +21,5 @@ TopBar{
 
 body{
     background-image: url('https://html.sammy-codes.com/images/background.jpg');
-  background-size: auto;
+  background-size: contain;
 }

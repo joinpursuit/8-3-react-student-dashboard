@@ -6,9 +6,12 @@ import CohortList from './CohortList';
 import TopBar from './TopBar';
 
 class App extends React.Component {
-  // constructor() {
-  //   super();
-  // }
+  constructor() {
+    super();
+    this.state={
+      students:[]
+    }
+  }
 
   render() {
     const { data } = this.props;
@@ -29,6 +32,6 @@ export default App;
 
 /*
 TODO
-app.css- header background, center
+
 cohort class by start date( likely need to use .filter )
 */

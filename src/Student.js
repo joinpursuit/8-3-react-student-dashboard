@@ -10,10 +10,10 @@ class Student extends React.Component {
       <article className="stucard">
         <img src={profilePhoto} alt="student" />
         <h3>
-          {names.preferredName} {names.middleName} {names.surname}
+          {names.preferredName} {names.middleName[0]}. {names.surname}
         </h3>
         <p> Birthday: {dob}</p>
-        <button> Show More...</button>
+        <a href='#'> Show More...</a>
       </article>
     );
   }
