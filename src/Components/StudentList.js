@@ -5,9 +5,19 @@ function StudentList(props) {
   return (
     <section className="student-list-container">
       <h2>All Students</h2>
-      <p>Total Students: {props.data}</p>
+      <p>Total Students: {props.dataLength}</p>
       <div className="student-list">
-        <StudentCard />
+        {props.data.map((element) => {
+          return (
+            <StudentCard
+              key={element.id}
+              pic={element.profilePhoto}
+              name={element.names.preferredName}
+              email={element.username}
+              birthday={element.dob}
+            />
+          );
+        })}
       </div>
     </section>
   );

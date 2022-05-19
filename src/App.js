@@ -24,7 +24,7 @@ class App extends react.Component {
               return <button key={i}>{element}</button>;
             })}
           />
-          <StudentList data={this.state.numberOfStudents} />
+          <StudentList dataLength={this.state.numberOfStudents} data={data} />
         </main>
       </div>
     );

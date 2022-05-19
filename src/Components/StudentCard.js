@@ -5,12 +5,11 @@ class StudentCard extends React.Component {
   render() {
     return (
       <div className="student-card">
-        <img src="https://picsum.photos/100" alt="Profile" width="100px" />
+        <img src={this.props.pic} alt="Profile" width="100px" />
         <div>
-          <p>Name</p>
-          <p>Email</p>
-          <p>Birthday</p>
-          <br></br>
+          <h4>{this.props.name}</h4>
+          <p>Email: {this.props.email}</p>
+          <p>Birthday: {this.props.birthday}</p>
           <p>Show More...</p>
         </div>
       </div>
