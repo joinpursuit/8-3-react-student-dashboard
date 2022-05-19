@@ -21,8 +21,8 @@ class App extends react.Component {
         <h1 className="header">Student Dashboard</h1>
         <main className="main">
           <CohortList
-            cohortsArray={this.state.cohortsArray.map((element) => {
-              return <li>{element}</li>;
+            cohortsArray={this.state.cohortsArray.map((element, i) => {
+              return <li key={i}>{element}</li>;
             })}
           />
           <StudentList data={this.state.numberOfStudents} />
