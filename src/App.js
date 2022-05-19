@@ -25,7 +25,7 @@ class App extends react.Component {
               return (
                 <div>
                   <button key={i}>{element}</button>
-                  <hr></hr>
+                  <br></br>
                 </div>
               );
             })}
