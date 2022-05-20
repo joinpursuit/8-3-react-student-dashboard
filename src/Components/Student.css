@@ -14,3 +14,12 @@
 .graduated {
   padding: 0 8rem;
 }
+.studentDetails,
+.graduated {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem 0;
+  font-weight: 500;
+}
+.studentDetails h4 {
+  padding: 0.5rem 0;
+}

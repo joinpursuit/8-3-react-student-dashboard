@@ -38,12 +38,12 @@ class App extends Component {
       return pair.join('');
     });
     spacedUniqueCohortArray.unshift('All Students');
-    console.log(spacedUniqueCohortArray);
+    // console.log(spacedUniqueCohortArray);
 
     const filteredArray = spacedUniqueCohortArray.filter(
       (ele) => ele === this.state.selectedCohortCode
     )[0];
-    console.log('filtered=', filteredArray);
+    // console.log('filtered=', filteredArray);
 
     return (
       <div>
@@ -62,7 +62,7 @@ class App extends Component {
             data={data}
             selectedCohortCode={selectedCohortCode}
             filteredArray={filteredArray}
-            uniqueCohortArray={uniqueCohortArray}
+            // uniqueCohortArray={uniqueCohortArray}
           />
         </div>
       </div>

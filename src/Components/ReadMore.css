@@ -1,18 +1,20 @@
 .moreLess {
   display: grid;
-  grid-template-columns: repeat(3, 200px);
+  grid-template-columns: repeat(3, 150px);
   gap: 0.1rem;
   border-bottom: 1px solid green;
 }
 .codewars {
   grid-column: 1;
-  padding: 0 2rem;
+  padding: 0.5rem 2rem 0.5rem 0;
 }
 .scores {
   grid-column: 2;
+  padding: 0.5rem 2rem 0.5rem 0;
 }
 .certify {
   grid-column: 3;
+  padding: 0.5rem 2rem 0.5rem 0;
 }
 .certify .check {
   color: green;
@@ -39,4 +41,23 @@ label {
 input[type='submit'] {
   margin: 0 1rem;
   padding: 0.5rem;
+  background: green;
+  color: white;
+}
+input[type='submit']:hover {
+  background: teal;
+}
+
+.showbtn {
+  background: teal;
+  border: 2px solid black;
+}
+.comments-list {
+  padding: 0.5rem 2rem 0.5rem 0;
+}
+
+.codewars p,
+.scores p,
+.certify p {
+  padding: 0.3rem 0;
 }

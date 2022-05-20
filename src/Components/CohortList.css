@@ -7,3 +7,6 @@
 .sideBar h2 {
   padding: 1rem 0;
 }
+.uniqueCohort:hover {
+  background: rgb(59, 211, 213);
+}

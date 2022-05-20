@@ -58,7 +58,7 @@ class Student extends Component {
     return (
       <div className='student' key={studentData.id}>
         <img
-          style={{ width: '150px', height: '100px' }}
+          style={{ width: '200px', height: '150px' }}
           src={studentData.profilePhoto}
           alt={studentData.names.preferredName}
         />
@@ -76,7 +76,7 @@ class Student extends Component {
           <ReadMore studentData={studentData} />
         </div>
         <div className='graduated'>
-          <h4 style={{color:'green'}}>
+          <h4 style={{ color: 'green' }}>
             {this.eligibleToGraduate(studentData.certifications, codeWarsTotal)}
           </h4>
         </div>

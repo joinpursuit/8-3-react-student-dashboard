@@ -22,6 +22,10 @@ class ReadMore extends Component {
       commentMessage: this.state.commentMessage,
     });
     this.setState({ commentsList: newList });
+    this.setState({
+      commentorName: '',
+      commentMessage: '',
+    });
   };
 
   handleChange = (event) => {
@@ -49,11 +53,25 @@ class ReadMore extends Component {
         ? '#DAA520'
         : 'red';
     };
+
+    const checkCertifications = (certified) => {
+      const certifiedIcon =
+        !certified.resume ||
+        !certified.linkedin ||
+        !certified.github ||
+        !certified.mockInterview ? (
+          <span className='xmark'>&#10005;</span>
+        ) : (
+          <span className='check'>&#10003;</span>
+        );
+      return certifiedIcon;
+    };
+
     const toggle = this.state.isReadMore;
     return (
       <div>
         <button
-          className='btn'
+          className='showbtn'
           style={{
             color: 'green',
             border: 'none',
@@ -64,6 +82,7 @@ class ReadMore extends Component {
         >
           {toggle ? 'Show Less...' : 'Read More...'}
         </button>
+
         {toggle && (
           <section className='read'>
             <section className='moreLess'>
@@ -92,37 +111,14 @@ class ReadMore extends Component {
               </div>
               <div className='certify'>
                 <h4>Certifications</h4>
+                <p>Resume: {checkCertifications(studentData.certifications)}</p>
                 <p>
-                  Ceritications:{' '}
-                  {!studentData.certifications.resume ? (
-                    <span className='xmark'>&#10005;</span>
-                  ) : (
-                    <span className='check'>&#10003;</span>
-                  )}
+                  Linkedin: {checkCertifications(studentData.certifications)}
                 </p>
+                <p>Github: {checkCertifications(studentData.certifications)}</p>
                 <p>
-                  Ceritications:{' '}
-                  {!studentData.certifications.linkedin ? (
-                    <span className='xmark'>&#10005;</span>
-                  ) : (
-                    <span className='check'>&#10003;</span>
-                  )}
-                </p>
-                <p>
-                  Ceritications:{' '}
-                  {!studentData.certifications.github ? (
-                    <span className='xmark'>&#10005;</span>
-                  ) : (
-                    <span className='check'>&#10003;</span>
-                  )}
-                </p>
-                <p>
-                  Ceritications:{' '}
-                  {!studentData.certifications.mockInterview ? (
-                    <span className='xmark'>&#10005;</span>
-                  ) : (
-                    <span className='check'>&#10003;</span>
-                  )}
+                  Mock Interview:{' '}
+                  {checkCertifications(studentData.certifications)}
                 </p>
               </div>
             </section>
@@ -157,12 +153,13 @@ class ReadMore extends Component {
                 </div>
               </form>
             </section>
+
             <section className='comments-list'>
               <ul>
                 {this.state.commentsList.map((comments, indx) => (
                   <li key={indx}>
-                    {console.log(comments)}
-                    {comments.commentorName}{' '} says '{comments.commentMessage}'
+                    {/* {console.log(comments)} */}
+                    {comments.commentorName} says '{comments.commentMessage}'
                   </li>
                 ))}
               </ul>

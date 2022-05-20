@@ -1,7 +1,7 @@
 const NavBar = () => {
   return (
-    <div>
-      <h1 style={{ background: 'green', margin: '0', padding: '0' }}>
+    <div class='navbar' style={{ margin: '0', padding: '0' }}>
+      <h1 style={{ background: 'green', padding: '1rem 0' }}>
         Student Dashboard
       </h1>
     </div>

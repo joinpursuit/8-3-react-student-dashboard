@@ -17,15 +17,15 @@ class CohortList extends Component {
     // );
     // uniqueCohortArray.unshift('All Students');
 
-    // const ColoredLine = ({ color }) => (
-    //   <hr
-    //     style={{
-    //       color,
-    //       backgroundColor: color,
-    //       height: 2,
-    //     }}
-    //   />
-    // );
+    const ColoredLine = ({ color }) => (
+      <hr
+        style={{
+          color,
+          backgroundColor: color,
+          height: 2,
+        }}
+      />
+    );
 
     return (
       <aside className='sideBar'>
@@ -35,18 +35,22 @@ class CohortList extends Component {
             return (
               <div key={indx} className='cohortName'>
                 <li
+                  className='uniqueCohort'
                   onClick={() => this.props.customClickHandler(ele)}
-                  style={{ listStyleType: 'none' }}
+                  style={{
+                    listStyleType: 'none',
+                    fontWeight: '700',
+                    fontFamily: 'Cursive',
+                    fontSize: '1.3rem',
+                  }}
                 >
                   {ele}
                 </li>
-                <hr style={{ color: 'green', size: '50' }} />
-                {/* <ColoredLine color='black' /> */}
+                <ColoredLine color='green' />
               </div>
             );
           })}
         </ul>
-      
       </aside>
     );
   }
