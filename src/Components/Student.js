@@ -1,5 +1,5 @@
 import React from "react";
-
+import ShowMore from "./ShowMore";
 
 const Student = (props) => {
 	const { studentInfo } = props;
@@ -13,7 +13,7 @@ const Student = (props) => {
 			<h4>{nameFormatter(studentInfo.names)}</h4>
 			<p className="email-address">{studentInfo.username} </p>
 			<p>DOB: {studentInfo.dob}</p>
-
+			<ShowMore />
 		</div>
 	);
 };
