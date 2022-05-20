@@ -1,0 +1,46 @@
+.StudentList {
+  border: 5px solid cyan;
+  grid-column: 2;
+  grid-row: 1;
+  height: 100vh;
+  overflow: auto;
+}
+
+#studentCount {
+  color: orangered;
+}
+
+.studentCard {
+  border: 5px solid red;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3%;
+  margin-bottom: 3%;
+}
+.studentCard .studentPhoto {
+  width: 100%;
+  grid-column: 1;
+}
+.studentCard .studentInfo {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.studentCard .studentInfo p {
+  margin: 0;
+}
+.studentCard .studentInfo .studentDOB {
+  font-size: 15px;
+}
+.studentCard .studentInfo .studentDOB .DOB {
+  color: orange;
+}
+.studentCard .studentInfo .showMoreButton {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.studentCard .studentInfo .showMoreButton:hover {
+  color: purple;
+}

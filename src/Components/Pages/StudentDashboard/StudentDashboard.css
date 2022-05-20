@@ -1,0 +1,15 @@
+.dashboardHeader {
+  text-align: center;
+  background-color: lightcoral;
+  font-size: 35px;
+}
+
+.main {
+  border: 5px solid purple;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1;
+  height: 100%;
+  gap: 5%;
+  margin-top: 3%;
+}
