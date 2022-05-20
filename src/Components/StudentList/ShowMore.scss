@@ -1,8 +1,22 @@
+.showMoreButton {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+  grid-column: 2;
+  grid-row: 2;
+
+  &:hover {
+    color: purple;
+  }
+}
+
 .ShowMoreSection {
   grid-column: 1 / span 2;
+  grid-row: 2;
   display: grid;
-  grid-template-columns: 3;
+  grid-template-columns: repeat(3, 1fr);
   gap: 3%;
+  font-size: 15px;
 
   .scores {
     grid-column: 2;
@@ -12,7 +26,11 @@
     grid-column: 3;
   }
 
+  .grades {
+    color: darkcyan;
+  }
+
   img {
-    width: 15%;
+    width: 10%;
   }
 }

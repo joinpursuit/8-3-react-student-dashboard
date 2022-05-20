@@ -1,24 +1,66 @@
 import "./CohortList.scss";
 
-import { Component } from "react";
+const CohortList = (props) => {
+  const renderCohortList = () => {
+    const { studentData, changeCohortCode } = props;
 
-class CohortList extends Component {
-  constructor() {
-    super();
-    this.state = {
-      //
-    };
-  }
+    let cohortArr = [];
 
-  render() {
-    // const { studentData } = this.props;
+    studentData.map((student) => {
+      let getCohorts = student.cohort.cohortCode;
+
+      if (!cohortArr.includes(getCohorts)) {
+        cohortArr.push(getCohorts);
+      }
+
+      return cohortArr;
+    });
+
+    let keyNum = 0;
+
+    const cohortList = cohortArr.map((cohorts) => {
+      let seasonArr = [];
+
+      let test = cohorts.toLowerCase();
+
+      // console.log(test);
+      // if (cohorts.includes("Winter")) {
+      //   console.log("yes");
+      // }
+      // switch (cohorts) {
+      //   case cohorts.includes()
+      // }
+
+      return (
+        <li
+          key={keyNum++}
+          className="cohortCodes"
+          onClick={() => changeCohortCode(cohorts)}
+        >
+          {cohorts}
+        </li>
+      );
+    });
 
     return (
-      <section className="CohortList">
-        <h1>Choose a Class by Start Date</h1>
-      </section>
+      <ul className="cohortList">
+        <p
+          id="allStudentsCohort"
+          onClick={() => changeCohortCode("All Students")}
+        >
+          All Students
+        </p>
+        {cohortList}
+      </ul>
     );
-  }
-}
+  };
+
+  return (
+    <section className="CohortSection">
+      <h1>Choose a Class by Start Date</h1>
+      {renderCohortList()}
+    </section>
+  );
+};
 
 export default CohortList;

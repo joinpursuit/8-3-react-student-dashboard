@@ -34,19 +34,10 @@
 
     .studentDOB {
       font-size: 15px;
+      margin: 0;
 
       .DOB {
         color: orange;
-      }
-    }
-
-    .showMoreButton {
-      color: blue;
-      cursor: pointer;
-      text-decoration: underline;
-
-      &:hover {
-        color: purple;
       }
     }
   }

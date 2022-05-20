@@ -4,58 +4,103 @@ import { Component } from "react";
 import moment from "moment";
 
 import ShowMore from "./ShowMore";
+import ShowMoreButton from "./ShowMoreButton";
 
 class StudentList extends Component {
   constructor() {
     super();
     this.state = {
       showMore: false,
+      studentID: null,
     };
   }
 
   renderStudentsAndTotal = () => {
-    const { studentData } = this.props;
+    const { studentData, cohortCode } = this.props;
 
     let totalStudents = 0;
     let keyNum = 0;
 
     const students = studentData.map((students) => {
-      // console.log(students);
-
       let middleInitial = students.names.middleName.charAt(0).toUpperCase();
 
-      return (
-        <article key={keyNum++} className="studentCard">
-          <img
-            className="studentPhoto"
-            src={students.profilePhoto}
-            alt="studentPhoto"
-          />
-          <section className="studentInfo">
-            <p className="studentName">
-              <strong>
-                {students.names.preferredName} {middleInitial}.{" "}
-                {students.names.surname}
-              </strong>
-            </p>
-            <p className="studentUsername">{students.username}</p>
-            <p className="studentDOB">
-              <strong className="DOB">Date of Birth: </strong>
-              {this.convertDOB(students.dob)}
-            </p>
-            <div
-              className="showMoreButton"
-              onClick={() => this.handleShowMore(students)}
-            >
-              {this.state.showMore ? "Show less..." : "Show more..."}
-            </div>
-          </section>
-          {this.state.showMore ? <ShowMore students={students} /> : null}
-        </article>
-      );
-    });
+      if (cohortCode === "All Students") {
+        totalStudents++;
 
-    totalStudents += students.length;
+        return (
+          <article key={keyNum++} className="studentCard">
+            <img
+              className="studentPhoto"
+              src={students.profilePhoto}
+              alt="studentPhoto"
+            />
+            <section className="studentInfo">
+              <p className="studentName">
+                <strong>
+                  {students.names.preferredName} {middleInitial}.{" "}
+                  {students.names.surname}
+                </strong>
+              </p>
+              <p className="studentUsername">{students.username}</p>
+              <p className="studentDOB">
+                <strong className="DOB">Date of Birth: </strong>
+                {this.convertDOB(students.dob)}
+              </p>
+              <ShowMoreButton
+                handleShowMore={this.handleShowMore}
+                students={students}
+                showMore={this.state.showMore}
+                studentID={this.state.studentID}
+              />
+            </section>
+            <ShowMore
+              students={students}
+              showMore={this.state.showMore}
+              studentID={this.state.studentID}
+            />
+          </article>
+        );
+      } else {
+        if (students.cohort.cohortCode === cohortCode) {
+          totalStudents++;
+          return (
+            <article key={keyNum++} className="studentCard">
+              <img
+                className="studentPhoto"
+                src={students.profilePhoto}
+                alt="studentPhoto"
+              />
+              <section className="studentInfo">
+                <p className="studentName">
+                  <strong>
+                    {students.names.preferredName} {middleInitial}.{" "}
+                    {students.names.surname}
+                  </strong>
+                </p>
+                <p className="studentUsername">{students.username}</p>
+                <p className="studentDOB">
+                  <strong className="DOB">Date of Birth: </strong>
+                  {this.convertDOB(students.dob)}
+                </p>
+                <div
+                  className="showMoreButton"
+                  onClick={() => this.handleShowMore(students)}
+                >
+                  {this.state.showMore ? "Show less..." : "Show more..."}
+                </div>
+              </section>
+              <ShowMore
+                students={students}
+                showMore={this.state.showMore}
+                studentID={this.state.studentID}
+              />
+            </article>
+          );
+        }
+      }
+
+      return null;
+    });
 
     return (
       <section>
@@ -73,24 +118,19 @@ class StudentList extends Component {
     return dateFormatted;
   };
 
-  handleShowMore = (students) => {
-    console.log(students);
-
+  handleShowMore = (studentid) => {
     this.setState({
       showMore: !this.state.showMore,
+      studentID: studentid,
     });
-
-    // return (
-    //   <div className="showMore">
-    //     {this.state.showMore ? <ShowMore students={students} /> : null}
-    //   </div>
-    // );
   };
 
   render() {
+    const { cohortCode } = this.props;
+
     return (
       <section>
-        <h1>All Students</h1>
+        <h1>{cohortCode}</h1>
         {this.renderStudentsAndTotal()}
       </section>
     );

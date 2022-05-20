@@ -1,5 +1,23 @@
-.CohortList {
-  border: 5px solid blue;
+.CohortSection {
   grid-column: 1;
   grid-row: 1;
+
+  .cohortList {
+    list-style-type: none;
+    display: grid;
+    gap: 3%;
+    height: 80%;
+
+    #allStudentsCohort {
+      margin-top: 10%;
+      border-bottom: 3px solid cyan;
+      cursor: pointer;
+    }
+
+    .cohortCodes {
+      border-bottom: 3px solid red;
+      margin-bottom: 3%;
+      cursor: pointer;
+    }
+  }
 }
