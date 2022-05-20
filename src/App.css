@@ -1,0 +1,79 @@
+
+body {
+  
+}
+
+header {
+  padding: 1rem 0;text-align: center;background-color:cadetblue;;
+}
+header h1 {
+  font-size: 3rem;font-weight: bold;color: #FFF;
+}
+main {
+  width: 60%; margin: 1rem auto;display: grid;grid-template-columns: 2fr 4fr;gap: 20px;
+}
+main aside {
+  height: 100%;padding: 1rem;display: flex;
+  justify-content: space-between;
+}
+main aside section {
+  width: 100%;
+  height: 125vh;
+  top: 5%;
+  position: -webkit-sticky;
+  position: sticky;
+}
+main aside h2 {
+  margin: 0;font-size: 2rem;font-weight: bold;  
+}
+main aside ul {
+  padding: 0rem; list-style: none;
+}
+main aside ul li {
+  padding: 1rem 0;font-size: 1.2rem;font-weight: bold;border-bottom: 1px solid #666;cursor: pointer;
+}
+main aside ul li:hover {
+  color:cadetblue;
+}
+main article {
+
+}
+main article ul {
+  padding: 0rem; list-style: none;
+}
+main article ul > li {
+  padding: 1rem;margin: 1rem 0;border: 1px solid cadetblue;
+}
+main article ul li .student-personal-data {
+  display: grid;grid-template-columns: 20% 80%;
+}
+main article ul li .student-personal-data img {
+  width: 80%;
+}
+main article ul li .student-personal-data div {
+  padding: 1rem;
+}
+main article ul li .student-personal-data h4 {
+  margin: 0rem 0; font-size: 1.5rem;font-weight: bold;
+}
+main article ul li .student-personal-data p:nth-child(1) {
+  font-size: 1.0rem;font-weight: 500;
+}
+main article ul li .student-personal-data p:nth-child(3) {
+  font-size: 1.0rem;font-weight: 500;color:cadetblue;
+}
+
+main article ul li .student-academic-data {
+  padding: 1rem;margin: 1rem 0;;
+  display: grid;grid-template-columns: 1fr 1fr 1fr;border: 1px solid cadetblue;
+}
+main article ul li .student-academic-data ul {}
+main article ul li .student-academic-data ul li {
+  padding: 0.5rem 0;  border: none;
+}
+main article ul li .student-academic-data ul li span {
+  font-size: 1.2rem;font-weight: bold;color:cadetblue;
+}
+main article ul li .student-academic-data h4 {
+  margin: 0rem 0; font-size: 1.5rem;font-weight: bold;
+}
