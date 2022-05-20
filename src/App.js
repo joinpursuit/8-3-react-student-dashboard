@@ -10,17 +10,33 @@ class App extends React.Component {
     super();
     this.state = {
       selectedCohort: "AllStudents",
+      studentShowDetail: [],
     };
   }
 
   selectCohortHandler = (selectedCohort) => {
     this.setState({
       selectedCohort: selectedCohort,
+      studentShowDetail: [],
+    });
+  };
+
+  studentShowDetailHandler = (studentId) => {
+    let copyOfStudentShowDetail = [...this.state.studentShowDetail];
+    copyOfStudentShowDetail.includes(studentId)
+      ? copyOfStudentShowDetail.splice(
+          copyOfStudentShowDetail.indexOf(studentId),
+          1
+        )
+      : copyOfStudentShowDetail.push(studentId);
+
+    this.setState({
+      studentShowDetail: copyOfStudentShowDetail,
     });
   };
 
   render() {
-    console.log(this.state);
+    //console.log(this.state);
     const { selectedCohort } = this.state;
     return (
       <div className="dashBoard">
@@ -29,7 +45,12 @@ class App extends React.Component {
           data={Data}
           selectCohortHandler={this.selectCohortHandler}
         />
-        <StudentList data={Data} selectedCohort={selectedCohort} />
+        <StudentList
+          data={Data}
+          selectedCohort={selectedCohort}
+          studentShowDetail={this.state.studentShowDetail}
+          studentShowDetailHandler={this.studentShowDetailHandler}
+        />
       </div>
     );
   }

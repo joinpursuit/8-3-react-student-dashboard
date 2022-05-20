@@ -9,9 +9,12 @@ class Details extends React.Component {
     const { resume, linkedin, github, mockInterview } =
       this.props.studentInfo.certifications;
 
+    const arrayLength = this.props.arrayLength;
+
     return (
       <div>
         <div>
+          <p>ArrayLength: {arrayLength}</p>
           <h4>Codewars:</h4>
           <p>Current Total: {codewars.current.total}</p>
           <p>Last Week: {codewars.current.lastWeek}</p>

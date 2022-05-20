@@ -41,6 +41,11 @@ class Student extends React.Component {
     const name = `${studentInfo.names.preferredName} ${studentInfo.names.middleName[0]}. ${studentInfo.names.surname}`;
     const email = studentInfo.username;
     const Birthday = studentInfo.dob;
+
+    const { studentShowDetail, studentShowDetailHandler } = this.props;
+    console.log(this.props);
+    // console.log(this.props);
+
     return (
       <div className="student">
         <img src={imgSrc} alt={name} />
@@ -52,10 +57,10 @@ class Student extends React.Component {
             ? "On Track To Graduate"
             : null}
         </p>
-        <button onClick={this.changeButtonState}>
+        <button onClick={() => studentShowDetailHandler(studentInfo.id)}>
           {this.state.showMoreOrShowLess}
         </button>
-        {this.state.showMoreOrShowLess === "Show Less"
+        {studentShowDetail.includes(studentInfo.id)
           ? this.showMoreHandler(studentInfo)
           : null}
       </div>

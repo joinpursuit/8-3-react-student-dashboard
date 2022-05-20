@@ -12,11 +12,23 @@ class StudentList extends React.Component {
     }
   };
 
-  displayCohortStudents = (data, selectedCohort) => {
+  displayCohortStudents = (
+    data,
+    selectedCohort,
+    studentShowDetail,
+    studentShowDetailHandler
+  ) => {
     const selectedStudents = this.selectedCohortStudent(data, selectedCohort);
 
     return selectedStudents.map((selectedStudent, index) => {
-      return <Student studentInfo={selectedStudent} key={index} />;
+      return (
+        <Student
+          studentInfo={selectedStudent}
+          key={index}
+          studentShowDetail={studentShowDetail}
+          studentShowDetailHandler={studentShowDetailHandler}
+        />
+      );
     });
   };
 
@@ -28,8 +40,19 @@ class StudentList extends React.Component {
   };
 
   render() {
-    const { data, selectedCohort } = this.props;
-    const studentCards = this.displayCohortStudents(data, selectedCohort);
+    const {
+      data,
+      selectedCohort,
+      studentShowDetail,
+      studentShowDetailHandler,
+    } = this.props;
+
+    const studentCards = this.displayCohortStudents(
+      data,
+      selectedCohort,
+      studentShowDetail,
+      studentShowDetailHandler
+    );
 
     return (
       <div className="studentList">
