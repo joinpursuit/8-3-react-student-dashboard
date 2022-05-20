@@ -16,13 +16,29 @@ h1 {
   display: flex;
 } */
 
-/*.app{ display: grid;
-grid-template-columns: 2fr 3fr;
-}
-
-.students {
-grid-column: 1 / span 3;
+.app {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
 }
 .cohortList {
-grid-column: 3 / span 7;
-} */
+  grid-column: 1/2;
+}
+.students {
+  grid-column: 2/3;
+}
+
+@media (max-width: 1000px) {
+  .app {
+    display: block;
+    /* grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr; */
+  }
+  .cohortList {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .students {
+    grid-row: 2;
+    grid-column: 1;
+  }
+}

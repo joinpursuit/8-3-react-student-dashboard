@@ -8,6 +8,8 @@ class ReadMore extends Component {
     this.state = {
       isReadMore: false,
       commentsList: [],
+      commentorName:'',
+      commentMessage:'',
     };
     // >> Binding
     this.handleChange = this.handleChange.bind(this);

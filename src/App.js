@@ -50,7 +50,7 @@ class App extends Component {
         <NavBar />
         <div
           className='app'
-          style={{ display: 'grid', gridTemplateColumns: '1fr 2fr' }}
+          // style={{ display: 'grid', gridTemplateColumns: '1fr 2fr' }}
         >
           <CohortList
             className='cohorList'

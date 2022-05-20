@@ -36,7 +36,7 @@
   padding: 1rem;
 }
 label {
-  padding-right: 0.5rem;
+  padding-right: 2rem;
 }
 input[type='submit'] {
   margin: 0 1rem;
@@ -67,4 +67,25 @@ button:hover {
 .scores p,
 .certify p {
   padding: 0.3rem 0;
+}
+
+@media (max-width: 800px) {
+  input[type='submit'] {
+    margin: 1rem;
+  }
+  .comments-list {
+    padding: 0.5rem 0;
+  }
+
+  button {
+    font-weight: bold;
+    font-size: 5px;
+    transition: all 500ms;
+  }
+
+  button:hover {
+    font-size: 8px;
+    font-size-adjust: 5px;
+    background-color: rgb(37, 198, 193);
+  }
 }
