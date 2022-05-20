@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const Student = (props) => {
 	const { studentInfo } = props;
 	const nameFormatter = (studentname) => {
@@ -12,6 +13,7 @@ const Student = (props) => {
 			<h4>{nameFormatter(studentInfo.names)}</h4>
 			<p className="email-address">{studentInfo.username} </p>
 			<p>DOB: {studentInfo.dob}</p>
+
 		</div>
 	);
 };

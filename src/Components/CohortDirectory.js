@@ -8,8 +8,8 @@ const CohortDirectory = (props) => {
 	const { info, clicker } = props;
 	let cohortList = [];
 	info.forEach((item) => {
-		if (!cohortList.includes(item.cohort.cohortCode)) {
-			cohortList.push(item.cohort.cohortCode);
+		if (!cohortList.includes(dateFormatter(item.cohort.cohortCode))) {
+			cohortList.push(dateFormatter(item.cohort.cohortCode));
 		}
 	});
 	//TODO: sort cohortList at some point after populating
@@ -21,7 +21,7 @@ const CohortDirectory = (props) => {
 			{cohortList.map((cohort) => {
 				return (
 					<li id={cohort} key={cohort} onClick={() => clicker(cohort)}>
-						{dateFormatter(cohort)}
+						{cohort}
 					</li>
 				);
 			})}
@@ -30,3 +30,4 @@ const CohortDirectory = (props) => {
 };
 
 export default CohortDirectory;
+export { dateFormatter };

@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import CohortDirectory from "./Components/CohortDirectory";
+import CohortDirectory, { dateFormatter } from "./Components/CohortDirectory";
 import StudentDirectory from "./Components/StudentDirectory";
 
 class App extends React.Component {
@@ -21,7 +21,18 @@ class App extends React.Component {
 				</header>
 				<main>
 					<CohortDirectory info={this.props.object} clicker={this.changeCohort} />
-					<StudentDirectory info={this.props.object} cohort={this.state.currentCohort} />
+					<StudentDirectory
+						info={
+							this.state.currentCohort !== "All Students"
+								? this.props.object.filter(
+										(each) =>
+											dateFormatter(each.cohort.cohortCode) ===
+											this.state.currentCohort
+								  )
+								: this.props.object
+						}
+						cohort={this.state.currentCohort}
+					/>
 				</main>
 			</section>
 		);
