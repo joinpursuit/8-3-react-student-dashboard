@@ -15,9 +15,16 @@ class StudentList extends React.Component {
   displayCohortStudents = (data, selectedCohort) => {
     const selectedStudents = this.selectedCohortStudent(data, selectedCohort);
 
-    return selectedStudents.map((selectedStudent) => {
-      return <Student studentInfo={selectedStudent} />;
+    return selectedStudents.map((selectedStudent, index) => {
+      return <Student studentInfo={selectedStudent} key={index} />;
     });
+  };
+
+  parseCohort = (cohort) => {
+    if (cohort === "AllStudents") return "All Students";
+    return `${cohort.substring(0, cohort.length - 4)} ${cohort.substring(
+      cohort.length - 4
+    )}`;
   };
 
   render() {
@@ -26,7 +33,7 @@ class StudentList extends React.Component {
 
     return (
       <div className="studentList">
-        <h2>All Students</h2>
+        <h2>{this.parseCohort(selectedCohort)}</h2>
         <h3>Total Students: {studentCards.length}</h3>
         {studentCards}
       </div>
