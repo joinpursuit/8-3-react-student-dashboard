@@ -1,0 +1,16 @@
+.student {
+  padding: 1rem 0;
+  margin: 1rem 0;
+  display: flex;
+  flex: 1;
+}
+.student img,
+.student h4 {
+  padding: 0 1rem;
+}
+.student button {
+  margin: 1rem;
+}
+.graduated {
+  padding: 0 8rem;
+}

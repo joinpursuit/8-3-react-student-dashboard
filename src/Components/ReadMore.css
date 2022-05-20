@@ -1,0 +1,42 @@
+.moreLess {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  gap: 0.1rem;
+  border-bottom: 1px solid green;
+}
+.codewars {
+  grid-column: 1;
+  padding: 0 2rem;
+}
+.scores {
+  grid-column: 2;
+}
+.certify {
+  grid-column: 3;
+}
+.certify .check {
+  color: green;
+}
+.certify .xmark {
+  color: red;
+}
+
+.comment,
+.comments-section {
+  display: block;
+}
+
+.comments-section {
+  display: block;
+  border: 1px solid black;
+}
+.comment > div {
+  padding: 1rem;
+}
+label {
+  padding-right: 0.5rem;
+}
+input[type='submit'] {
+  margin: 0 1rem;
+  padding: 0.5rem;
+}

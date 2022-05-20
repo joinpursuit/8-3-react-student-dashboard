@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: green;
+  margin-bottom: 4rem;
+}
+/* .app {
+  display: flex;
+} */
+
+/*.app{ display: grid;
+grid-template-columns: 2fr 3fr;
+}
+
+.students {
+grid-column: 1 / span 3;
+}
+.cohortList {
+grid-column: 3 / span 7;
+} */
