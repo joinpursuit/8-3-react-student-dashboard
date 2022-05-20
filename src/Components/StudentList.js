@@ -1,23 +1,13 @@
 import React from 'react';
-import studentData from './data.json';
+import StudentInfo from './StudentInfo'
 
-const StudentList = (props) => {
-	const studentArr = [
-		prefferedName,
-		middleName.splice(0),
-		surname,
-		username,
-		dob,
-	];
-
-	return studentArr.map((student) => {
-		return (
-			<>
-				<h4>All Students</h4>
-				<p>Total Students:</p>
-			</>
-		);
-	});
-};
+function StudentList({ students }) {
+	const studentList = students.map((student) => (
+		<li key={student.id}>
+			<StudentInfo student={student} />
+		</li>
+    ));
+	return <ul className='student-dashboard'>{studentList}</ul>;
+}
 
 export default StudentList;
