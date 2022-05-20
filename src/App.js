@@ -16,11 +16,11 @@ class App extends React.Component {
 	render() {
 		return (
 			<section>
-				<div className="header">
+				<header className="header">
 					<h1 className="title">Student Dashboard</h1>
-				</div>
+				</header>
 				<main>
-					<CohortDirectory info={this.props.object}  />
+					<CohortDirectory info={this.props.object} clicker={this.changeCohort} />
 					<StudentDirectory info={this.props.object} cohort={this.state.currentCohort} />
 				</main>
 			</section>

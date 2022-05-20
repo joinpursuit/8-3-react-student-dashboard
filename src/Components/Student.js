@@ -7,10 +7,11 @@ const Student = (props) => {
 	};
 	return (
 		<div className="student" id={studentInfo.id}>
-			<img src={studentInfo.profilePhoto} alt={studentInfo.id} className="student-photo"/>
+			<img src={studentInfo.profilePhoto} alt={studentInfo.id} className="student-photo" />
 			<br />
 			<h4>{nameFormatter(studentInfo.names)}</h4>
-			<p>{studentInfo.dob}</p>
+			<p className="email-address">{studentInfo.username} </p>
+			<p>DOB: {studentInfo.dob}</p>
 		</div>
 	);
 };
