@@ -2,6 +2,12 @@ import React from 'react';
 import Student from './Student';
 
 class StudentDash extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      students:[]
+    }
+  }
   render() {
     const { data } = this.props;
     const studentCards = data.map((stuCard) => {
