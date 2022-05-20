@@ -1,11 +1,11 @@
-import Cohort from './Semester';
+import Semester from './Semester';
 
 function Cohorts({ filterByClass }) {
   return (
-    <section className="sort-class">
+    <section className="filter-class">
       <h2>Choose a Class by Start Date</h2>
-      <Cohort
-        handleClick={(event) =>
+      <Semester
+        handleClick={ (event) =>
           filterByClass(
             event.target.textContent,
             event.target.textContent.split(' ').join('')

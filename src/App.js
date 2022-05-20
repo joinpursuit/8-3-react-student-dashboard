@@ -4,11 +4,12 @@ import Cohorts from './Components/Cohorts';
 import './index.css';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       cohort: 'All Students',
       code: 'AllStudents',
+      showMore: false,
     };
   }
 
@@ -19,24 +20,29 @@ class App extends Component {
     });
   };
 
+  toggleShowMore = () => {
+    this.setState((previousState) => ({
+      showMore: !previousState.showMore,
+    }));
+  };
+
   render() {
     const { allStudents } = this.props;
-    const { cohort, code } = this.state;
+    const { cohort, code, showMore } = this.state;
+
     console.log(this.state);
 
     return (
-      <div className="App">
-        <div className="app-grid">
-          <h1>Student Dashboard</h1>
-          <Cohorts
-            filterByClass={this.filterByClass}
-          />
-          <StudentDashboard
-            code={code}
-            cohort={cohort}
-            allStudents={allStudents}
-          />
-        </div>
+      <div className="app-grid">
+        <h1>Student Dashboard</h1>
+        <Cohorts filterByClass={this.filterByClass} />
+        <StudentDashboard
+          toggleShowMore={this.toggleShowMore}
+          showMore={showMore}
+          code={code}
+          cohort={cohort}
+          allStudents={allStudents}
+        />
       </div>
     );
   }

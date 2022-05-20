@@ -12,8 +12,8 @@ function Semester({ handleClick }) {
   ];
 
   const displaySemesters = allSemesters.map((semester) => (
-    <div>
-      <h3 id={`${semester}`} onClick={handleClick}>
+    <div key={semester}>
+      <h3 onClick={handleClick}>
         {semester}
       </h3>
       <hr></hr>
