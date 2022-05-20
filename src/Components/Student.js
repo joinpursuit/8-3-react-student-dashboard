@@ -1,13 +1,25 @@
 import React from "react";
+import Details from "./Details";
 import "./Student.css";
 
 class Student extends React.Component {
   constructor() {
     super();
     this.state = {
-      showMore: false,
+      showMoreOrShowLess: "Show More",
     };
   }
+
+  changeButtonState = () => {
+    const state = this.state.showMoreOrShowLess;
+    state === "Show More"
+      ? this.setState({
+          showMoreOrShowLess: "Show Less",
+        })
+      : this.setState({
+          showMoreOrShowLess: "Show More",
+        });
+  };
 
   checkGraduateStatus = (studentInfo) => {
     const { resume, linkedin, github, mockInterview } =
@@ -19,7 +31,9 @@ class Student extends React.Component {
     );
   };
 
-  showMoreHandler = (studentInfo) => {};
+  showMoreHandler = (studentInfo) => {
+    return <Details studentInfo={studentInfo} />;
+  };
 
   render() {
     const { studentInfo } = this.props;
@@ -38,7 +52,12 @@ class Student extends React.Component {
             ? "On Track To Graduate"
             : null}
         </p>
-        <button>Show More</button>
+        <button onClick={this.changeButtonState}>
+          {this.state.showMoreOrShowLess}
+        </button>
+        {this.state.showMoreOrShowLess === "Show Less"
+          ? this.showMoreHandler(studentInfo)
+          : null}
       </div>
     );
   }
