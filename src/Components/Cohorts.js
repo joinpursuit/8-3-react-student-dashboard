@@ -5,15 +5,11 @@ class Cohorts extends React.Component {
   constructor(props) {
     super(props);
     
-    
   }
 
-  // getCohort = (cohort) => {
-  //   console.log(cohort)
-
-  // }
 
   render() {
+    // >> Getting the cohorts data 
     const filteredList = new Set(
       (this.props.data).map(e => e.cohort['cohortCode'])
     )
