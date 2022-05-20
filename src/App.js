@@ -8,10 +8,14 @@ import TopBar from './TopBar';
 class App extends React.Component {
   constructor() {
     super();
-    this.state={
-      students:[]
-    }
+    this.state = {
+      currentCohort: 'All Students',
+    };
   }
+
+  updateCohort = (cohort) => {
+    this.setState({ currentCohort: cohort });
+  };
 
   render() {
     const { data } = this.props;
@@ -20,7 +24,7 @@ class App extends React.Component {
       <>
         <TopBar />
         <div className="school-dash">
-          <CohortList />
+          <CohortList data={data} updateCohort={this.updateCohort} />
           <StudentDash data={data} />
         </div>
       </>
@@ -29,9 +33,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-/*
-TODO
-
-cohort class by start date( likely need to use .filter )
-*/

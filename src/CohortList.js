@@ -1,41 +1,25 @@
-import React from "react";
-import Cohort from "./Cohort";
-import './CohortList.css'
+import React from 'react';
+import Cohort from './Cohort';
+import './CohortList.css';
+import data from './data/data.json';
 
+function CohortList() {
+  const cohortCode = data.map((student) => student.cohort.cohortCode);
+  const deduped = new Set(cohortCode);
+  const allCohorts = ['All Students', ...deduped];
 
+  const displayCohorts = allCohorts.map((semester) => (
+    <div key={semester}>
+      <h3>{semester}</h3>
+      <hr></hr>
+    </div>
+  ));
+  return (
+    <div className="semester-list">
+      <h2>Choose a Class by Start Date </h2>
+      <section>{displayCohorts}</section>
+    </div>
+  );
+}
 
-function CohortList({ handleClick }) {
-    const allCohorts = [
-      'All Students',
-      'Winter 2026',
-      'Fall 2026',
-      'Summer 2026',
-      'Spring 2026',
-      'Winter 2025',
-      'Fall 2025',
-      'Summer 2025',
-      'Spring 2025',
-    ];
-  
-    const displayCohorts = allCohorts.map((semester) => (
-      <div>
-        <h3 id={semester} onClick={handleClick}>
-          <a href="#">{semester}</a>
-        </h3>
-        <hr></hr>
-      </div>
-    ));
-    return (
-        <div>
-            <h2>Choose a Class by Start Date </h2>
-            <section>{displayCohorts}</section>;
-        </div>
-    ) 
-  }
-  
-  export default CohortList;
-
-  /*
-  TODOS
-create a clickable list of cohort codes
-  */
+export default CohortList;
