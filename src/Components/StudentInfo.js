@@ -4,17 +4,17 @@ function StudentInfo({ student: { names, username, profilePhoto, dob } }) {
 	return (
 		<>
 			<section>
-				<h2>All Students</h2>
-				<p>Total:</p>
+				<aside>
 				<article className='student-info'>
-					<img src={profilePhoto} alt={names} />
+					<img src={profilePhoto} alt={names} className="profile-photo" />
 					<h4>
-						{names.prefferedName} {names.middleName[0]}. {names.surname}
+						{names.preferredName} {names.middleName[0]}. {names.surname}
 					</h4>
-					<p>{username}</p>
-					<p>Birthday: {dob}</p>
+					<h4><em>{username}</em></h4>
+					<h4><em>Birthday: {dob}</em></h4>
 					<button>Show More</button>
 				</article>
+				</aside>
 			</section>
 		</>
 	);
