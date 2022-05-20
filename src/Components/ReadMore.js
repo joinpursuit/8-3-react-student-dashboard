@@ -75,7 +75,6 @@ class ReadMore extends Component {
           style={{
             color: 'green',
             border: 'none',
-            background: 'transparent',
             textDecoration: 'underline',
           }}
           onClick={ReadMoreShowLess}

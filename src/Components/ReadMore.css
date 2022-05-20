@@ -45,12 +45,19 @@ input[type='submit'] {
   color: white;
 }
 input[type='submit']:hover {
-  background: teal;
+  background: rgb(3, 155, 125);
 }
 
-.showbtn {
-  background: teal;
-  border: 2px solid black;
+button {
+  font-weight: bold;
+  font-size: 15px;
+  transition: all 500ms;
+}
+
+button:hover {
+  font-size: 25px;
+  font-size-adjust: 10px;
+  background-color: rgb(37, 198, 193);
 }
 .comments-list {
   padding: 0.5rem 2rem 0.5rem 0;
