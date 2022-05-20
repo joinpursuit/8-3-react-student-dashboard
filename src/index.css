@@ -81,6 +81,7 @@ h4{
 .show-more-container{
    display: grid;
    grid-template-columns: repeat(3, 1fr);
+   width: fit-content;
 }
 
 @media only screen and (max-width: 768px) {

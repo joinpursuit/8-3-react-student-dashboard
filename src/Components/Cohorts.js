@@ -5,7 +5,7 @@ function Cohorts({ filterByClass }) {
     <section className="filter-class">
       <h2>Choose a Class by Start Date</h2>
       <Semester
-        handleClick={ (event) =>
+        handleClick={(event) =>
           filterByClass(
             event.target.textContent,
             event.target.textContent.split(' ').join('')

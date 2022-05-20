@@ -9,26 +9,21 @@ class App extends Component {
     this.state = {
       cohort: 'All Students',
       code: 'AllStudents',
-      showMore: false,
+
     };
-  }
+  };
 
   filterByClass = (cohort, code) => {
     this.setState({
       cohort: cohort,
       code: code,
+      
     });
-  };
-
-  toggleShowMore = () => {
-    this.setState((previousState) => ({
-      showMore: !previousState.showMore,
-    }));
   };
 
   render() {
     const { allStudents } = this.props;
-    const { cohort, code, showMore } = this.state;
+    const { cohort, code } = this.state;
 
     console.log(this.state);
 
@@ -37,8 +32,6 @@ class App extends Component {
         <h1>Student Dashboard</h1>
         <Cohorts filterByClass={this.filterByClass} />
         <StudentDashboard
-          toggleShowMore={this.toggleShowMore}
-          showMore={showMore}
           code={code}
           cohort={cohort}
           allStudents={allStudents}

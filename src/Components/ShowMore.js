@@ -25,7 +25,7 @@ function ShowMore({ codewars, certifications, cohort, showMore, handleClick }) {
               {goal.total}
             </p>
             <p>
-              <span className="color-text">Percentage of Goal Achieved:</span>{' '}
+              <span className="color-text">Percent of Goal Achieved:</span>
               {((current.total / goal.total) * 100).toFixed()}%
             </p>
           </article>
