@@ -11,6 +11,8 @@ main {
 .student {
 	border: 2px solid red;
 	margin: 2px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 .student-photo {
 	width: 75px;
@@ -18,4 +20,9 @@ main {
 }
 .student-directory {
 	overflow-y: scroll; /*WORK!!!*/
+}
+li {
+	border: 1px solid blue;
+	text-align: center;
+	list-style-type: none;
 }
