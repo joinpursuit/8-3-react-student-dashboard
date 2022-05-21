@@ -42,8 +42,8 @@ class Details extends React.Component {
 
   displayComments = (comments, id) => {
     if (comments.hasOwnProperty(id)) {
-      return comments[id].map((comment) => {
-        return <li>{comment}</li>;
+      return comments[id].map((comment, index) => {
+        return <li key={index}>{comment}</li>;
       });
     }
   };

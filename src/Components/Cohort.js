@@ -1,22 +1,31 @@
-import React from "react";
 import "./Cohort.css";
 
-class Cohort extends React.Component {
-  parseCohort = (cohort) => {
-    if (cohort === "AllStudents") return "All Students";
-    return `${cohort.substring(0, cohort.length - 4)} ${cohort.substring(
-      cohort.length - 4
-    )}`;
-  };
+/**
+ *  Add a space between the season and year of the CohortCode, Ex: "Winter2025"
+ * becomes "Winter 2025"
+ * @param {String} cohortCode - semster of the cohort
+ * @returns cohort code with a space between season and year, "AllStudents"
+ * will return "All Students"
+ */
+const parseCohortCode = (cohortCode) => {
+  if (cohortCode === "AllStudents") return "All Students";
 
-  render() {
-    const { cohort, selectCohortHandler } = this.props;
-    return (
-      <div className="cohort" onClick={() => selectCohortHandler(cohort)}>
-        {this.parseCohort(cohort)}
-      </div>
-    );
-  }
+  return `${cohortCode.substring(
+    0,
+    cohortCode.length - 4
+  )} ${cohortCode.substring(cohortCode.length - 4)}`;
+};
+
+/*renders the cohort. Ex: Winter 2025 , when click on the cohort, StudentList
+Component will only display students who are in the selected cohort */
+function Cohort(props) {
+  const { cohortCode, selectCohortHandler } = props;
+
+  return (
+    <div className="cohort" onClick={() => selectCohortHandler(cohortCode)}>
+      {parseCohortCode(cohortCode)}
+    </div>
+  );
 }
 
 export default Cohort;
