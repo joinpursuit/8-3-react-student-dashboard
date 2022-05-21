@@ -12,7 +12,7 @@ main {
 	border: 2px solid red;
 	margin: 2px;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 2fr 1fr;
 }
 .student-photo {
 	width: 75px;
@@ -25,4 +25,10 @@ li {
 	border: 1px solid blue;
 	text-align: center;
 	list-style-type: none;
+}
+.on-track {
+	color: green;
+}
+.hidden {
+	visibility: hidden;
 }
