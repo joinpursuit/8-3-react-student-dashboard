@@ -21,8 +21,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<h1 className='student-dashboard'>Student Dashboard</h1>
-				<h2 className='all-students'>All Students</h2>
-				<p className='total'>Total:</p>
+				
 				<CohortList
 					className='cohort'
 					data={data}

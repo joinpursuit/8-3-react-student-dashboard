@@ -31,8 +31,9 @@ function CohortList(props) {
 		return sortedCohortArr.map((cohortCode, index) => {
 			return (
 				<li key={index} onClick={() => handleClick(cohortCode)}>
-                    
-					{cohortCode === 'All Students'? 'All Students':`${cohortCode.substring(0, cohortCode.length - 4)} 
+					{cohortCode === 'All Students'
+						? 'All Students'
+						: `${cohortCode.substring(0, cohortCode.length - 4)} 
 					${cohortCode.substring(cohortCode.length - 4)}`}
 				</li>
 			);
