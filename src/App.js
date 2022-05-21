@@ -7,6 +7,7 @@ import CohortList from './CohortList';
 import TopSection from './TopSection';
 import data from './data/data.json';
 
+
 class App extends React.Component {
    constructor() {
      super();

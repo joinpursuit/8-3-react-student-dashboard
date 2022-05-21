@@ -2,6 +2,15 @@ import React from "react";
 import Cohort from "./Cohort";
 import data from './data/data.json';
 
+
+
+
+
+
+
+
+
+
 function CohortList() {
   const cohortCode = data.map((student) => student.cohort.cohortCode);
   const deduped = new Set(cohortCode);
