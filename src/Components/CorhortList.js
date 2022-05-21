@@ -1,5 +1,3 @@
-// import CorhortSemester from './CorhortSemester'
-
 function CorhortList({ data, clickCohort }) {
   const corhortList = data.map(
     (student) => student.cohort.cohortCode.replace(/\B(?=(\d{4})+(?!\d))/g, ' ') //stackoverflow https://stackoverflow.com/questions/2254185/regular-expression-for-formatting-numbers-in-javascript
@@ -16,7 +14,7 @@ function CorhortList({ data, clickCohort }) {
   })
 
   return (
-    <div className="cohort-list">
+    <div className='cohort-list'>
       <h2>Choose a Class by Start Date</h2>
       <p onClick={() => clickCohort(null)}>All Students</p>
       {sortSeason.map((list, ind) => (
