@@ -1,7 +1,7 @@
 import React from 'react';
-import './TopBar.css';
+import './Header.css';
 
-class TopBar extends React.Component {
+class Header extends React.Component {
   render() {
     return (
       <div className="TopBar">
@@ -11,4 +11,4 @@ class TopBar extends React.Component {
   }
 }
 
-export default TopBar;
+export default Header;

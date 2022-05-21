@@ -3,11 +3,6 @@ img{
     width: 150px;
 }
 
-article{
+.stucard{
     border: 1px solid green;
 }
-
-/* button{
-    background: transparent;
-    border: none;
-} */

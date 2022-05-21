@@ -4,19 +4,19 @@ import './Cohort.css';
 class Cohort extends React.Component {
 
   // add a space between the season and year
-  formatCohort = (cohort) => {
-    if (cohort === 'All Students') return 'All Students';
-    return `${cohort.substring(0, cohort.length - 4)} ${cohort.substring(
-      cohort.length - 4
+  formatCohort = (semester) => {
+    if (semester === 'All Students') return 'All Students';
+    return `${semester.substring(0, semester.length - 4)} ${semester.substring(
+      semester.length - 4
     )}`;
   };
 
   render() {
     const { semester, updateCohort } = this.props;
     return (
-      <div className="cohort" onClick={() => updateCohort(semester)}>
+      <h3 className="cohort" onClick={() => updateCohort(semester)}>
         {this.formatCohort(semester)}
-      </div>
+      </h3>
     );
   }
 }

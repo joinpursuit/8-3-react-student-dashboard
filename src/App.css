@@ -6,10 +6,7 @@
 
 }
 
-TopBar{
-    
-    background-color: green;
-}
+
 
 .cohortList{
     grid-column: 1/2;

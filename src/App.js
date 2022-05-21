@@ -1,9 +1,8 @@
 import React from 'react';
-import StudentDash from './StudentDash';
-import './Student.css';
+import StudentDash from './Components/StudentDash';
 import './App.css';
-import CohortList from './CohortList';
-import TopBar from './TopBar';
+import CohortList from './Components/CohortList';
+import Header from './Components/Header';
 
 class App extends React.Component {
   constructor() {
@@ -21,17 +20,17 @@ class App extends React.Component {
     });
   };
 
-  showMoreHandler = (id) =>{
-    let showMoreCopy= [...this.state.showMore];
-    if (showMoreCopy.includes(id)){
-      showMoreCopy.splice(showMoreCopy.indexOf(id), 1)
-    } else{
-      showMoreCopy.push(id)
+  showMoreHandler = (id) => {
+    let showMoreCopy = [...this.state.showMore];
+    if (showMoreCopy.includes(id)) {
+      showMoreCopy.splice(showMoreCopy.indexOf(id), 1);
+    } else {
+      showMoreCopy.push(id);
     }
     this.setState({
-      showMore:showMoreCopy
-    })
-  }
+      showMore: showMoreCopy,
+    });
+  };
 
   render() {
     const { data } = this.props;
@@ -39,7 +38,7 @@ class App extends React.Component {
 
     return (
       <>
-        <TopBar />
+        <Header />
         <div className="school-dash">
           <CohortList data={data} updateCohort={this.updateCohort} />
           <StudentDash
