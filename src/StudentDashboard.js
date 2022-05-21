@@ -1,20 +1,6 @@
 import React from "react";
 import StudentCard from "./StudentCard";
 
-/*const StudentDashboard = ({ array }) => {
-  return (
-    <div>
-      <h3>
-        All Classes
-        <p>{`Total Student: ${array.length}`}</p>
-      </h3>
-      {array.map((element) => {
-        return <StudentCard student={element} key={element.id} />;
-      })}
-    </div>
-  );
-};*/
-
 class StudentDashboard extends React.Component {
   constructor() {
     super();
@@ -22,23 +8,27 @@ class StudentDashboard extends React.Component {
       students: [],
     };
   }
-  createStudentList = (array) => {
+  createStudentList = (array, cohort) => {
+    if (cohort !== "All Classes") {
+      cohort = `${cohort.slice(0, cohort.length - 4)} 
+        ${cohort.slice(cohort.length - 4)}`;
+    }
     return (
-      <div>
-        <h3>
-          All Classes
-          <p>{`Total Student: ${array.length}`}</p>
-        </h3>
+      <div className="container">
+        <h2>{cohort}</h2>
+        <p>{`Total Students: ${array.length}`}</p>
         {array.map((element) => {
-          return <StudentCard student={element} key={element.id} />;
+          return (
+            <StudentCard student={element} key={element.id} className="item" />
+          );
         })}
       </div>
     );
   };
 
   render() {
-    const { array } = this.props;
-    return <div>{this.createStudentList(array)}</div>;
+    const { array, cohort } = this.props;
+    return <div>{this.createStudentList(array, cohort)}</div>;
   }
 }
 
