@@ -7,6 +7,12 @@ img {
     width: 150px;
     height: 150px;
 }
+
+.show-more  {
+    display: block;
+    cursor: pointer;
+}
+
 .birthday {
     display: flex;
     justify-content: baseline;
