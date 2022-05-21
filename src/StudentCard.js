@@ -1,4 +1,5 @@
 import "./StudentCard.css";
+import ShowMore from "./ShowMore";
 
 const formatBirthdayText = (birthday) => {
   const newBirthday = birthday.split("/");
@@ -44,27 +45,31 @@ const formatBirthdayText = (birthday) => {
   return `${month} ${newBirthday[1]}, ${newBirthday[2]} `;
 };
 
-const StudentCard = ({ student }) => {
-  // showHidden = () => {
-  //   document.querySelectorAll(".truncated").forEach((current) => {
-  //     current.addEventListener("click", () => {
-  //       studentCard.setExtrasVisibility(!studentCard.isVisible);
-  //     });
-  //   });
-  // };
+const graduationCheck = (certifications) => {
+  if (
+    certifications.resume &&
+    certifications.linkedin &&
+    certifications.github &&
+    certifications.mockInterview
+  ) {
+    return "On Track to Graduate";
+  }
+};
 
-  const { names, profilePhoto, username, dob } = student;
+const StudentCard = ({ student }) => {
+  const { names, profilePhoto, username, dob, certifications } = student;
   return (
     <div className="card">
+      <p className="graduation">{graduationCheck(certifications)}</p>
       <h4>{`${names.preferredName} ${names.middleName} ${names.surname}`}</h4>
       <p>{username}</p>
-      <img src={profilePhoto} alt={names.preferredName} />
+      <img className="profile" src={profilePhoto} alt={names.preferredName} />
       <div className="birthday">
         <p className="green left">Birthday: </p>
         <p className="dob right">{formatBirthdayText(dob)}</p>
       </div>
       <div>
-        <p className="green show-more">Show more...</p>
+        <ShowMore student={student} />
       </div>
     </div>
   );

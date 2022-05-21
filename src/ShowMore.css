@@ -1,0 +1,25 @@
+.hidden {
+    display: none;
+}
+
+.show-more  {
+    display: block;
+    cursor: pointer;
+}
+.info-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+img {
+    width: 20px;
+    height: 20px;
+}
+.green {
+    color: green;
+}
+.yellow {
+    color:darkkhaki;
+}
+.red {
+    color: red;
+}

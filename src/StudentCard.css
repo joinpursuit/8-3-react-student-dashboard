@@ -3,16 +3,10 @@
     margin: 10px;
     padding: 10px;
 }
-img {
+.profile {
     width: 150px;
     height: 150px;
 }
-
-.show-more  {
-    display: block;
-    cursor: pointer;
-}
-
 .birthday {
     display: flex;
     justify-content: baseline;
@@ -29,4 +23,9 @@ img {
 }
 .show-more {
     text-decoration: underline;
+}
+.graduation {
+    color: green;
+    float: right;
+    margin-right: 50px;
 }
