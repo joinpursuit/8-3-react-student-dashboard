@@ -6,19 +6,21 @@ class Student extends React.Component {
   constructor() {
     super();
     this.state = {
-      showMoreOrShowLess: "Show More",
+      comments: [],
     };
   }
 
-  changeButtonState = () => {
-    const state = this.state.showMoreOrShowLess;
-    state === "Show More"
-      ? this.setState({
-          showMoreOrShowLess: "Show Less",
-        })
-      : this.setState({
-          showMoreOrShowLess: "Show More",
-        });
+  addCommentsHandler = (event) => {
+    event.preventDefault();
+    console.log(event.target.commenter.value);
+    console.log(event.target.comment.value);
+    const comment = `${event.target.commenter.value}. says, "${event.target.comment.value}"`;
+    const copyOfComments = [...this.state.comments, comment];
+    event.target.commenter.value = "";
+    event.target.comment.value = "";
+    this.setState({
+      comments: copyOfComments,
+    });
   };
 
   checkGraduateStatus = (studentInfo) => {
@@ -32,7 +34,13 @@ class Student extends React.Component {
   };
 
   showMoreHandler = (studentInfo) => {
-    return <Details studentInfo={studentInfo} />;
+    return (
+      <Details
+        studentInfo={studentInfo}
+        comments={this.state.comments}
+        addCommentsHandler={this.addCommentsHandler}
+      />
+    );
   };
 
   render() {
@@ -43,7 +51,7 @@ class Student extends React.Component {
     const Birthday = studentInfo.dob;
 
     const { studentShowDetail, studentShowDetailHandler } = this.props;
-    console.log(this.props);
+    //console.log(this.props);
     // console.log(this.props);
 
     return (
@@ -58,7 +66,9 @@ class Student extends React.Component {
             : null}
         </p>
         <button onClick={() => studentShowDetailHandler(studentInfo.id)}>
-          {this.state.showMoreOrShowLess}
+          {studentShowDetail.includes(studentInfo.id)
+            ? `Show Less`
+            : `Show More`}
         </button>
         {studentShowDetail.includes(studentInfo.id)
           ? this.showMoreHandler(studentInfo)

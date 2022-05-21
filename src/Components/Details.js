@@ -9,12 +9,11 @@ class Details extends React.Component {
     const { resume, linkedin, github, mockInterview } =
       this.props.studentInfo.certifications;
 
-    const arrayLength = this.props.arrayLength;
+    const { comments, addCommentsHandler } = this.props;
 
     return (
       <div>
         <div>
-          <p>ArrayLength: {arrayLength}</p>
           <h4>Codewars:</h4>
           <p>Current Total: {codewars.current.total}</p>
           <p>Last Week: {codewars.current.lastWeek}</p>
@@ -37,6 +36,22 @@ class Details extends React.Component {
           <p>Mock Interview: {mockInterview ? "✅" : "❌"}</p>
           <p>GitHub: {github ? "✅" : "❌"}</p>
         </div>
+        <div>
+          <h4>One-on-One Notes</h4>
+          <form onSubmit={addCommentsHandler}>
+            <label htmlFor="commenter">Commenter Name</label>
+            <input type="text" id="commenter" name="commenter" />
+            <br />
+            <label htmlFor="comment">Comment</label>
+            <input type="text" id="comment" name="comment" />
+            <button>Add Note</button>
+          </form>
+        </div>
+        <ul>
+          {comments.map((comment, index) => {
+            return <li key={index}>{comment}</li>;
+          })}
+        </ul>
       </div>
     );
   }
