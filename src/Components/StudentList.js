@@ -16,7 +16,9 @@ class StudentList extends React.Component {
     data,
     selectedCohort,
     studentShowDetail,
-    studentShowDetailHandler
+    studentShowDetailHandler,
+    comments,
+    commentsHandler
   ) => {
     const selectedStudents = this.selectedCohortStudent(data, selectedCohort);
 
@@ -27,6 +29,8 @@ class StudentList extends React.Component {
           key={index}
           studentShowDetail={studentShowDetail}
           studentShowDetailHandler={studentShowDetailHandler}
+          comments={comments}
+          commentsHandler={commentsHandler}
         />
       );
     });
@@ -45,13 +49,17 @@ class StudentList extends React.Component {
       selectedCohort,
       studentShowDetail,
       studentShowDetailHandler,
+      comments,
+      commentsHandler,
     } = this.props;
 
     const studentCards = this.displayCohortStudents(
       data,
       selectedCohort,
       studentShowDetail,
-      studentShowDetailHandler
+      studentShowDetailHandler,
+      comments,
+      commentsHandler
     );
 
     return (

@@ -3,25 +3,15 @@ import Details from "./Details";
 import "./Student.css";
 
 class Student extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      comments: [],
-    };
-  }
-
-  addCommentsHandler = (event) => {
-    event.preventDefault();
-    console.log(event.target.commenter.value);
-    console.log(event.target.comment.value);
-    const comment = `${event.target.commenter.value}. says, "${event.target.comment.value}"`;
-    const copyOfComments = [...this.state.comments, comment];
-    event.target.commenter.value = "";
-    event.target.comment.value = "";
-    this.setState({
-      comments: copyOfComments,
-    });
-  };
+  // addCommentsHandler = (event) => {
+  //   event.preventDefault();
+  //   console.log(event.target.commenter.value);
+  //   console.log(event.target.comment.value);
+  //   const comment = `${event.target.commenter.value}. says, "${event.target.comment.value}"`;
+  //   event.target.commenter.value = "";
+  //   event.target.comment.value = "";
+  //   commentsHandler(comment);
+  // };
 
   checkGraduateStatus = (studentInfo) => {
     const { resume, linkedin, github, mockInterview } =
@@ -33,12 +23,13 @@ class Student extends React.Component {
     );
   };
 
-  showMoreHandler = (studentInfo) => {
+  showMoreHandler = (studentInfo, comments, commentsHandler) => {
     return (
       <Details
         studentInfo={studentInfo}
-        comments={this.state.comments}
-        addCommentsHandler={this.addCommentsHandler}
+        comments={comments}
+        commentsHandler={commentsHandler}
+        // addCommentsHandler={this.addCommentsHandler}
       />
     );
   };
@@ -50,7 +41,12 @@ class Student extends React.Component {
     const email = studentInfo.username;
     const Birthday = studentInfo.dob;
 
-    const { studentShowDetail, studentShowDetailHandler } = this.props;
+    const {
+      studentShowDetail,
+      studentShowDetailHandler,
+      comments,
+      commentsHandler,
+    } = this.props;
     //console.log(this.props);
     // console.log(this.props);
 
@@ -71,7 +67,7 @@ class Student extends React.Component {
             : `Show More`}
         </button>
         {studentShowDetail.includes(studentInfo.id)
-          ? this.showMoreHandler(studentInfo)
+          ? this.showMoreHandler(studentInfo, comments, commentsHandler)
           : null}
       </div>
     );

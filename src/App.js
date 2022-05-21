@@ -11,6 +11,7 @@ class App extends React.Component {
     this.state = {
       selectedCohort: "AllStudents",
       studentShowDetail: [],
+      comments: {},
     };
   }
 
@@ -35,6 +36,20 @@ class App extends React.Component {
     });
   };
 
+  commentsHandler = (studentId, commenter, comment) => {
+    const commentRecord = `${commenter}. says, "${comment}"`;
+    let copyOfCommentsObj = this.state.comments;
+    if (copyOfCommentsObj.hasOwnProperty(studentId)) {
+      copyOfCommentsObj[studentId].push(commentRecord);
+    } else {
+      copyOfCommentsObj[studentId] = [commentRecord];
+    }
+
+    this.setState({
+      comments: copyOfCommentsObj,
+    });
+  };
+
   render() {
     //console.log(this.state);
     const { selectedCohort } = this.state;
@@ -50,6 +65,8 @@ class App extends React.Component {
           selectedCohort={selectedCohort}
           studentShowDetail={this.state.studentShowDetail}
           studentShowDetailHandler={this.studentShowDetailHandler}
+          comments={this.state.comments}
+          commentsHandler={this.commentsHandler}
         />
       </div>
     );
