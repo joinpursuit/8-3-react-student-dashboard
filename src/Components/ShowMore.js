@@ -12,6 +12,15 @@ class ShowMore extends React.Component {
 	extraInfo = () => {
 		this.setState({ showMore: !this.state.showMore });
 	};
+	/**
+	 * Add form submission to the list of notes!
+	 * @param {*} event
+	 *
+	 */
+	addToSubmissions = (event) => {
+		event.preventDefault();
+		console.log(event.target);
+	};
 	render() {
 		const { studentInfo } = this.props;
 		return (
@@ -54,6 +63,31 @@ class ShowMore extends React.Component {
 							Mock Interview:{" "}
 							{studentInfo.certifications.mockInterview ? "YEZZUR" : "nah brotha"}
 						</p>
+					</div>
+					<div className="1on1-form">
+						1-on-1 Notes
+						<form action="submit" onSubmit={this.addToSubmissions}>
+							<label>
+								{" "}
+								Commenter Name
+								<input type="text" name="name" />
+							</label>
+							<br />
+							<label>
+								{" "}
+								Comment
+								<input type="text" name="comment" />
+							</label>
+							<br />
+							<input type="submit" value="Add Note" />
+						</form>
+						<div className="submissions">
+							{studentInfo.notes.length
+								? studentInfo.notes.map((note) => {
+										return `${note.commenter} says: ${note.comment}`;
+								  })
+								: ""}
+						</div>
 					</div>
 				</div>
 			</div>

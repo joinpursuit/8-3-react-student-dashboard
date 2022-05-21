@@ -27,7 +27,7 @@ const Student = (props) => {
 				<h4>{nameFormatter(studentInfo.names)}</h4>
 				<p className="email-address">{studentInfo.username} </p>
 				<p>DOB: {studentInfo.dob}</p>
-				<ShowMore studentInfo={studentInfo}/>
+				<ShowMore studentInfo={studentInfo} key={studentInfo.id} />
 			</div>
 			<div className="on-track">
 				<p>{onTrackToGraduate}</p>

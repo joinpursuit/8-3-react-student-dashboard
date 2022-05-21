@@ -8,6 +8,7 @@ const dateFormatter = (str) => {
 	let year = str.substring(str.length - 4, str.length); //str= Fall2026; year = 2026
 	return `${str.substring(0, str.length - 4)} ${year}`; //ret val= Fall 2026
 };
+
 // const sortCohorts = (order, cohorts) => {
 // 	let winter = "12/1/";
 // 	let summer = "6/1/";
@@ -24,7 +25,7 @@ const dateFormatter = (str) => {
 
 /**
  *  Creates the CohortDirectory Component in App.js.
- * @param {JSX} props  
+ * @param {JSX} props  -> info (student array); clicker: event handler to change current cohort
  * @returns List of cohorts in human readable format. Also sortable.
  */
 const CohortDirectory = (props) => {
