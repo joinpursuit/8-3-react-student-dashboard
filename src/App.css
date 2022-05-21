@@ -1,0 +1,22 @@
+.school-dash{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+}
+
+TopBar{
+    
+    background-color: green;
+}
+
+.cohortList{
+    grid-column: 1/2;
+}
+
+.studentDash{
+    grid-column: 2/3;
+}
+
+body{
+  background-size: contain;
+}
