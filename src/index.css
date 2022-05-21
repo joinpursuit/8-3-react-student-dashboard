@@ -24,7 +24,7 @@
 
 .studentBio {
     display: grid;
-    grid-template-columns: 33% 66%;
+    grid-template-columns: 33% 33% 33%;
     border: #764f51;
 }
 
@@ -51,7 +51,6 @@
     text-decoration: underline;
     cursor: pointer;
     position: relative;
-    right: 5px;
 }
 
 #cohortList {
@@ -91,5 +90,12 @@ h2 {
 
 .studentInformation1 {
     padding-top: 4em;
+}
+
+#graduationTracker {
+    color: darkcyan;
+    background: none;
+    text-align: center;
+    margin-top: 4.8em;
 }
 
