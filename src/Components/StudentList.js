@@ -1,7 +1,10 @@
 import React from "react";
 import Student from "./Student";
 
-export default function StudentList({ studentInformation }) {
+export default function StudentList({
+  studentInformation,
+  selectedCohortCode,
+}) {
   const studentListItem = studentInformation.map((semester) => {
     return (
       <div className="oneStudent" key={semester.id}>
@@ -11,7 +14,7 @@ export default function StudentList({ studentInformation }) {
   });
   return (
     <section>
-      <h2 className="sutdentListTitle">All Students</h2>
+      <h2 className="sutdentListTitle">{selectedCohortCode}</h2>
       <p className="classSizeTitle">
         Total Students: <span id="classSize">{studentInformation.length}</span>
       </p>
