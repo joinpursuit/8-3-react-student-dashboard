@@ -74,5 +74,9 @@ function ShowMore({ codewars, certifications, cohort, showMore, handleClick }) {
       );
     }
   }
+
+
+
+  
   
   export default ShowMore;
