@@ -7,7 +7,7 @@ const ClassSection = ({ studentArray, classListArray, handleClick }) => {
   //Array.from(cohorts);
 
   return (
-    <div>
+    <div className="list">
       <h2>Choose a Class by Start Date</h2>
       <h4
         className="All"
