@@ -1,27 +1,38 @@
-import React from 'react';
-
 import AllStudents from './Components/AllStudents';
+import CohortBar from './Components/CohortBar';
+
+import React from 'react';
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      selectedCohortCode: 'All Students',
+    };
   }
+
+  handleClick = (event) => {
+    this.setState({ selectedCohortCode: event });
+  };
 
   render() {
     const { data } = this.props;
+    console.log('currentState', this.state.selectedCohortCode);
     return (
       <div>
-        <div className='main'>
-          <h1 className='header'> Student Dashboard</h1>
+        <h1 className='student-dashboard'>Student Dashboard</h1>
 
-          <div className='student-panels'>
-            <AllStudents student={data} />
-          </div>
-        </div>
+        <CohortBar
+          className='cohort'
+          data={data}
+          handleClick={this.handleClick}
+        />
+        <AllStudents
+          students={data}
+          cohortCode={this.state.selectedCohortCode}
+        />
       </div>
     );
   }
 }
-
 export default App;
