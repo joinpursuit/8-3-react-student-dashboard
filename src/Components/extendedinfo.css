@@ -1,0 +1,11 @@
+.container {
+
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    font-size: 14px;
+}
+
+.sec {
+    margin: 10px; 
+}

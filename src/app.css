@@ -1,13 +1,18 @@
+
+
 .main {
     display: grid;
     grid-template-columns: 25% 75%;
     grid-gap: 1em;
   }
 .heading {
-    grid-column: 1 / span 2;
-    background: #eaeaea;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-family: Helvetica, sans-serif;
+  color:beige;
+  grid-column: 1 / span 2;
+  background: rgb(116, 16, 11);
+  height: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 

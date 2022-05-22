@@ -9,23 +9,21 @@ class App extends React.Component {
     super();
     this.state = {
       filteredStudents: [...studentData],
+      cohort: "All Students",
     };
   }
   filteredByClass = (date) => {
     const selectedClass = studentData.filter(
       (student) => student.cohort.cohortCode === date
     );
+    const allOrSome = date === "AllStudents" ? [...studentData] : selectedClass;
     this.setState({
-      filteredStudents: [...selectedClass],
+      filteredStudents: allOrSome,
+      cohort: date,
     });
-    if (date === null) {
-      this.setState({
-        filteredStudents: [...studentData],
-      });
-    }
   };
   render() {
-    const { filteredStudents } = this.state;
+    const { filteredStudents, cohort } = this.state;
     return (
       <div className="main">
         <h1 className="heading">Student Dashboard</h1>
@@ -33,7 +31,7 @@ class App extends React.Component {
         <Sidebar filteredByClass={this.filteredByClass} />
 
         <div className="gallery">
-          <StudentGallery filteredStudents={filteredStudents} />
+          <StudentGallery filteredStudents={filteredStudents} cohort={cohort} />
         </div>
       </div>
     );

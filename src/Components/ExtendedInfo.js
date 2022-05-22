@@ -1,9 +1,9 @@
 import React from "react";
+import "./extendedinfo.css";
 
-const ExtendedInfo = (props) => {
-  const emoji = (boolean) =>
-    boolean ? <div>{`\u{2705}`}</div> : <div>{`\u{274C}`}</div>;
-  const { student, showmoreHandler } = props;
+function ExtendedInfo(props) {
+  const emoji = (boolean) => (boolean ? " ✅" : " ❌");
+  const { student } = props;
   const { resume, linkdin, github, mockInterview } = student.certifications;
   const { assignments, projects, assessments } = student.cohort.scores;
   const { total, lastWeek } = student.codewars.current;
@@ -11,28 +11,28 @@ const ExtendedInfo = (props) => {
   const percentAchieved = ((total / goal) * 100).toFixed();
   return (
     <div className="container">
-      <section>
-        <h5>Codewars:</h5>
-        <li>Current Total: {total} </li>
-        <li>Last Week: {lastWeek} </li>
-        <li>Goal: {goal} </li>
-        <li>Percent of Goal Achieved: {percentAchieved} %</li>
+      <section className="sec">
+        <h4>Codewars:</h4>
+        <div>Current Total: {total} </div>
+        <div>Last Week: {lastWeek} </div>
+        <div>Goal: {goal} </div>
+        <div>Percent of Goal Achieved: {percentAchieved} %</div>
       </section>
-      <section>
-        <h5>Scores</h5>
-        <li>Assignments: {assignments * 100}%</li>
-        <li>Projects: {projects * 100}%</li>
-        <li>Assessments: {assessments * 100}%</li>
+      <section className="sec">
+        <h4>Scores</h4>
+        <div>Assignments: {assignments * 100}%</div>
+        <div>Projects: {projects * 100}%</div>
+        <div>Assessments: {assessments * 100}%</div>
       </section>
-      <section>
-        <h5>Certifications</h5>
-        <li>Resume:{emoji(resume)}</li>
-        <li>LinkdIn:{emoji(linkdin)}</li>
-        <li>Mock Interview:{emoji(mockInterview)}</li>
-        <li>GitHub:{emoji(github)} </li>
+      <section className="sec">
+        <h4>Certifications</h4>
+        <div>Resume:{emoji(resume)}</div>
+        <div>LinkdIn:{emoji(linkdin)}</div>
+        <div>Mock Interview:{emoji(mockInterview)}</div>
+        <div>GitHub: {emoji(github)} </div>
       </section>
     </div>
   );
-};
+}
 
 export default ExtendedInfo;

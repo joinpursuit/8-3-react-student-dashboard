@@ -2,10 +2,10 @@ import React from "react";
 
 class GalleryCounter extends React.Component {
   render() {
-    const { filteredStudents } = this.props;
+    const { filteredStudents, cohort } = this.props;
     return (
       <div>
-        <h4>Class</h4>
+        <h2>{cohort}</h2>
         Total Students: {filteredStudents.length}
       </div>
     );
