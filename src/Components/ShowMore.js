@@ -23,6 +23,15 @@ class ShowMore extends React.Component {
 			className="icon"
 		/>
 	);
+	assignementColor = (percent) => {
+		if (percent <= 50) {
+			return "red";
+		} else if (percent < 100) {
+			return "yellow";
+		} else {
+			return "green";
+		}
+	};
 	/**
 	 * Toggles Show More tab for each student
 	 */
@@ -52,14 +61,23 @@ class ShowMore extends React.Component {
 						<p>Current Total: {studentInfo.codewars.current.total}</p>
 						<p>Last Week: {studentInfo.codewars.current.lastWeek}</p>
 						<p>Goal: {studentInfo.codewars.goal.total}</p>
-						<p className={this.state.codeWars}>
+						<h5>
 							Percent of Goal Acheieved:{" "}
-							{this.getPercentage(
-								studentInfo.codewars.current.total,
-								studentInfo.codewars.goal.total
-							)}
-							%
-						</p>
+							<p
+								className={this.assignementColor(
+									this.getPercentage(
+										studentInfo.codewars.current.total,
+										studentInfo.codewars.goal.total
+									)
+								)}
+							>
+								{this.getPercentage(
+									studentInfo.codewars.current.total,
+									studentInfo.codewars.goal.total
+								)}
+								%
+							</p>
+						</h5>
 					</div>
 					<div className="scores">
 						<h4>Scores</h4>

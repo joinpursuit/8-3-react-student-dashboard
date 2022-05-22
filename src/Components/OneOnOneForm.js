@@ -8,17 +8,25 @@ export default class OneOnOneForm extends React.Component {
 			comment: "",
 		};
 	}
+    /**
+     * update this.state.commenter with form's current value
+     * @param {Object} event 
+     */
 	handleCommenter = (event) => {
 		const { value } = event.target;
 		this.setState({ commenter: value });
 	};
+    /**
+     * update this.state.comment with form's current value
+     * @param {Object} event 
+     */
 	handleComment = (event) => {
 		const { value } = event.target;
 		this.setState({ comment: value });
 	};
 	/**
 	 * Adds 1on1 submission to the list of reviews
-	 * @param {*} event
+	 * @param {Object} event
 	 */
 	addToSubmissions = (event) => {
 		event.preventDefault();

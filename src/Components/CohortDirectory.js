@@ -37,7 +37,10 @@ const CohortDirectory = (props) => {
 		}
 	});
 	//TODO: sort cohortList at some point after populating
-
+	cohortList = cohortList.sort();
+	cohortList = cohortList.sort(function (a, b) {
+		return a.substring(a.length - 4, a.length) - b.substring(b.length - 4, b.length);
+	});
 	cohortList.unshift("All Students"); //put this to the front post sort
 
 	return (

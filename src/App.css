@@ -69,7 +69,7 @@ li:hover {
 	color: green;
 }
 .yellow {
-	color: yellow;
+	color: rgb(109, 109, 24);
 }
 .red {
 	color: red;
@@ -79,7 +79,7 @@ input {
 }
 button {
 	color: black;
-	background-color: transparent;
+	background-color: rgba(0, 0, 255, 0.222);
 	border-radius: 5px;
 	border: none;
 }
@@ -103,4 +103,7 @@ label {
 .name-photo {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+}
+.email-address {
+	text-align: center;
 }
