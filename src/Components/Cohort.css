@@ -10,3 +10,7 @@
 .cohort p{
     margin-bottom: 0px;
 }
+
+.cohort:hover{
+    color:green;
+}

@@ -135,7 +135,6 @@ class Details extends React.Component {
                 name="commenter"
                 onChange={this.updateInputHandler}
                 value={this.state.commenter}
-                required
               />
             </label>
             <label htmlFor="comment">
@@ -146,7 +145,6 @@ class Details extends React.Component {
                 name="comment"
                 onChange={this.updateInputHandler}
                 value={this.state.comment}
-                required
               />
             </label>
             <button
