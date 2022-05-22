@@ -1,16 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
+import ToggleButton from "./ToggleButton";
+// import StudentDetails from "./StudentDetails";
 
-
+//const Students = (props) => {
 class Students extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.state = {
+      showDetails: false,
+    }
+    //this.ChildElement = React.createRef();
+    //this.handleClick = this.handleClick.bind(this);
+
   }
 
+  // const handleClick = () => {
+  //   //this.forceUpdate(); // se ejecutará el método `render()` de MurrayList, que hará a su vez que se ejecute de nuevo el método `render()` de los hijos
+  //   //console.log(this.props.label)
+  // }
+  
   // validateCohort = (this.props.filter) => {
   //   dd
   // }
+  // const toggleShowHide = () => {
+  //   //this.setState(state => ({ isDisplayed: !state.isDisplayed }));
+  //   //console.log(isDisplayed)
+  // };
+
+  //const checkoutValid = (data) => {
+  checkoutValid = () => {
+    //console.log(data)
+    if(this.state.showDetails === false) {
+      this.setState({ 
+        showDetails: true,  
+      });
+    } else {
+      this.setState({ 
+        showDetails: false,  
+      });
+    }
+  }
+
+  getFormatedDOB = (data) => {
+    
+    //2/9/1997
+    const d = data.split('/');
+    console.log(d)
+    const date = new Date(`${d[2]}-${d[0]}-${d[1]}`);  // 2009-11-10
+    const month = date.toLocaleString('default', { month: 'long' });
+    console.log(date)
+    console.log(`${month} ${date.getDay()}, ${date.getFullYear()}`)
+    return `${month} ${d[1]}, ${d[2]}`;  
+  }
 
   render() {
+    //const hello = 'Say Hello to learning Props/State in React!';
+    //const [mostrarComponente, setMostrarComponente] = useState(true);
+
+    //const childelement = this.ChildElement.current;
+    //const childCompRef = useRef()
     // const studentList = new Set(
     //   (this.props.data).map(e => e.names)
     // )
@@ -18,47 +66,23 @@ class Students extends React.Component {
     
     return(
       <>
-      {console.log(studentList.length)}
+        {console.log(studentList.length)}
         <ul>
         {(this.props.data).map(student => {
          return <li key={student.id}>
                   <section className="student-personal-data">
-                  <img src={student.profilePhoto}/>
-                  <div>
-                    <h4>
-                      {`${student.names['preferredName']} ${(student.names['middleName']).substring(0, 1)} ${student.names['surname']}`}
-                    </h4>
-                    <p>{student.username}</p>
-                    <p>Birthday: {student.dob}</p>
-                    <button>Show more...</button>
-                  </div>
-                  </section>
-                  <section className="student-academic-data">
+                    {/* <div className="container"> */}
+                    <img src={student.profilePhoto}/>
                     <div>
-                      <h4>Codewars:</h4>
-                      <ul>
-                        <li><span>Current total:</span> {student.codewars.current.total}</li>
-                        <li><span>Last week:</span> {student.codewars.current.lastWeek}</li>
-                        <li><span>Goal:</span> {student.codewars.goal.total}</li>
-                      </ul>
+                      <h4>
+                        {`${student.names['preferredName']} ${(student.names['middleName']).substring(0, 1)} ${student.names['surname']}`}
+                      </h4>
+                      <p>{student.username}</p>
+                      <p>Birthday: <span>{this.getFormatedDOB(student.dob)}</span></p>
                     </div>
-                    <div>
-                      <h4>Scores:</h4>
-                      <ul>
-                        <li><span>Assignments:</span> {student.cohort.scores.assignments}</li>
-                        <li><span>Projects:</span> {student.cohort.scores.projects}</li>
-                        <li><span>Assessments:</span> {student.cohort.scores.assessments}</li>
-                      </ul>  
-                    </div>
-                    <div>
-                      <h4>Certifications:</h4>
-                      <ul>
-                        <li><span>Resume:</span> {student.certifications.resume}</li>
-                        <li><span>Linkedin:</span> {student.certifications.linkedin}</li>
-                        <li><span>Mock Interview:</span> {student.certifications.mockInterview}</li>
-                        <li><span>Github:</span> {student.certifications.github}</li>
-                      </ul>
-                    </div>
+                  </section> 
+                  <section>
+                    <ToggleButton checkoutValid={this.checkoutValid} studentList={this.props.data} studentId={student.id}/>  
                   </section>
                 </li>
         })}
@@ -67,5 +91,13 @@ class Students extends React.Component {
     )
   }
 }
+
+const Button = ({ onClick }) => (
+  <button onClick={onClick} type="button">
+    Toggle Show/Hide
+  </button>
+);
+const HelloReact = ({ hello, isDisplayed }) =>
+  isDisplayed ? <h1>{hello}</h1> : null;
 
 export default Students;

@@ -38,12 +38,12 @@ class Cohorts extends React.Component {
             }
           })} */}
           
-          {cohortList.map((cohort) => {
+          {cohortList.map((cohort, index) => {
             if(cohort.year === '*') {
-              return <li onClick={() => this.props.getCohort('*')}>All Students</li> 
+              return <li key={index} onClick={() => this.props.getCohort('*')}>All Students</li> 
             }
             else {
-              return <li onClick={() => this.props.getCohort(`${cohort.semester}${cohort.year}`)}>{`${cohort.semester} ${cohort.year}`}</li>
+              return <li key={index} onClick={() => this.props.getCohort(`${cohort.semester}${cohort.year}`)}>{`${cohort.semester} ${cohort.year}`}</li>
             }
           })}
         </ul>

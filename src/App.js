@@ -12,6 +12,7 @@ class App extends React.Component {
       data: Data,
       cohorts: Data,
       filter: '*',
+      isVisible: false,
     }
   }
 
@@ -21,6 +22,7 @@ class App extends React.Component {
     this.setState({ 
       data: filtered,
       filter: cohort,
+      
     });  
   }
 
@@ -37,17 +39,25 @@ class App extends React.Component {
     }
   }
 
-  handleDelete = (itemId, itemAmount, remove) => {
-    if(remove) {
-      const newCart = this.state.cart.filter(item => item.id !== itemId);
+  toggleVisible = (data) => {
+    if(data) {
       this.setState({ 
-        cart: newCart,
-        total: this.state.total - itemAmount,
-        count: this.state.count - 1,
-        // >> Calling a callback function to recalculate discount 
-      }, () => this.recalculateDiscount(this.state.count, this.state.total));
+        
+      });
     }
-  };
+  }
+
+  // handleDelete = (itemId, itemAmount, remove) => {
+  //   if(remove) {
+  //     const newCart = this.state.cart.filter(item => item.id !== itemId);
+  //     this.setState({ 
+  //       cart: newCart,
+  //       total: this.state.total - itemAmount,
+  //       count: this.state.count - 1,
+  //       // >> Calling a callback function to recalculate discount 
+  //     }, () => this.recalculateDiscount(this.state.count, this.state.total));
+  //   }
+  // };
 
   render(){
     return (
@@ -59,7 +69,7 @@ class App extends React.Component {
           </aside>
           <article>
             <StudentsByCohort data={this.state.data} filter={this.state.filter}/>
-            <Students data={this.state.data} filter={this.state.filter}/>
+            <Students data={this.state.data} filter={this.state.filter} toggleVisible={this.toggleVisible}/>
           </article>
         </main>
         <footer></footer>
