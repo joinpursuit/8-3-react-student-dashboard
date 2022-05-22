@@ -1,0 +1,19 @@
+.notes {
+    border: 2px solid #699271;
+    margin: 10px;
+    padding: 10px;
+}
+#form {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+.note-button {
+    max-width: 100px;
+    background-color: #699271;
+    border-radius: 5px;
+    border-color: #699271;
+    border-style: solid;
+    color: white
+}
