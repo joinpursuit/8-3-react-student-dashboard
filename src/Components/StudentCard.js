@@ -17,6 +17,8 @@ class StudentCard extends React.Component {
     super();
     this.state = {
       showMore: false,
+      feedback: "",
+      comment: "",
     };
   }
   showMoreHandler = () => {
@@ -24,15 +26,27 @@ class StudentCard extends React.Component {
       showMore: !this.state.showMore,
     });
   };
+  commentNameHandler = (e) => {
+    const { value } = e.target;
+    this.setState({
+      feedback: value,
+    });
+  };
+
+  commentHandler = (e) => {
+    const { value } = e.target;
+    this.setState({
+      comment: value,
+    });
+  };
   render() {
     const { student } = this.props;
     const { names, dob, profilePhoto, username } = student;
-    const { showMore } = this.state;
+    const { showMore, feedback, comment } = this.state;
     const dobFormatted = new Date(dob).toDateString().substring(4);
     const { preferredName, middleName, surname } = names;
     return (
       <div className="card">
-        {console.log(onTrack(student))}
         <img
           className="pic"
           alt={preferredName}
@@ -55,8 +69,12 @@ class StudentCard extends React.Component {
             </div>
             {showMore ? (
               <ExtendedInfo
-                student={this.props.student}
+                student={student}
                 showMoreHandler={this.showMoreHandler}
+                feedback={feedback}
+                comment={comment}
+                commentNameHandler={this.commentNameHandler}
+                commentHandler={this.commentHandler}
               />
             ) : null}
           </div>
