@@ -4,6 +4,12 @@
   padding: 20px;
 }
 
+#all-students-button {
+  display: block;
+  width: 100%;
+  padding: 20px;
+}
+
 .cohort-list-container {
     padding: 20px;
 }
