@@ -11,6 +11,7 @@ class App extends React.Component {
     this.state = {
       classCode: "All Classes",
       currentCohort: data,
+      comments: {},
     };
   }
 
@@ -25,6 +26,19 @@ class App extends React.Component {
     this.setState({
       classCode: code,
       currentCohort: newArray,
+    });
+  };
+
+  addComments = (commenterName, comment) => {
+    const newCommentObj = {};
+    if (commenterName in Object.keys(newCommentObj)) {
+      newCommentObj[commenterName].push(comment);
+    } else {
+      newCommentObj[commenterName] = ` says: ${comment}`;
+    }
+
+    this.setState({
+      comments: newCommentObj,
     });
   };
 
@@ -50,6 +64,8 @@ class App extends React.Component {
             <StudentDashboard
               array={this.state.currentCohort}
               cohort={this.state.classCode}
+              handleComments={this.addComments}
+              commentsObj={this.state.comments}
             />
           </div>
         </section>
