@@ -3,7 +3,6 @@ import StudentDash from './Components/StudentDash';
 import './App.css';
 import CohortList from './Components/CohortList';
 
-
 class App extends React.Component {
   constructor() {
     super();
@@ -13,6 +12,11 @@ class App extends React.Component {
     };
   }
 
+  /**
+   * updateCohort
+   * @param {str} cohort : cohortCode from the data
+   * side effect; updates the state key 'currentCohort'.
+   */
   updateCohort = (cohort) => {
     this.setState({
       currentCohort: cohort,
@@ -20,6 +24,11 @@ class App extends React.Component {
     });
   };
 
+  /**
+   *
+   * @param {str} id : a students id#.
+   * side effect: updates the state key 'showMore'.
+   */
   showMoreHandler = (id) => {
     let showMoreCopy = [...this.state.showMore];
     if (showMoreCopy.includes(id)) {
@@ -38,7 +47,7 @@ class App extends React.Component {
 
     return (
       <>
-        <header className='Header'> Student Dashboard</header>
+        <header className="Header"> Student Dashboard</header>
         <div className="school-dash">
           <CohortList data={data} updateCohort={this.updateCohort} />
           <StudentDash

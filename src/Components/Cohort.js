@@ -1,7 +1,12 @@
 import React from 'react';
 
 class Cohort extends React.Component {
-  // add a space between the season and year
+  /**
+   * formatCohort- adds a space between season name and year
+   * @param {string} semester : ex.winter2025
+   * @returns string with a space between the season and year(ex. winter 2025)
+   */
+
   formatCohort = (semester) => {
     if (semester === 'All Students') return 'All Students';
     return `${semester.substring(0, semester.length - 4)} ${semester.substring(

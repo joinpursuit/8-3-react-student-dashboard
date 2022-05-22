@@ -1,6 +1,11 @@
 import React from 'react';
 
 class Showmore extends React.Component {
+  /**
+   * codewarsPercentageColor- determine color of percentage score text.
+   * @param {number} percentage - percent of goal completed
+   * @returns the appropriate color string depending on percentage score
+   */
   codewarsPercentageColor = (percentage) => {
     if (percentage >= 100) {
       return 'green';
@@ -11,10 +16,19 @@ class Showmore extends React.Component {
     }
   };
 
+  /**
+   *
+   * @param {*} event - info captured on click
+   */
   addNoteHander = (event) => {
     event.preventDefault();
   };
 
+  /**
+   * showComments- if available, display any comment and its commenter
+   * @param {object[]} studentDeets - a students info object
+   * @returns a string comment
+   */
   showComments = (studentDeets) => {
     if (studentDeets.notes.length) {
       return studentDeets.notes.map((note, idx) => {
@@ -69,7 +83,7 @@ class Showmore extends React.Component {
           <p>Mock Interview: {mockInterview ? '✅' : '❌'}</p>
           <p>GitHub: {github ? '✅' : '❌'}</p>
         </div>
-        <section className="commentstuff">
+        <div className="commentstuff">
           <h3> 1 On 1 Notes</h3>
           <form>
             <label htmlFor="commenter">Name:</label>
@@ -82,7 +96,7 @@ class Showmore extends React.Component {
             <button onClick={this.addNoteHander}>Add Note</button>
           </form>
           <div>{this.showComments(studentDeets)}</div>
-        </section>
+        </div>
       </div>
     );
   }

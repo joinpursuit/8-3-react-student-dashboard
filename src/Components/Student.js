@@ -2,20 +2,34 @@ import React from 'react';
 import Showmore from './Showmore';
 
 class Student extends React.Component {
-  // returns true or false for if they will graduate
+  /**
+   * willGraduate- checks each student's certifications and codewar score to see if they meet requirements to graduate
+   * @param {object} studentDeets - students info object
+   * @returns a string that will display atop a student card
+   */
+
   willGraduate = (studentDeets) => {
     const { resume, linkedin, github, mockInterview } =
       studentDeets.certifications;
     const studentCodewarsScore = studentDeets.codewars.current.total;
-    return (
+    if (
       resume &&
       linkedin &&
       github &&
       mockInterview &&
       studentCodewarsScore > 600
-    );
+    ) {
+      return '****On Track to Graduate****';
+    } else {
+      return null;
+    }
   };
 
+  /**
+   *
+   * @param {object} studentDeets - students info object
+   * @returns passes student info prop down to Showmore component
+   */
   showMoreButtonHandler = (studentDeets) => {
     return <Showmore studentDeets={studentDeets} />;
   };
@@ -32,7 +46,7 @@ class Student extends React.Component {
     return (
       <div className="stucard">
         <h4 style={{ color: 'rgb(21, 62, 21' }}>
-          {this.willGraduate(studentDeets) ? '**On Track to Graduate**' : null}
+          {this.willGraduate(studentDeets)}
         </h4>
 
         <img src={profilePhoto} alt="headshot" />

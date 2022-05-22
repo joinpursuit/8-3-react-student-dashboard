@@ -12,7 +12,7 @@
     grid-template-columns: 1fr 2fr;
     grid-column-gap: 50px;
     background-image: url('https://html.sammy-codes.com/images/background.jpg');
-  background-size: contain;
+  background-size: auto;
 }
 
 img{
@@ -21,9 +21,9 @@ img{
 }
 
 .stucard{
-    border: 20px solid rgb(21, 62, 21);
+    border: 10px solid rgb(21, 62, 21);
     text-align: center;
-    margin: 5px;
+    margin: 10px;
 }
 
 button{
@@ -77,6 +77,4 @@ button{
     }
      /* https://www.w3schools.com/csSref/sel_hover.asp */
 
- .commentstuff{
-     
- }
+ 
