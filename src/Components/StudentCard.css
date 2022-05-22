@@ -8,3 +8,18 @@
 .student-card img {
     display: inline-block;
 }
+
+#pic {
+    padding-top: 40px;
+    padding-bottom: 32px;
+    padding-left: 40px;
+}
+
+#student-profile {
+    padding: 32px;
+}
+
+#show-more {
+    color: green;
+    text-decoration: underline;
+}
