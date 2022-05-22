@@ -7,10 +7,6 @@ constructor() {
   this.state = {
     displayshowMore: false,
   }
-
-
-
-
 }
 
 updateShowMore = () => {
@@ -31,7 +27,6 @@ updateShowMore = () => {
   })
 }
 
-
   render() {
     const {
       stuCard: {
@@ -47,7 +42,6 @@ updateShowMore = () => {
 
     const dobFormatted = new Date(dob).toDateString().substring(4);
     return (
-      //console.log(this.state.showMore)
       <article className="stucard">
         <img src={profilePhoto} alt="student" />
         <h3>
@@ -58,13 +52,6 @@ updateShowMore = () => {
         <button onClick={ this.updateShowMore} href="#"> {this.state.displayshowMore ? "Show Less" : "Show More" }</button>
         
        {this.state.displayshowMore ? <ShowMore stuObject = {this.props.stuCard}    /> :null}
-
-       
-
-
-
-
-
 
       </article>
     );
