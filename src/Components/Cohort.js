@@ -7,7 +7,7 @@ import "./Cohort.css";
  * @returns cohort code with a space between season and year, "AllStudents"
  * will return "All Students"
  */
-const parseCohortCode = (cohortCode) => {
+export const parseCohortCode = (cohortCode) => {
   if (cohortCode === "AllStudents") return "All Students";
 
   return `${cohortCode.substring(

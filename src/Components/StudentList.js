@@ -1,75 +1,57 @@
-import React from "react";
 import Student from "./Student";
+import { parseCohortCode } from "./Cohort.js";
 
-class StudentList extends React.Component {
-  selectedCohortStudent = (data, selectedCohort) => {
-    if (selectedCohort === "AllStudents") {
-      return data;
-    } else {
-      return data.filter((student) => {
-        return student.cohort.cohortCode === selectedCohort;
-      });
-    }
-  };
+/**
+ * Filter the given student array based on the given cohortCode
+ * @param {[]Object} data - An array of student objects, each object contains info of the student
+ * @param {String} selectedCohort - cohortCode of selected cohort
+ * @returns an array of student object match with the selected cohort code
+ */
+const selectedCohortStudent = (data, selectedCohort) => {
+  if (selectedCohort === "AllStudents") {
+    return data;
+  } else {
+    return data.filter((student) => {
+      return student.cohort.cohortCode === selectedCohort;
+    });
+  }
+};
 
-  displayCohortStudents = (
+/* Render the student list with student cards
+ * Each student card contains image and basic info of student
+ */
+function StudentList(props) {
+  const {
     data,
     selectedCohort,
     studentShowDetail,
     studentShowDetailHandler,
     comments,
-    commentsHandler
-  ) => {
-    const selectedStudents = this.selectedCohortStudent(data, selectedCohort);
+    commentsHandler,
+  } = props;
 
-    return selectedStudents.map((selectedStudent, index) => {
-      return (
-        <Student
-          studentInfo={selectedStudent}
-          key={index}
-          studentShowDetail={studentShowDetail}
-          studentShowDetailHandler={studentShowDetailHandler}
-          comments={comments}
-          commentsHandler={commentsHandler}
-        />
-      );
-    });
-  };
+  const selectedStudents = selectedCohortStudent(data, selectedCohort);
 
-  parseCohort = (cohort) => {
-    if (cohort === "AllStudents") return "All Students";
-    return `${cohort.substring(0, cohort.length - 4)} ${cohort.substring(
-      cohort.length - 4
-    )}`;
-  };
-
-  render() {
-    const {
-      data,
-      selectedCohort,
-      studentShowDetail,
-      studentShowDetailHandler,
-      comments,
-      commentsHandler,
-    } = this.props;
-
-    const studentCards = this.displayCohortStudents(
-      data,
-      selectedCohort,
-      studentShowDetail,
-      studentShowDetailHandler,
-      comments,
-      commentsHandler
-    );
-
+  const studentCards = selectedStudents.map((selectedStudent, index) => {
     return (
-      <div className="studentList">
-        <h2>{this.parseCohort(selectedCohort)}</h2>
-        <h3>Total Students: {studentCards.length}</h3>
-        {studentCards}
-      </div>
+      <Student
+        studentInfo={selectedStudent}
+        key={index}
+        studentShowDetail={studentShowDetail}
+        studentShowDetailHandler={studentShowDetailHandler}
+        comments={comments}
+        commentsHandler={commentsHandler}
+      />
     );
-  }
+  });
+
+  return (
+    <div className="studentList">
+      <h2>{parseCohortCode(selectedCohort)}</h2>
+      <h3>Total Students: {studentCards.length}</h3>
+      {studentCards}
+    </div>
+  );
 }
 
 export default StudentList;
