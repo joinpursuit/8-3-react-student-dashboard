@@ -107,7 +107,14 @@ h2 {
     margin-top: 4.8em;
 }
 
-.icon {
-    max-width: 50px;
-    height: auto;
+.greaterThanOneHundred {
+    color: green;
+}
+
+.betweenFiftyAndHundred {
+    color:#BDB76B
+}
+
+.underFifty {
+    color: red;
 }

@@ -41,6 +41,31 @@ export default class ShowMore extends React.Component {
     return icon;
   };
 
+  codewarsPercentageComparator(object) {
+    let initialText = "Percent of Goal Achieved: ";
+    let percentText = "%";
+    let currentTotal = object.codewars.current.total;
+    let goal = object.codewars.goal.total;
+    let percentage = ((currentTotal / goal) * 100).toFixed(2);
+    if (percentage > 100) {
+      return (
+        <p className="greaterThanOneHundred">
+          {initialText + percentage + percentText}
+        </p>
+      );
+    } else if (percentage >= 50 && percentage <= 100) {
+      return (
+        <p className="betweenFiftyAndHundred">
+          {initialText + percentage + percentText}
+        </p>
+      );
+    } else if (percentage < 50) {
+      return (
+        <p className="underFifty">{initialText + percentage + percentText}</p>
+      );
+    }
+  }
+
   render() {
     const { semester } = this.props;
 
@@ -59,15 +84,7 @@ export default class ShowMore extends React.Component {
               <p>Current Total: {semester.codewars.current.total}</p>
               <p>Last Week: {semester.codewars.current.lastWeek}</p>
               <p>Goal: {semester.codewars.goal.total}</p>
-              <p>
-                Percent of Goal Achieved:{" "}
-                {(
-                  (semester.codewars.current.total /
-                    semester.codewars.goal.total) *
-                  100
-                ).toFixed(2)}
-                %
-              </p>
+              <p>{this.codewarsPercentageComparator(semester)}</p>
             </aside>
             <div>
               <h4>Scores</h4>
