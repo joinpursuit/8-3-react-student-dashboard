@@ -32,6 +32,7 @@ class App extends react.Component {
 }
 
 // Helper Functions
+
 /**
  * createCohortsObj takes an array of objects, specifically meant to take in the data.json object, and returns an array of cohorts that correspond to the specific entering class of students within the original array
  * @param {[Objects]} data
