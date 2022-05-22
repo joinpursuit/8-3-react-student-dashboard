@@ -28,6 +28,12 @@
     border: #764f51;
 }
 
+.studentGraduationStats {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    border: #764f51;
+}
+
 .oneStudent {
     border-style: solid;
     margin-right: 1em;
@@ -51,6 +57,8 @@
     text-decoration: underline;
     cursor: pointer;
     position: relative;
+    left: 260px;
+    bottom: 75px;
 }
 
 #cohortList {
@@ -99,3 +107,7 @@ h2 {
     margin-top: 4.8em;
 }
 
+.icon {
+    max-width: 50px;
+    height: auto;
+}

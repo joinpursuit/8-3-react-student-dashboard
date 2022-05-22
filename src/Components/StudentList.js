@@ -8,7 +8,7 @@ export default function StudentList({
   const studentListItem = studentInformation.map((semester) => {
     return (
       <div className="oneStudent" key={semester.id}>
-        <Student semester={semester} />
+        <Student semester={semester} studentInformation={studentInformation}/>
       </div>
     );
   });

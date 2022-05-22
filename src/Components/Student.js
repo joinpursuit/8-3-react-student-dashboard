@@ -1,6 +1,7 @@
 import React from "react";
+import ShowMore from "./ShowMore";
 
-export default function Student({ semester }) {
+export default function Student({ semester, studentInformation }) {
   const studentPreferredName = semester.names.preferredName;
   const studentMiddleName = semester.names.middleName;
   const studentSurName = semester.names.surname;
@@ -58,27 +59,35 @@ export default function Student({ semester }) {
   };
 
   return (
-    <div className="studentBio">
-      <img
-        src={profilePicture}
-        className="profilePic"
-        alt="student headshot"
-      ></img>
-      <div className="studentInformation1">
-        <p>
-          <strong>
-            {studentPreferredName +
-              " " +
-              studentMiddleName +
-              " " +
-              studentSurName}
-          </strong>
-        </p>
-        <p>{emailAddress}</p>
-        <p>Birthday: {convertBirthDate(studentBirthday)}</p>
-        <div id="showMore">Show More...</div>
+    <div>
+      <div className="studentBio">
+        <img
+          src={profilePicture}
+          className="profilePic"
+          alt="student headshot"
+        ></img>
+        <div className="studentInformation1">
+          <p>
+            <strong>
+              {studentPreferredName +
+                " " +
+                studentMiddleName +
+                " " +
+                studentSurName}
+            </strong>
+          </p>
+          <p>{emailAddress}</p>
+          <p>Birthday: {convertBirthDate(studentBirthday)}</p>
+        </div>
+        <section id="graduationTracker">{graduationStatus(semester)}</section>
       </div>
-      <section id="graduationTracker">{graduationStatus(semester)}</section>
+      <div>
+        <ShowMore
+          className="studentGraduationStats"
+          studentInformation={studentInformation}
+          semester={semester}
+        />
+      </div>
     </div>
   );
 }
