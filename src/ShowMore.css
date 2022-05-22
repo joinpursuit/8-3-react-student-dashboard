@@ -23,3 +23,6 @@ img {
 .red {
     color: red;
 }
+.form {
+    grid-column: 1 / span 3;
+}

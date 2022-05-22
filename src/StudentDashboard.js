@@ -1,5 +1,6 @@
 import React from "react";
 import StudentCard from "./StudentCard";
+import CommentList from "./CommentList";
 
 class StudentDashboard extends React.Component {
   constructor() {
@@ -8,7 +9,7 @@ class StudentDashboard extends React.Component {
       students: [],
     };
   }
-  createStudentList = (array, cohort) => {
+  createStudentList = (array, cohort, funct, commentsObj) => {
     if (cohort !== "All Classes") {
       cohort = `${cohort.slice(0, cohort.length - 4)} 
         ${cohort.slice(cohort.length - 4)}`;
@@ -19,7 +20,12 @@ class StudentDashboard extends React.Component {
         <p>{`Total Students: ${array.length}`}</p>
         {array.map((element) => {
           return (
-            <StudentCard student={element} key={element.id} className="item" />
+            <StudentCard
+              student={element}
+              handleComments={funct}
+              key={element.id}
+              className="item"
+            />
           );
         })}
       </div>
@@ -27,8 +33,12 @@ class StudentDashboard extends React.Component {
   };
 
   render() {
-    const { array, cohort } = this.props;
-    return <div>{this.createStudentList(array, cohort)}</div>;
+    const { array, cohort, handleComments, commentsObj } = this.props;
+    return (
+      <div>
+        {this.createStudentList(array, cohort, handleComments, commentsObj)}
+      </div>
+    );
   }
 }
 

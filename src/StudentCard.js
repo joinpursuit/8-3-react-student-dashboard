@@ -56,7 +56,7 @@ const graduationCheck = (certifications) => {
   }
 };
 
-const StudentCard = ({ student }) => {
+const StudentCard = ({ student, handleComments }) => {
   const { names, profilePhoto, username, dob, certifications } = student;
   return (
     <div className="card">
@@ -69,7 +69,7 @@ const StudentCard = ({ student }) => {
         <p className="dob right">{formatBirthdayText(dob)}</p>
       </div>
       <div>
-        <ShowMore student={student} />
+        <ShowMore student={student} handleComments={handleComments} />
       </div>
     </div>
   );

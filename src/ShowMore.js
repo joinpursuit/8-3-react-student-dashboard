@@ -1,5 +1,6 @@
 import React from "react";
 import "./ShowMore.css";
+import Form from "./Form";
 class ShowMore extends React.Component {
   constructor() {
     super();
@@ -49,7 +50,7 @@ class ShowMore extends React.Component {
   };
 
   render() {
-    const { student } = this.props;
+    const { student, handleComments } = this.props;
     const { codewars, certifications, cohort } = student;
     const percentage = Math.round(
       (codewars.current.total / codewars.goal.total) * 100
@@ -90,6 +91,9 @@ class ShowMore extends React.Component {
             <p>LinkedIn: {this.passFailImage(certifications.linkedin)}</p>
             <p>Mock Interview: {this.passFailImage(certifications.github)}</p>
             <p>GitHub: {this.passFailImage(certifications.mockInterview)}</p>
+          </div>
+          <div className="form">
+            <Form student={student} handleComments={() => handleComments} />
           </div>
         </div>
       </div>
