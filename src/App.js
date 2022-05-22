@@ -2,7 +2,7 @@ import React from 'react';
 import StudentDash from './Components/StudentDash';
 import './App.css';
 import CohortList from './Components/CohortList';
-import Header from './Components/Header';
+
 
 class App extends React.Component {
   constructor() {
@@ -38,7 +38,7 @@ class App extends React.Component {
 
     return (
       <>
-        <Header />
+        <header className='Header'> Student Dashboard</header>
         <div className="school-dash">
           <CohortList data={data} updateCohort={this.updateCohort} />
           <StudentDash

@@ -1,8 +1,6 @@
 import React from 'react';
-import './Cohort.css';
 
 class Cohort extends React.Component {
-
   // add a space between the season and year
   formatCohort = (semester) => {
     if (semester === 'All Students') return 'All Students';

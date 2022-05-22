@@ -6,7 +6,7 @@ class StudentDash extends React.Component {
 
   chooseStudent = (data, currentCohort) => {
     if (currentCohort === 'All Students') {
-      return data; // i'll need all 250 students
+      return data; // i'll need all 250 student objects
     } else {
       return data.filter((stu) => {
         return stu.cohort.cohortCode === currentCohort;
@@ -28,7 +28,9 @@ class StudentDash extends React.Component {
   };
 
   formatCohort = (cohort) => {
-    if (cohort === 'All Students') return 'All Students';
+    if (cohort === 'All Students') {
+      return 'All Students';
+    }
     return `${cohort.substring(0, cohort.length - 4)} ${cohort.substring(
       cohort.length - 4
     )}`;
