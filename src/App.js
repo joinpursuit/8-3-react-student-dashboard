@@ -45,19 +45,21 @@ class App extends React.Component {
   }
   */
   commentsHandler = (studentId, commenter, comment) => {
-    const commentRecord = `[${commenter}] says: "${comment}"`;
+    if (comment !== "" && commenter !== "") {
+      const commentRecord = `[${commenter}] says: "${comment}"`;
 
-    let copyOfCommentsObj = this.state.comments;
+      let copyOfCommentsObj = this.state.comments;
 
-    if (copyOfCommentsObj.hasOwnProperty(studentId)) {
-      copyOfCommentsObj[studentId].push(commentRecord);
-    } else {
-      copyOfCommentsObj[studentId] = [commentRecord];
+      if (copyOfCommentsObj.hasOwnProperty(studentId)) {
+        copyOfCommentsObj[studentId].push(commentRecord);
+      } else {
+        copyOfCommentsObj[studentId] = [commentRecord];
+      }
+
+      this.setState({
+        comments: copyOfCommentsObj,
+      });
     }
-
-    this.setState({
-      comments: copyOfCommentsObj,
-    });
   };
 
   render() {

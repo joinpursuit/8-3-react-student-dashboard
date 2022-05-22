@@ -23,7 +23,7 @@ function Cohort(props) {
 
   return (
     <div className="cohort" onClick={() => selectCohortHandler(cohortCode)}>
-      {parseCohortCode(cohortCode)}
+      <p>{parseCohortCode(cohortCode)}</p>
     </div>
   );
 }

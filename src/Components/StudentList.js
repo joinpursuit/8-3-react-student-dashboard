@@ -1,5 +1,6 @@
 import Student from "./Student";
 import { parseCohortCode } from "./Cohort.js";
+import "./StudentList.css";
 
 /**
  * Filter the given student array based on the given cohortCode
@@ -48,7 +49,10 @@ function StudentList(props) {
   return (
     <div className="studentList">
       <h2>{parseCohortCode(selectedCohort)}</h2>
-      <h3>Total Students: {studentCards.length}</h3>
+      <h3>
+        Total Students:{" "}
+        <span className="studentNum">{studentCards.length}</span>
+      </h3>
       {studentCards}
     </div>
   );

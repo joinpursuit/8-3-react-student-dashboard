@@ -83,13 +83,26 @@ function Student(props) {
   return (
     <div className="student">
       <img src={imgSrc} alt={name} />
-      <p>{name}</p>
-      <p>{email}</p>
-      <p>Birthday: {parseBirthday(Birthday)}</p>
-      <p>{checkGraduateStatus(studentInfo) ? "On Track To Graduate" : null}</p>
-      <button onClick={() => studentShowDetailHandler(studentInfo.id)}>
-        {studentShowDetail.includes(studentInfo.id) ? `Show Less` : `Show More`}
-      </button>
+      <div>
+        <p className="bold largeSize">{name}</p>
+        <p>{email}</p>
+        <p>
+          <span className="green">Birthday:</span> {parseBirthday(Birthday)}
+        </p>
+      </div>
+      <div className="graduateStatus">
+        <p>
+          {checkGraduateStatus(studentInfo) ? "On Track To Graduate" : null}
+        </p>
+      </div>
+      <div
+        className="button"
+        onClick={() => studentShowDetailHandler(studentInfo.id)}
+      >
+        {studentShowDetail.includes(studentInfo.id)
+          ? `Show Less...`
+          : `Show More...`}
+      </div>
       {studentShowDetail.includes(studentInfo.id)
         ? showMoreHandler(studentInfo, comments, commentsHandler)
         : null}

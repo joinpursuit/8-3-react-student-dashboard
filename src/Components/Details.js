@@ -72,52 +72,83 @@ class Details extends React.Component {
     );
 
     return (
-      <div>
-        <div>
+      <div className="detailContainer">
+        <div className="codewars">
           <h4>Codewars:</h4>
-          <p>Current Total: {codewars.current.total}</p>
-          <p>Last Week: {codewars.current.lastWeek}</p>
-          <p>Goal: {codewars.goal.total}</p>
           <p>
-            Percent of Goal Achieved:{" "}
+            <span className="green">Current Total:</span>
+            {codewars.current.total}
+          </p>
+          <p>
+            <span className="green">Last Week:</span>
+            {codewars.current.lastWeek}
+          </p>
+          <p>
+            <span className="green">Goal:</span> {codewars.goal.total}
+          </p>
+          <p>
+            <span className="green">Percent of Goal Achieved:</span>
             <span className={this.colorDependOnPercentage(codewarsPercentage)}>
               {codewarsPercentage}%
             </span>
           </p>
         </div>
-        <div>
+        <div className="scores">
           <h4>Scores:</h4>
-          <p>Assignment:{assignments * 100}%</p>
-          <p>Projects:{projects * 100}%</p>
-          <p>Assessments:{assessments * 100}%</p>
+          <p>
+            <span className="green">Assignment:</span>
+            {assignments * 100}%
+          </p>
+          <p>
+            <span className="green">Projects:</span>
+            {projects * 100}%
+          </p>
+          <p>
+            <span className="green">Assessments:</span>
+            {assessments * 100}%
+          </p>
         </div>
-        <div>
+        <div className="certifications">
           <h4>Certifications:</h4>
-          <p>Resume: {resume ? "✅" : "❌"}</p>
-          <p>Linkedin: {linkedin ? "✅" : "❌"}</p>
-          <p>Mock Interview: {mockInterview ? "✅" : "❌"}</p>
-          <p>GitHub: {github ? "✅" : "❌"}</p>
+          <p>
+            <span className="green">Resume:</span> {resume ? "✅" : "❌"}
+          </p>
+          <p>
+            <span className="green">Linkedin:</span> {linkedin ? "✅" : "❌"}
+          </p>
+          <p>
+            <span className="green">Mock Interview:</span>{" "}
+            {mockInterview ? "✅" : "❌"}
+          </p>
+          <p>
+            <span className="green">GitHub:</span> {github ? "✅" : "❌"}
+          </p>
         </div>
-        <div>
+        <div className="oneToOne">
           <h4>One-on-One Notes</h4>
           <form onSubmit={this.formSubmitHandler}>
-            <label htmlFor="commenter">Commenter Name</label>
-            <input
-              type="text"
-              id="commenter"
-              name="commenter"
-              onChange={this.updateInputHandler}
-              value={this.state.commenter}
-            />
-            <br />
-            <label htmlFor="comment">Comment</label>
-            <input
-              type="text"
-              id="comment"
-              name="comment"
-              onChange={this.updateInputHandler}
-              value={this.state.comment}
-            />
+            <label htmlFor="commenter">
+              Commenter Name:{" "}
+              <input
+                type="text"
+                id="commenter"
+                name="commenter"
+                onChange={this.updateInputHandler}
+                value={this.state.commenter}
+                required
+              />
+            </label>
+            <label htmlFor="comment">
+              Comment:{" "}
+              <input
+                type="text"
+                id="comment"
+                name="comment"
+                onChange={this.updateInputHandler}
+                value={this.state.comment}
+                required
+              />
+            </label>
             <button
               onClick={() => {
                 commentsHandler(id, this.state.commenter, this.state.comment);
