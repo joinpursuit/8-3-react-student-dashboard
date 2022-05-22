@@ -28,12 +28,13 @@ class StudentDash extends React.Component {
   };
 
   formatCohort = (cohort) => {
-    if (cohort === 'All Students') {
-      return 'All Students';
+    if (!cohort === 'All Students') {
+      return `${cohort.substring(0, cohort.length - 4)} ${cohort.substring(
+        cohort.length - 4
+      )}`;
     }
-    return `${cohort.substring(0, cohort.length - 4)} ${cohort.substring(
-      cohort.length - 4
-    )}`;
+
+    return 'All Students';
   };
 
   render() {

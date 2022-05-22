@@ -11,7 +11,26 @@ class Showmore extends React.Component {
     }
   };
 
+  addNoteHander = (event) => {
+    event.preventDefault();
+  };
+
+  showComments = (studentDeets) => {
+    if (studentDeets.notes.length) {
+      return studentDeets.notes.map((note, idx) => {
+        return (
+          <li key={idx}>
+            {note.commenter} says "{note.comment}"
+          </li>
+        );
+      });
+    } else {
+      return '';
+    }
+  };
+
   render() {
+    const { studentDeets } = this.props;
     const { codewars } = this.props.studentDeets;
     const { assignments, projects, assessments } =
       this.props.studentDeets.cohort.scores;
@@ -50,6 +69,20 @@ class Showmore extends React.Component {
           <p>Mock Interview: {mockInterview ? '✅' : '❌'}</p>
           <p>GitHub: {github ? '✅' : '❌'}</p>
         </div>
+        <section className="commentstuff">
+          <h3> 1 On 1 Notes</h3>
+          <form>
+            <label htmlFor="commenter">Name:</label>
+            <input type="text" name="commenter" />
+            <br></br>
+            <br></br>
+            <label htmlFor="comment">Comment:</label>
+            <input type="text" name="comment" />
+
+            <button onClick={this.addNoteHander}>Add Note</button>
+          </form>
+          <div>{this.showComments(studentDeets)}</div>
+        </section>
       </div>
     );
   }
