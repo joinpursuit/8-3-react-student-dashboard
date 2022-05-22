@@ -33,7 +33,6 @@ class StudentCard extends React.Component {
 
 function formaDOB(rawDate) {
   let formattedDate = rawDate.split("/");
-  console.log(formattedDate);
 
   switch (formattedDate[0]) {
     case "1":

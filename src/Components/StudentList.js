@@ -12,7 +12,13 @@ function StudentList(props) {
             <StudentCard
               key={element.id}
               pic={element.profilePhoto}
-              name={element.names.preferredName}
+              name={
+                element.names.preferredName +
+                " " +
+                element.names.middleName +
+                " " +
+                element.names.surname
+              }
               email={element.username}
               birthday={element.dob}
             />
