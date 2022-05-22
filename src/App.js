@@ -1,5 +1,6 @@
 import AllStudents from './Components/AllStudents';
 import CohortBar from './Components/CohortBar';
+import './Components/App.css';
 
 import React from 'react';
 
@@ -19,7 +20,7 @@ class App extends React.Component {
     const { data } = this.props;
     console.log('currentState', this.state.selectedCohortCode);
     return (
-      <div>
+      <main className='main'>
         <h1 className='student-dashboard'>Student Dashboard</h1>
 
         <CohortBar
@@ -31,7 +32,7 @@ class App extends React.Component {
           students={data}
           cohortCode={this.state.selectedCohortCode}
         />
-      </div>
+      </main>
     );
   }
 }

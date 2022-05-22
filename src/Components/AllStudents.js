@@ -1,5 +1,6 @@
 import React from 'react';
 import AStudent from './AStudent';
+import './AllStudents.css';
 
 function AllStudents(props) {
   const { students, cohortCode } = props;

@@ -1,0 +1,10 @@
+.cohortbar{
+   top: 0;
+   align-self: flex-start;
+   height: auto;
+   position: -webkit-sticky;
+   position: sticky;
+   background-color: gray;
+   
+   float: left;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './CohortBar.css';
 
 function CohortBar(props) {
   const { data, handleClick } = props;
@@ -52,7 +53,7 @@ function CohortBar(props) {
     });
   };
   return (
-    <div>
+    <div className='cohortbar'>
       <h2>Choose a Class by Start Date</h2>
 
       <section>{displayCohort(data, handleClick)}</section>
