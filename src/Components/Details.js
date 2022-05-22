@@ -10,41 +10,52 @@ class Details extends React.Component {
     };
   }
 
-  updateCommentHandler = (event) => {
-    const { value } = event.target;
-
+  /**
+   * Clear the user inputs when the submit button being clicked
+   */
+  clearInputsHandler = () => {
     this.setState({
-      comment: value,
+      commenter: "",
+      comment: "",
     });
   };
 
-  updateCommenterHandler = (event) => {
-    const { value } = event.target;
+  //Update the input's commenter and comment into the state
+  updateInputHandler = (event) => {
+    const { name, value } = event.target;
 
     this.setState({
-      commenter: value,
+      [name]: value,
     });
   };
 
-  formSubmitHandler = (event, commentsHandler) => {
+  //when submit the form, do not refresh the page
+  formSubmitHandler = (event) => {
     event.preventDefault();
-    const commenter = event.target.commenter.value;
-    const comment = event.target.comment.value;
-
-    // const comment = `${event.target.commenter.value}. says, "${event.target.comment.value}"`;
-    event.target.commenter.value = "";
-    event.target.comment.value = "";
-    this.setState({
-      commenter: commenter,
-      comment: comment,
-    });
   };
 
+  /**
+   * Display the comments if the student id exist inside the comments object as a key
+   * @param {[]String} comments // object that contains comments ,key is the different student ids,
+   * value is array of comments
+   * @param {String} id -A unique ID associated with each student.
+   * @returns an array of comments as <li> item
+   */
   displayComments = (comments, id) => {
     if (comments.hasOwnProperty(id)) {
       return comments[id].map((comment, index) => {
         return <li key={index}>{comment}</li>;
       });
+    }
+  };
+
+  colorDependOnPercentage = (codewarsPercentage) => {
+    if (codewarsPercentage >= 100) {
+      return "green";
+    } else if (codewarsPercentage >= 50) {
+      return "yellow";
+    } else {
+      return "red";
     }
   };
 
@@ -56,6 +67,9 @@ class Details extends React.Component {
       this.props.studentInfo.certifications;
 
     const { comments, commentsHandler } = this.props;
+    const codewarsPercentage = Number(
+      ((codewars.current.total / codewars.goal.total) * 100).toFixed(2)
+    );
 
     return (
       <div>
@@ -65,8 +79,10 @@ class Details extends React.Component {
           <p>Last Week: {codewars.current.lastWeek}</p>
           <p>Goal: {codewars.goal.total}</p>
           <p>
-            Percen of Goal Achieved:
-            {((codewars.current.total / codewars.goal.total) * 100).toFixed(2)}%
+            Percent of Goal Achieved:{" "}
+            <span className={this.colorDependOnPercentage(codewarsPercentage)}>
+              {codewarsPercentage}%
+            </span>
           </p>
         </div>
         <div>
@@ -90,7 +106,7 @@ class Details extends React.Component {
               type="text"
               id="commenter"
               name="commenter"
-              onChange={this.updateCommenterHandler}
+              onChange={this.updateInputHandler}
               value={this.state.commenter}
             />
             <br />
@@ -99,13 +115,14 @@ class Details extends React.Component {
               type="text"
               id="comment"
               name="comment"
-              onChange={this.updateCommentHandler}
+              onChange={this.updateInputHandler}
               value={this.state.comment}
             />
             <button
-              onClick={() =>
-                commentsHandler(id, this.state.commenter, this.state.comment)
-              }
+              onClick={() => {
+                commentsHandler(id, this.state.commenter, this.state.comment);
+                this.clearInputsHandler();
+              }}
             >
               Add Note
             </button>
