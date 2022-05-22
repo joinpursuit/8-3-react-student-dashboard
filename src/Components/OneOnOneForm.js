@@ -31,14 +31,13 @@ export default class OneOnOneForm extends React.Component {
 		const { studentInfo } = this.props;
 		const { comment, commenter } = this.state;
 		return (
-			<div className="1on1-form">
+			<div className="one-form">
 				{" "}
-				{/**TODO: make form its own file, sothat you can keep track on state easily. */}
 				1-on-1 Notes
 				<form onSubmit={this.addToSubmissions}>
 					<label>
 						{" "}
-						Commenter Name
+						Commenter Name{" "}
 						<input
 							type="text"
 							name="name"
@@ -49,7 +48,7 @@ export default class OneOnOneForm extends React.Component {
 					<br />
 					<label>
 						{" "}
-						Comment
+						Comment{" "}
 						<input
 							type="text"
 							name="comment"

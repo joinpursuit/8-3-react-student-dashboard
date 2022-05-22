@@ -6,18 +6,38 @@ class ShowMore extends React.Component {
 		super();
 		this.state = {
 			showMore: true,
+			codeWars: "",
 		};
-		// this.studentInfo = studentInfo;
 	}
-	// { studentInfo } = studentInfo;
+	checkmark = (
+		<img
+			src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/White_check_mark_in_dark_green_rounded_square.svg/512px-White_check_mark_in_dark_green_rounded_square.svg.png"
+			alt="check"
+			className="icon"
+		/>
+	);
+	xmark = (
+		<img
+			src="https://icon-library.com/images/close-button-icon/close-button-icon-12.jpg"
+			alt="red x"
+			className="icon"
+		/>
+	);
+	/**
+	 * Toggles Show More tab for each student
+	 */
 	extraInfo = () => {
 		this.setState({ showMore: !this.state.showMore });
 	};
 	/**
-	 * Add form submission to the list of notes!
-	 * @param {*} event
-	 *
+	 * Sets the codewars percentage as well as the color for the number.
+	 * @param {Number} current -numerator
+	 * @param {Number} total -denominator
+	 * @returns {Number} Number as a percentage
 	 */
+	getPercentage = (current, total) => {
+		return ((current / total) * 100).toFixed(2);
+	};
 
 	render() {
 		const { studentInfo } = this.props;
@@ -32,13 +52,12 @@ class ShowMore extends React.Component {
 						<p>Current Total: {studentInfo.codewars.current.total}</p>
 						<p>Last Week: {studentInfo.codewars.current.lastWeek}</p>
 						<p>Goal: {studentInfo.codewars.goal.total}</p>
-						<p>
+						<p className={this.state.codeWars}>
 							Percent of Goal Acheieved:{" "}
-							{(
-								(studentInfo.codewars.current.total /
-									studentInfo.codewars.goal.total) *
-								100
-							).toFixed(2)}
+							{this.getPercentage(
+								studentInfo.codewars.current.total,
+								studentInfo.codewars.goal.total
+							)}
 							%
 						</p>
 					</div>
@@ -50,16 +69,22 @@ class ShowMore extends React.Component {
 					</div>
 					<div className="certifications">
 						<h4>Certifications</h4>
-						<p>Resume: {studentInfo.certifications.resume ? "YEZZUR" : "nah brotha"}</p>
+						<p>
+							Resume:{" "}
+							{studentInfo.certifications.resume ? this.checkmark : this.xmark}
+						</p>
 						<p>
 							LinkedIn:{" "}
-							{studentInfo.certifications.linkedin ? "YEZZUR" : "nah brotha"}
+							{studentInfo.certifications.linkedin ? this.checkmark : this.xmark}
 						</p>
-						<p>GitHub: {studentInfo.certifications.github ? "YEZZUR" : "nah brotha"}</p>
+						<p>
+							GitHub:{" "}
+							{studentInfo.certifications.github ? this.checkmark : this.xmark}
+						</p>
 						<p>
 							{" "}
 							Mock Interview:{" "}
-							{studentInfo.certifications.mockInterview ? "YEZZUR" : "nah brotha"}
+							{studentInfo.certifications.mockInterview ? this.checkmark : this.xmark}
 						</p>
 					</div>
 					<OneOnOneForm studentInfo={studentInfo} key={studentInfo.id} />

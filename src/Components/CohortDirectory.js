@@ -43,6 +43,7 @@ const CohortDirectory = (props) => {
 	return (
 		<ul className="directory">
 			<h4>Choose a Class by Start Date</h4>
+			<br />
 			{cohortList.map((cohort) => {
 				return (
 					<li id={cohort} key={cohort} onClick={() => clicker(cohort)}>
