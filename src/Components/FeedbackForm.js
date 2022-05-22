@@ -2,17 +2,24 @@ import React from "react";
 import "./extendedinfo.css";
 
 function FeedbackForm(props) {
-  const { feedback, commentNameHandler, comment, commentHandler, notes } =
-    props;
+  const {
+    person,
+    commentNameHandler,
+    comment,
+    commentHandler,
+    notes,
+    submitHandler,
+    newReviews,
+  } = props;
   return (
     <section className="feedback">
       <h4>1-on-1 Notes</h4>
-      <form className="form-container">
+      <form onSubmit={submitHandler} className="form-container">
         <label htmlFor="name">Commenter Name </label>
         <input
           type="text"
           name="name"
-          value={feedback}
+          value={person}
           onChange={commentNameHandler}
         />
         <br />
@@ -31,6 +38,9 @@ function FeedbackForm(props) {
           {notes[0].commenter} says '{notes[0].comment}'{" "}
         </li>
       ) : null}
+      {newReviews.length
+        ? newReviews.map((review, idx) => <li key={idx}>{review}</li>)
+        : null}
     </section>
   );
 }

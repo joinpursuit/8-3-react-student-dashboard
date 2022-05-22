@@ -4,8 +4,15 @@ import FeedbackForm from "./FeedbackForm.js";
 
 function ExtendedInfo(props) {
   const emoji = (boolean) => (boolean ? "✅" : " ❌");
-  const { student, feedback, commentNameHandler, comment, commentHandler } =
-    props;
+  const {
+    student,
+    person,
+    commentNameHandler,
+    comment,
+    commentHandler,
+    submitHandler,
+    newReviews,
+  } = props;
   const { resume, linkedin, github, mockInterview } = student.certifications;
   const { assignments, projects, assessments } = student.cohort.scores;
   const { total, lastWeek } = student.codewars.current;
@@ -36,11 +43,13 @@ function ExtendedInfo(props) {
         </section>
       </div>
       <FeedbackForm
-        feedback={feedback}
+        submitHandler={submitHandler}
+        person={person}
         commentNameHandler={commentNameHandler}
         comment={comment}
         commentHandler={commentHandler}
         notes={student.notes}
+        newReviews={newReviews}
       />
     </div>
   );
