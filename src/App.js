@@ -12,7 +12,8 @@ class App extends React.Component {
    constructor() {
      super();
      this.state={
-      currentCohort: 'All Students',
+      currentCohort: 'All Students', 
+      
    }
   }
   updateCohort = (cohort) => {
@@ -21,13 +22,14 @@ class App extends React.Component {
 
   render() {
     const { data } = this.props;
-
+console.log(this.state.currentCohort)
     return (
       <>
         <TopSection />
         <div className="school-dash">
           <CohortList data={data} updateCohort={this.updateCohort} />
-          <StudentDash data={data} />
+          <StudentDash data={data}
+          currentCohort = {this.state.currentCohort} />
         </div>
       </>
     );
