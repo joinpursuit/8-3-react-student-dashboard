@@ -23,7 +23,7 @@ function AStudent({ student: { names, username, profilePhoto, dob } }) {
             <h4>
               <em>Birthday: {dateFormat}</em>
             </h4>
-            <button>Show More</button>
+            <ExpandInfo />
           </article>
         </aside>
       </section>
