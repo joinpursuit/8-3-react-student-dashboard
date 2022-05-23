@@ -10,6 +10,137 @@ body {
   text-decoration: none;
 }
 
+.App {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.App h1 {
+  background: linear-gradient(
+    180deg,
+    rgb(0, 0, 36) 0%,
+    rgb(0, 59, 110) 50%,
+    rgba(0, 109, 204) 100%
+  );
+  color: white;
+  text-align: center;
+  padding: 30px;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.card {
+  border: 2px solid rgb(0, 162, 255);
+  padding: 5px;
+  margin: 5px;
+}
+
+.card img {
+  height: 130px;
+  float: left;
+  margin-right: 5px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 5px;
+}
+
+.card button {
+  background: none;
+  border: none;
+  padding: 10px;
+  text-decoration: underline;
+  color: rgb(0, 162, 255);
+}
+
+.graduation-status {
+  color: rgb(0, 248, 0);
+  float: right;
+}
+
+.dob span {
+  color: rgb(0, 162, 255);
+}
+
+.total span {
+  color: rgb(0, 162, 255);
+}
+
+.cohorts {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row: 2;
+}
+
+.all-students {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  margin-right: 40px;
+}
+
+.cohorts button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.cohorts li {
+  list-style: none;
+}
+
+.cohorts h3 {
+  text-align: center;
+}
+
+.cohorts button:hover {
+  color: rgb(0, 162, 255);
+}
+
+.cohort {
+  list-style: none;
+}
+
+.cohort button {
+  background: none;
+  border: none;
+  padding: 10px;
+}
+
+.cohort button:hover {
+  color: rgb(0, 162, 255);
+}
+
+.line {
+  background-color: rgb(0, 162, 255);
+  height: 2px;
+  width: auto;
+  margin-right: 60px;
+}
+
+.details {
+  display: grid;
+  grid-template-areas:
+    "a b c"
+    "l l l"
+    "f f f";
+  padding-left: 10px;
+}
+
+.line-alt {
+  grid-area: l;
+  background-color: rgb(0, 162, 255);
+  height: 2px;
+  width: auto;
+  margin-right: 15px;
+}
+
+.comments {
+  grid-area: f;
+}
+
 .span {
   color: rgb(0, 162, 255);
 }
