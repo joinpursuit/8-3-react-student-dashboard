@@ -31,15 +31,13 @@ class AStudent extends React.Component {
             />
             <h4 className='fullname'>
               {names.preferredName} {names.middleName[0]}. {names.surname}
-            </h4>
+              <h4>
+                <em className>{username}</em>
 
-            <h4>
-              <em className>{username}</em>
-            </h4>
-
-            <h4>
-              <em>Birthday: {dateFormat}</em>
-
+                <h4>
+                  <em>Birthday: {dateFormat}</em>
+                </h4>
+              </h4>
               <div onClick={() => this.toggleExpandInfo()}>
                 {ExpandInfo ? 'Show Less' : 'Show More'}
               </div>

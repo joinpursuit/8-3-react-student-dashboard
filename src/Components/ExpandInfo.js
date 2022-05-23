@@ -22,7 +22,7 @@ function ExpandInfo({ codewars, certifications, cohort, showMore }) {
           </p>
           <p>
             <span className='moreInfoBlurb'> Goal: </span>
-            {global.total}
+            {goal.total}
           </p>
           <p>
             <span className='moreInfoBlurb'>Percent of Goal Achieved:</span>

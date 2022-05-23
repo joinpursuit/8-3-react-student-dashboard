@@ -3,7 +3,6 @@ import './CohortBar.css';
 
 function CohortBar(props) {
   const { data, handleClick } = props;
-  // console.log(handleClick);
 
   const ListOfStartingDates = () => {
     const startDates = data.map((student) => student.cohort.cohortCode);
@@ -11,14 +10,13 @@ function CohortBar(props) {
   };
 
   const filterByCohort = (cohortArr) => {
-    // console.log(cohortArr)
     let obj = {};
     for (let i = 0; i < cohortArr.length; i++) {
       if (obj.hasOwnProperty !== cohortArr[i]) {
         obj[cohortArr[i]] = cohortArr[i];
       }
     }
-    // console.log(obj);
+
     return Object.keys(obj);
   };
 
@@ -46,17 +44,23 @@ function CohortBar(props) {
     sortedCohortArr.unshift('All Students');
     return sortedCohortArr.map((cohortCode, index) => {
       return (
-        <li key={index} onClick={() => handleClick(cohortCode)}>
+        <li
+          className='cohorttext'
+          key={index}
+          onClick={() => handleClick(cohortCode)}
+        >
           {cohortCode === 'All Students' ? 'All Students' : `${cohortCode}`}
         </li>
       );
     });
   };
+
   return (
     <div className='cohortbar'>
       <h2>Choose a Class by Start Date</h2>
 
       <section>{cohortDisplay(data, handleClick)}</section>
+      <br />
     </div>
   );
 }

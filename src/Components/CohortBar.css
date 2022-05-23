@@ -4,7 +4,11 @@
    height: auto;
    position: -webkit-sticky;
    position: sticky;
-   background-color: gray;
-   
+ 
+   border: 2px solid teal;
    float: left;
+}
+.cohorttext {
+    text-decoration: underline;
+    text-decoration-color: teal;
 }

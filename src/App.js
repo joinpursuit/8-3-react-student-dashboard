@@ -18,7 +18,7 @@ class App extends React.Component {
 
   render() {
     const { data } = this.props;
-    console.log('currentState', this.state.selectedCohortCode);
+
     return (
       <main className='main'>
         <h1 className='student-dashboard'>Student Dashboard</h1>

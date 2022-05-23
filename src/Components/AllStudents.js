@@ -22,6 +22,7 @@ function AllStudents(props) {
   };
   return (
     <div className='class-roster'>
+      <h1> {cohortCode}</h1>
       <p className='total'>Total:{displayStudentList(students).length}</p>
       <ul className='student-panel'>{displayStudentList(students)}</ul>;
     </div>
