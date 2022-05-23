@@ -25,6 +25,19 @@ class ShowMore extends Component {
     });
   };
 
+  percentColor = (currentTotal, goal) => {
+    let percentage = currentTotal / goal;
+    percentage *= 100;
+
+    if (percentage >= 100) {
+      return "goalReached";
+    } else if (percentage >= 50 && percentage < 100) {
+      return "halfway";
+    } else if (percentage < 50) {
+      return "underGoal";
+    }
+  };
+
   calculatePercentageOfGoal = (total, goal) => {
     let percentage = total / goal;
     percentage *= 100;
@@ -63,7 +76,12 @@ class ShowMore extends Component {
                     <strong className="grades">Goal: </strong>
                     {students.codewars.goal.total}
                   </p>
-                  <p>
+                  <p
+                    className={this.percentColor(
+                      students.codewars.current.total,
+                      students.codewars.goal.total
+                    )}
+                  >
                     <strong className="grades">
                       Percent of Goal Achieved:{" "}
                     </strong>

@@ -1,12 +1,27 @@
-.ShowMoreInfo {
+.showMoreSection {
+  grid-column: 1/span 3;
+  text-align: center;
+}
+.showMoreSection .ShowMoreInfo {
   grid-column: 1/span 2;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-.ShowMoreInfo img {
+.showMoreSection .ShowMoreInfo img {
   width: 10%;
 }
+.showMoreSection .ShowMoreInfo .grades {
+  color: #01d4f0;
+}
 
-.showMoreSection {
-  grid-column: 1/span 2;
+.goalReached {
+  color: lightgreen;
+}
+
+.halfway {
+  color: yellow;
+}
+
+.underGoal {
+  color: red;
 }

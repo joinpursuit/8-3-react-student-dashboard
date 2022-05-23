@@ -6,6 +6,20 @@ import moment from "moment";
 import ShowMore from "./ShowMore";
 
 class StudentList extends Component {
+  checkGraduationStatus = (students) => {
+    if (
+      students.certifications.github &&
+      students.certifications.linkedin &&
+      students.certifications.mockInterview &&
+      students.certifications.resume &&
+      students.codewars.current.total > 600
+    ) {
+      return "success";
+    } else {
+      return "failure";
+    }
+  };
+
   renderStudentsAndTotal = () => {
     const { studentData, cohortCode } = this.props;
 
@@ -25,6 +39,9 @@ class StudentList extends Component {
               src={students.profilePhoto}
               alt="studentPhoto"
             />
+            <div className={this.checkGraduationStatus(students)}>
+              On Track to Graduate
+            </div>
             <section className="studentInfo">
               <p className="studentName">
                 <strong>
@@ -34,40 +51,42 @@ class StudentList extends Component {
               </p>
               <p className="studentUsername">{students.username}</p>
               <p className="studentDOB">
-                <strong className="DOB">Date of Birth: </strong>
+                <strong className="DOB">Birthday: </strong>
                 {this.convertDOB(students.dob)}
               </p>
             </section>
             <ShowMore students={students} />
           </article>
         );
-      } else {
-        if (students.cohort.cohortCode === cohortCode) {
-          totalStudents++;
-          return (
-            <article key={keyNum++} className="studentCard">
-              <img
-                className="studentPhoto"
-                src={students.profilePhoto}
-                alt="studentPhoto"
-              />
-              <section className="studentInfo">
-                <p className="studentName">
-                  <strong>
-                    {students.names.preferredName} {middleInitial}.{" "}
-                    {students.names.surname}
-                  </strong>
-                </p>
-                <p className="studentUsername">{students.username}</p>
-                <p className="studentDOB">
-                  <strong className="DOB">Date of Birth: </strong>
-                  {this.convertDOB(students.dob)}
-                </p>
-              </section>
-              <ShowMore students={students} />
-            </article>
-          );
-        }
+      } else if (students.cohort.cohortCode === cohortCode) {
+        totalStudents++;
+
+        return (
+          <article key={keyNum++} className="studentCard">
+            <img
+              className="studentPhoto"
+              src={students.profilePhoto}
+              alt="studentPhoto"
+            />
+            <div className={this.checkGraduationStatus(students)}>
+              On Track to Graduate
+            </div>
+            <section className="studentInfo">
+              <p className="studentName">
+                <strong>
+                  {students.names.preferredName} {middleInitial}.{" "}
+                  {students.names.surname}
+                </strong>
+              </p>
+              <p className="studentUsername">{students.username}</p>
+              <p className="studentDOB">
+                <strong className="DOB">Birthday: </strong>
+                {this.convertDOB(students.dob)}
+              </p>
+            </section>
+            <ShowMore students={students} />
+          </article>
+        );
       }
 
       return null;

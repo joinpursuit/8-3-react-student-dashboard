@@ -3,23 +3,25 @@
 }
 
 .StudentList {
-  border: 5px solid cyan;
   height: 100vh;
   width: 100%;
   overflow: auto;
 }
 
 #studentCount {
-  color: orangered;
+  color: purple;
 }
 
 .studentCard {
-  border: 5px solid red;
+  border: 3px solid greenyellow;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr 1fr;
   -moz-column-gap: 3%;
        column-gap: 3%;
   margin-bottom: 3%;
+}
+.studentCard .onTrack {
+  grid-column: 3;
 }
 .studentCard .studentPhoto {
   display: block;
@@ -28,6 +30,8 @@
   grid-row: 1;
 }
 .studentCard .studentInfo {
+  grid-column: 2;
+  grid-row: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,4 +45,12 @@
 }
 .studentCard .studentInfo .studentDOB .DOB {
   color: orange;
+}
+
+.success {
+  color: lightgreen;
+}
+
+.failure {
+  color: red;
 }

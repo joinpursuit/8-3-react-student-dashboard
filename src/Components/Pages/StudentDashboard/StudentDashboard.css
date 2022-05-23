@@ -2,6 +2,7 @@
   text-align: center;
   background-color: lightcoral;
   font-size: 35px;
+  width: 100vw;
 }
 
 .main {
@@ -11,4 +12,5 @@
        column-gap: 3%;
   margin-top: 3%;
   background-color: grey;
+  width: 100vw;
 }
