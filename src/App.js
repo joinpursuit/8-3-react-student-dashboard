@@ -48,10 +48,17 @@ class App extends React.Component {
   render() {
     const cohorts = new Set(data.map((item) => item.cohort.cohortCode));
   return (
-    <div>
+    <div className="dashBoard">
       <h1>Student Dashboard</h1>
-      <CohortList garysCustomClickHandler={()=> this.handleClick()} cohorts={cohorts} />
-      <StudentList students={students} />
+      <CohortList data={Data} garysCustomClickHandler={()=> this.handleClick()} cohorts={cohorts} />
+      <StudentList data={Data} 
+      selectedCohort={selectedCohort}
+      students={students}
+      deets={deets}
+      deetsNstuff={this.showDeets}
+      comments={comments}
+      commentStuff={this.commentStuff}
+       />
     </div>
   )
   }
