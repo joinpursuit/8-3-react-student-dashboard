@@ -18,14 +18,14 @@ body {
 .App h1 {
   background: linear-gradient(
     180deg,
-    rgb(0, 0, 36) 0%,
-    rgb(0, 59, 110) 50%,
-    rgba(0, 109, 204) 100%
+    rgba(0, 109, 204) 10%,
+    rgb(0, 59, 110) 40%,
+    rgb(0, 0, 36) 90%
   );
   color: white;
   text-align: center;
-  padding: 30px;
-  padding-bottom: 50px;
+  padding: 50px;
+  margin-top: 0px;
   margin-bottom: 20px;
   grid-column-start: 1;
   grid-column-end: 4;
