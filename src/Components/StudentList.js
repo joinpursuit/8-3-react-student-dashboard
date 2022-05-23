@@ -4,7 +4,7 @@ import "./StudentList.css";
 function StudentList(props) {
   return (
     <section className="student-list-container">
-      <h2>All Students</h2>
+      <h2>{props.selectedCohort}</h2>
       <p>Total Students: {props.dataLength}</p>
       <div className="student-list">
         {props.data.map((element) => {

@@ -9,9 +9,28 @@ class App extends react.Component {
   constructor(props) {
     super(props);
     this.state = {
-      numberOfStudents: data.length,
+      cohort: "All Students",
+      dynamicData: data.slice(),
       cohortsArray: createCohortsObj(data),
     };
+  }
+
+  handleClick(e) {
+    let cohortCode = e.target.innerText.replaceAll(" ", "");
+    this.setState({
+      dynamicData: data.filter((element) => {
+        return element.cohort.cohortCode.includes(cohortCode);
+      }),
+      cohort: e.target.innerText,
+    });
+    console.log(this.state);
+  }
+
+  handleClick2() {
+    this.setState({
+      cohort: "All Students",
+      dynamicData: data.slice(),
+    });
   }
 
   render() {
@@ -20,11 +39,20 @@ class App extends react.Component {
         <h1 className="header">Student Dashboard</h1>
         <main className="main">
           <CohortList
+            handleClick={() => this.handleClick2()}
             cohortsArray={this.state.cohortsArray.map((element, i) => {
-              return <button key={i}>{element}</button>;
+              return (
+                <button onClick={(e) => this.handleClick(e)} key={i}>
+                  {element}
+                </button>
+              );
             })}
           />
-          <StudentList dataLength={this.state.numberOfStudents} data={data} />
+          <StudentList
+            selectedCohort={this.state.cohort}
+            dataLength={this.state.dynamicData.length}
+            data={this.state.dynamicData}
+          />
         </main>
       </div>
     );
