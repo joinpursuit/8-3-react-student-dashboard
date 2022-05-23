@@ -1,0 +1,96 @@
+.h1 {
+  background-color: green;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 1em;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.studentBox {
+  background-color: lightcyan;
+  border: 2px solid green;
+  padding: 20px;
+  margin: 10px;
+  width: 500px;
+}
+
+.rightSide {
+  position: absolute;
+  right: 20%;
+  top: 22%;
+}
+
+.leftSide {
+  background-color: lightgreen;
+  padding: 10px;
+  padding-left: 30px;
+  width: 26%;
+}
+
+.left:hover {
+  color: aliceblue;
+  background-color: lightslategray;
+  width: 50%;
+  padding: 10px;
+}
+
+hr {
+  width: 300px;
+  text-align: left;
+  margin-left: 0;
+}
+
+.showMore {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.underline {
+  text-decoration: underline;
+  color: green;
+}
+
+.underline:hover {
+  background-color: yellow;
+}
+
+.green {
+  color: green;
+}
+
+.yellow {
+  color: yellow;
+  text-shadow: 1px 1px black;
+}
+
+.red {
+  color: red;
+}
+
+.form-line {
+  width: 100%;
+  border-top: 2px solid green;
+}
+
+.form-box {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#notes {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+}
+
+.onTrack {
+  position: relative;
+  left: 300px;
+  top: -220px;
+  color: green;
+}
