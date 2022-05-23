@@ -1,0 +1,11 @@
+.dashBoard {
+    display: grid; grid-template-columns: 1fr 1fr;
+}
+
+.cohortList{
+    grid-column: .5;
+}
+
+.studentList{
+    grid-column: .33;
+}
