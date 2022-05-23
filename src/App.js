@@ -31,6 +31,20 @@ class App extends React.Component {
     this.setState({selectedCohortCode: clickedItem})
   }
 
+  commentStuff = (studentId, author, comment) => {
+    if(comment !== "" && author !== ""){
+      let record = `[${author}] said: "${comment}"`;
+      let copyOfComments = this.state.comments;
+      if (copyOfComments.hasOwnProperty(studentId)) {
+        copyOfComments[studentId].push(record);
+      } else {
+        copyOfComments[studentId] = [record];
+      }
+      this.setState({comments: copyOfComments,})
+    }
+
+  }
+
   render() {
     const cohorts = new Set(data.map((item) => item.cohort.cohortCode));
   return (
