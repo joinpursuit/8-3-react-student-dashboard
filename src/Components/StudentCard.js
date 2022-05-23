@@ -173,6 +173,11 @@ function formaDOB(rawDate) {
   return formattedDate;
 }
 
+/**
+ * turnToPercent takes in a fraction and returns that number formatted as a percent value of that fraction with no decimal places.
+ * @param {number} num
+ * @returns {number}
+ */
 function turnToPercent(num) {
   let res = num * 100;
   return res.toFixed(0);
