@@ -13,7 +13,7 @@ class StudentList extends React.Component {
     };
 
     displayStudents = (
-        data,
+        input,
         selectedCohort,
         deets,
         deetsNstuff,
