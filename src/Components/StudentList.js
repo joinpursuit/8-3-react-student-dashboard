@@ -6,6 +6,7 @@ function StudentList({ data, cohortli}) {
       <StudentProfile student={student} />
     </div>
   ))
+  
   return (
     <section className='student-list'>
       <h2>{cohortli}</h2>

@@ -1,4 +1,5 @@
 function CorhortList({ data, clickCohort }) {
+  
   const corhortList = data.map(
     (student) => student.cohort.cohortCode.replace(/\B(?=(\d{4})+(?!\d))/g, ' ') //stackoverflow https://stackoverflow.com/questions/2254185/regular-expression-for-formatting-numbers-in-javascript
   )

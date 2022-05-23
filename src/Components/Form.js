@@ -12,7 +12,9 @@ class Form extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    
     console.log(event)
+
     let { comments, commenterName, comment } = this.state
     let newComment = `${commenterName} says, "${comment}"`
     this.setState({ comments: [...comments, newComment] })

@@ -4,6 +4,7 @@ function ShowMoreInfo({
   student: { codewars, cohort, certifications },
   student,
 }) {
+  
   /**
    * a convert to percentage for the codewar scores
    * @param {number} current data codewar.current.total
