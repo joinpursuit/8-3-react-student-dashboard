@@ -9,10 +9,20 @@ class StudentCard extends React.Component {
       gradReqs: this.props.gradReqs,
       assessments: this.props.assessments,
       codewars: this.props.codewars,
+      showMoreClicked: false,
     };
   }
 
   handleMouseOver() {}
+
+  handleClick(e) {
+    this.setState({
+      showMoreClicked: !this.state.showMoreClicked,
+    });
+    e.target.innerText = this.state.showMoreClicked
+      ? "Show More..."
+      : "Show Less...";
+  }
 
   render() {
     const passedReqs = Object.values(this.state.gradReqs).includes(false);
@@ -35,12 +45,23 @@ class StudentCard extends React.Component {
             {this.state.formattedDOb}
           </p>
           <br></br>
-          <p className="green-text underline">Show More...</p>
+          <p
+            onClick={(e) => this.handleClick(e)}
+            className="green-text underline"
+          >
+            Show More...
+          </p>
         </div>
         <div id="grad-message">
           {!passedReqs && passedCodewars ? "On Track to Graduate" : ""}
         </div>
-        <section className="show-more-container">
+        <section
+          className={
+            this.state.showMoreClicked
+              ? "visible show-more-container"
+              : "invisible show-more-container"
+          }
+        >
           <div id="codewars-div">
             <h4>CodeWars:</h4>
             <p>

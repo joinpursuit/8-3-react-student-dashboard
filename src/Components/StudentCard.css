@@ -49,3 +49,11 @@
 .green-text {
     color: green;
 }
+
+.visible {
+    display: auto;
+}
+
+.invisible {
+    display: none;
+}
