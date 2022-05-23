@@ -17,9 +17,14 @@
     padding: 10px;
 }
 
+#one-on-one-container {
+    margin-left: 10px;
+}
+
 #codewars-div,
 #scores-div,
-#certs-div {
+#certs-div,
+#one-on-one-title {
     text-align: center;
 }
 
