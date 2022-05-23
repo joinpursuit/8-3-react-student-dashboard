@@ -23,15 +23,22 @@
 }
 
 #one-on-one-container {
+    border: 1px solid black;
     display: grid;
     grid-row: 3;
     grid-column: 1 / 4;
-    margin-left: 10px;
+    padding: 20px;
 }
 
 form {
     display: grid;
     grid-template-rows: 1fr 2fr 1fr;
+}
+
+#codewars-div,
+#scores-div,
+#certs-div {
+    border: 1px solid black;
 }
 
 #codewars-div,
