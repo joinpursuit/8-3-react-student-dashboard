@@ -18,8 +18,8 @@ function StudentInfo(props) {
     const { resume, linkedin, github, mockInterview } = student.certifications;
     const codewarsScore = student.codewars.current.total;
     if (resume && linkedin && github && mockInterview && codewarsScore > 600) {
-      return 'EXCELLENT! ON TRACK TO GRADUATE!';
-    } else return 'ALMOST THERE! KEEP IT UP!';
+      return 'Excellent! On track to graduate!';
+    } else return "You're almost there! Keep it up!";
   };
   return (
     <div>

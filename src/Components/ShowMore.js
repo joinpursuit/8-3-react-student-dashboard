@@ -1,4 +1,5 @@
 import React from 'react';
+import OneOnOne from './OneOnOne';
 
 class ShowMore extends React.Component {
   constructor() {
@@ -10,11 +11,11 @@ class ShowMore extends React.Component {
 
   render() {
     const { student } = this.props;
+    const notes = student.notes;
     const currentTotal = student.codewars.current.total;
     const currentLastWeek = student.codewars.current.lastWeek;
     const goalTotal = student.codewars.goal.total;
     const goalLastWeek = student.codewars.goal.lastWeek;
-
     const percentage = ((currentTotal / goalTotal) * 100).toFixed(0);
 
     /**
@@ -92,6 +93,7 @@ class ShowMore extends React.Component {
             <p>{student.scores}</p>
           </div>
         )}
+        <OneOnOne notes={notes} />
       </div>
     );
   }

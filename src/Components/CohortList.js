@@ -15,8 +15,6 @@ function CohortList(props) {
         obj[cohortArr[i]] = cohortArr[i];
       }
     }
-    console.log('This is Object:', Object.keys(obj));
-    console.log('This is type of Object:', typeof Object.keys(obj));
     return Object.keys(obj);
   };
 
