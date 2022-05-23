@@ -94,7 +94,7 @@ class Students extends React.Component {
                                               codewars={student.codewars.current.total}
                         /></span>
                       </div>
-                      <p>{student.username}</p>
+                      <p>Username: <span>{student.username}</span></p>
                       <p>Birthday: <span>{this.getFormatedDOB(student.dob)}</span></p>
                     </div>
                   </section> 
