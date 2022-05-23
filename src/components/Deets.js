@@ -59,7 +59,7 @@ class Deets extends React.Component {
     );
 
     return (
-      <div className="detailContainer">
+      <div className="details">
         <div className="codewars">
           <h4>Codewars:</h4>
           <p>

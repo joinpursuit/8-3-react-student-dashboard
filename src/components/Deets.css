@@ -1,0 +1,23 @@
+.green{
+    color:green;
+}
+
+.yellow{
+    color:yellow;
+}
+
+.red{
+    color:red;
+}
+
+.details{
+    display: grid;
+    grid-column: .25;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+    width:90%;
+}
+
+button:hover{
+    color: pink;
+}
