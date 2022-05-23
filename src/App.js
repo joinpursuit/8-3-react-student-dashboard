@@ -50,7 +50,7 @@ class App extends React.Component {
   return (
     <div className="dashBoard">
       <h1>Student Dashboard</h1>
-      <CohortList data={Data} garysCustomClickHandler={()=> this.handleClick()} cohorts={cohorts} />
+      <CohortList selectCohort={this.selectCohort} data={Data} garysCustomClickHandler={()=> this.handleClick()} cohorts={cohorts} />
       <StudentList data={Data} 
       selectedCohort={selectedCohort}
       students={students}
