@@ -1,3 +1,4 @@
+import "./Cohort.css"
 
 const cohortStuff = (cohortCode) => {
     if (cohortCode === "All Students") return "All Students";
