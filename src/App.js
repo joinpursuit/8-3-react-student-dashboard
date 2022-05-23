@@ -23,7 +23,6 @@ class App extends react.Component {
       }),
       cohort: e.target.innerText,
     });
-    console.log(this.state);
   }
 
   handleClick2() {
