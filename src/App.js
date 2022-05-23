@@ -21,7 +21,10 @@ class App extends React.Component {
   }
 
   showDeets = (studentId) => {
-    
+    let copyOfDeets = [...this.state.deets];
+    copyOfDeets.includes(studentId) ? copyOfDeets.splice(copyOfDeets.indexOf(studentId), 1) 
+    : copyOfDeets.push(studentId);
+    this.setState({deets: copyOfDeets,})
   }
 
   handleClick(clickedItem) {
