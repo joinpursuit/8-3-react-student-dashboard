@@ -5,7 +5,7 @@ function StudentList(props) {
   const { students, cohortCode } = props;
 
   /**
-   *
+   * displayStudentList to show the list of all students with detailed information.
    * @param {Object[]} students - An array of object with detailed info of all students.
    * @returns {String[]} - An array of strings with cohort code (ex: Winter 2025)
    * @returns {Object[]} - A new array of students objects based on their cohort code.

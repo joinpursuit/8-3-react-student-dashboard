@@ -15,7 +15,7 @@ class ShowMore extends React.Component {
     const goalTotal = student.codewars.goal.total;
     const goalLastWeek = student.codewars.goal.lastWeek;
 
-    const percentage = ((currentLastWeek / goalTotal) * 100).toFixed(0);
+    const percentage = ((currentTotal / goalTotal) * 100).toFixed(0);
 
     /**
      * showMoreButton to show more detailed info about each student
@@ -56,12 +56,11 @@ class ShowMore extends React.Component {
             <p>Goal Total: {goalTotal}</p>
             <p>Goal LastWeek: {goalLastWeek}</p>
             <p>
-              Percentage Achieved:
               <span
                 style={{ color: changeCodewarsPercentageColor(percentage) }}
               >
                 {' '}
-                <strong>{percentage}%</strong>
+                <strong> Percentage Of Goal Achieved: {percentage}%</strong>
               </span>
             </p>
             <br></br>
