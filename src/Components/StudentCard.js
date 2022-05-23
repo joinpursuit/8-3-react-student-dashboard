@@ -127,8 +127,9 @@ class StudentCard extends React.Component {
               {this.state.gradReqs.github ? "✅" : "❌"}
             </p>
           </div>
+          <br></br>
           <div id="one-on-one-container">
-            <h4 id="one-on-one-title">1-On-1 Notes</h4>
+            <h4 id="one-on-one-title">1-on-1 Notes</h4>
             <form>
               <label>
                 Commenter Name: <input type="text" />
