@@ -10,6 +10,7 @@ class App extends React.Component {
     this.state = {
       studentData: [...Data],
       cohortli: 'All Students',
+      showMore: false,
     }
   }
 
@@ -28,15 +29,22 @@ class App extends React.Component {
     }
   }
 
+
+  
   render() {
-    let { studentData, cohortli } = this.state
+    let { studentData, cohortli, showMore } = this.state
 
     return (
       <section className='whole-class'>
         <h1>Student Dashboard</h1>
         <div className='student-dash'>
           <CorhortList data={Data} clickCohort={this.clickCohort} />
-          <StudentList data={studentData} cohortli={cohortli} />
+          <StudentList
+            data={studentData}
+            cohortli={cohortli}
+            showMore={showMore}
+            clickShowMore={this.clickShowMore}
+          />
         </div>
       </section>
     )
