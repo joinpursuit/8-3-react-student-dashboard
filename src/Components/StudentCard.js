@@ -10,10 +10,37 @@ class StudentCard extends React.Component {
       assessments: this.props.assessments,
       codewars: this.props.codewars,
       showMoreClicked: false,
+      comments: "",
+      commenter: "",
+      formattedComment: [],
     };
   }
 
   handleMouseOver() {}
+
+  handleFormSubmit(e) {
+    e.preventDefault();
+    let commentor = e.target.commenterName.value;
+    let comment = e.target.comment.value;
+
+    e.target.commenterName.value = "";
+    e.target.comment.value = "";
+
+    this.setState({
+      comments: comment,
+      commenter: commentor,
+    });
+
+    let formattedComment = [];
+    formattedComment.push(
+      `${this.state.commenter} says, "${this.state.comments}"`
+    );
+
+    this.setState({
+      formattedComment: formattedComment,
+    });
+    console.log(this.state.formattedComment);
+  }
 
   comparePercentagesColor(Percent) {
     if (Percent < 50) {
@@ -130,19 +157,25 @@ class StudentCard extends React.Component {
           <br></br>
           <div id="one-on-one-container">
             <h4 id="one-on-one-title">1-on-1 Notes</h4>
-            <form>
-              <label>
-                Commenter Name: <input type="text" />
+            <form onSubmit={(e) => this.handleFormSubmit(e)}>
+              <label htmlFor="commenter-name">
+                Commenter Name:{" "}
+                <input name="commenterName" id="commenter-name" type="text" />
               </label>
-              <label>
-                Commenter Notes: <input type="text" />
+              <label htmlFor="comment">
+                Commenter Notes:{" "}
+                <input name="comment" id="comment" type="text" />
               </label>
               <br></br>
               <br></br>
               <input type="submit" />
             </form>
             <hr></hr>
-            <p></p>
+            <ul>
+              {this.state.formattedComment.map((comment, i) => {
+                return <li key={i}>{comment}</li>;
+              })}
+            </ul>
           </div>
         </section>
       </div>
