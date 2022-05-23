@@ -10,7 +10,6 @@ class App extends React.Component {
     this.state = {
       studentData: [...Data],
       cohortli: 'All Students',
-      showMore: false,
     }
   }
 
@@ -29,8 +28,6 @@ class App extends React.Component {
     }
   }
 
-
-  
   render() {
     let { studentData, cohortli, showMore } = this.state
 

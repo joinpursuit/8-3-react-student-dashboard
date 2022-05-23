@@ -6,7 +6,7 @@ h1 {
 
 div.student-dash {
   display: grid;
-  grid-template-columns: repeat(2, 1fr) ;
+  grid-template-columns: repeat(2, 1fr);
   background-color: #dfe6f6;
 }
 
@@ -86,4 +86,3 @@ section.show-info {
   color: #9a5296;
   cursor: pointer;
 }
-
