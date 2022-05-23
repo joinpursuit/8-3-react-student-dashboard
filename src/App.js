@@ -46,7 +46,7 @@ class App extends React.Component {
     } else if (buttonClicked % 2 === 0) {
       return "Night-Theme";
     } else {
-      return "Rose-Gold";
+      return "Rose";
     }
   };
 

@@ -31,14 +31,15 @@
 }
 
 
-.Rose-Gold {
+
+.Rose {
     background-color: pink;
 }
-.Rose-Gold .main-section {
+.Rose .main-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
-.Rose-Gold header {
+.Rose header {
     background-color: #E386A9;
     text-align: center;
     padding-top: 1em;
@@ -46,50 +47,48 @@
     color: white
 
 }
-.Rose-Gold div {
+.Rose div {
     font-family: fantasy;
 }
-.Rose-Gold .right-side {
+.Rose .right-side {
     grid-column: 2 / span 3;
 }
-.Rose-Gold .All {
+.Rose .All {
     border-bottom: 2px solid #D68AA8;;
     cursor: pointer;
 }
-.Rose-Gold .class-item {
+.Rose .class-item {
     border-bottom: 2px solid #D68AA8;
     cursor: pointer;
 }
-.Rose-Gold .graduation {
+.Rose .graduation {
     color: #C2587B;
     float: right;
     margin-right: 50px;
 }
-.Rose-Gold .colored {
+.Rose .colored {
     color: #C2587B;
 }
-.Rose-Gold .card {
+.Rose .card {
     border: 2px solid #D68AA8;
     margin: 10px;
     padding: 10px;
 }
-.Rose-Gold .show-more  {
+.Rose .show-more  {
     display: block;
     cursor: pointer;
     color: #C2587B;
     text-decoration: underline;
 }
-.Rose-Gold .notes {
+.Rose .notes {
     border: 2px solid #D68AA8;
 }
-.Rose-Gold .note-button {
+.Rose .note-button {
     background-color: #D68AA8;
     border-color: #D68AA8;
     color: white;
     cursor: pointer;
 }
-
-
 
 
 
