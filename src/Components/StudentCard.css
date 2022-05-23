@@ -83,3 +83,7 @@ form {
 .invisible {
     display: none;
 }
+
+p:hover {
+    color: blue;
+}
