@@ -1,4 +1,5 @@
 import Cohort from "./Cohort";
+import "./CohortList.css"
 
 const cohortArr = (input) => {
  let cohortObj = {};

@@ -1,0 +1,27 @@
+.student{
+    display:grid;
+    grid-template-columns: 160px 1fr 1fr;
+    margin-bottom: 20px;
+    border: 2px solid magenta;
+    width: 700px;
+}
+
+.student img{
+    margin:auto;
+    margin-top: 30px;
+    height: 140px;
+}
+
+.button{
+    grid-column: .33;
+    height: 20px;
+    text-decoration: underline;
+    color: rosybrown;
+}
+
+.button{
+    color:white;
+    background-color: blueviolet;
+    width: 100px;
+    height:40px;
+}
