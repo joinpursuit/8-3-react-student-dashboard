@@ -16,4 +16,19 @@ button {
     border: none;
     color: white;
     padding: 5px 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+li {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }

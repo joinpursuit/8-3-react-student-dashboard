@@ -13,7 +13,7 @@ function FeedbackForm(props) {
   } = props;
   return (
     <section className="feedback">
-      <h4>1-on-1 Notes</h4>
+      <h4>Student Feedback</h4>
       <form onSubmit={submitHandler} className="form-container">
         <label htmlFor="name">Commenter Name </label>
         <input
@@ -21,6 +21,7 @@ function FeedbackForm(props) {
           name="name"
           value={person}
           onChange={commentNameHandler}
+          required
         />
         <br />
         <label htmlFor="comment">Comment: </label>
@@ -29,6 +30,7 @@ function FeedbackForm(props) {
           name="comment"
           value={comment}
           onChange={commentHandler}
+          required
         />
         <br />
         <button type="submit">Add Note</button>
