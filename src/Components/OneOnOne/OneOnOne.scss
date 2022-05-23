@@ -1,0 +1,25 @@
+.OneOnOneSection {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  height: 100%;
+
+  #OneOnOneTitle {
+    color: green;
+    grid-column: 1 / span 2;
+    text-align: center;
+  }
+
+  #OneOnOneForm {
+    border: 3px solid black;
+    grid-column: 1;
+    text-align: center;
+    height: 15em;
+  }
+
+  #commentList {
+    height: 15em;
+    overflow: auto;
+  }
+}

@@ -4,17 +4,8 @@ import { Component } from "react";
 import moment from "moment";
 
 import ShowMore from "./ShowMore";
-import ShowMoreButton from "./ShowMoreButton";
 
 class StudentList extends Component {
-  constructor() {
-    super();
-    this.state = {
-      showMore: false,
-      studentID: null,
-    };
-  }
-
   renderStudentsAndTotal = () => {
     const { studentData, cohortCode } = this.props;
 
@@ -46,18 +37,8 @@ class StudentList extends Component {
                 <strong className="DOB">Date of Birth: </strong>
                 {this.convertDOB(students.dob)}
               </p>
-              <ShowMoreButton
-                handleShowMore={this.handleShowMore}
-                students={students}
-                showMore={this.state.showMore}
-                studentID={this.state.studentID}
-              />
             </section>
-            <ShowMore
-              students={students}
-              showMore={this.state.showMore}
-              studentID={this.state.studentID}
-            />
+            <ShowMore students={students} />
           </article>
         );
       } else {
@@ -82,18 +63,8 @@ class StudentList extends Component {
                   <strong className="DOB">Date of Birth: </strong>
                   {this.convertDOB(students.dob)}
                 </p>
-                <div
-                  className="showMoreButton"
-                  onClick={() => this.handleShowMore(students)}
-                >
-                  {this.state.showMore ? "Show less..." : "Show more..."}
-                </div>
               </section>
-              <ShowMore
-                students={students}
-                showMore={this.state.showMore}
-                studentID={this.state.studentID}
-              />
+              <ShowMore students={students} />
             </article>
           );
         }
@@ -118,19 +89,13 @@ class StudentList extends Component {
     return dateFormatted;
   };
 
-  handleShowMore = (studentid) => {
-    this.setState({
-      showMore: !this.state.showMore,
-      studentID: studentid,
-    });
-  };
-
   render() {
     const { cohortCode } = this.props;
+    let readable = cohortCode.split(/([0-9]+)/).join(" ");
 
     return (
-      <section>
-        <h1>{cohortCode}</h1>
+      <section className="studentListSection">
+        <h1>{readable}</h1>
         {this.renderStudentsAndTotal()}
       </section>
     );

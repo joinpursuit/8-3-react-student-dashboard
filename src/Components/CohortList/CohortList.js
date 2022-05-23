@@ -1,8 +1,8 @@
 import "./CohortList.scss";
 
 const CohortList = (props) => {
-  const renderCohortList = () => {
-    const { studentData, changeCohortCode } = props;
+  const getCohorts = () => {
+    const { studentData } = props;
 
     let cohortArr = [];
 
@@ -16,20 +16,49 @@ const CohortList = (props) => {
       return cohortArr;
     });
 
+    return renderCohortList(cohortArr);
+  };
+
+  const renderCohortList = (cohortArr) => {
+    const { changeCohortCode } = props;
+
+    const springArr = [];
+    const summerArr = [];
+    const fallArr = [];
+    const winterArr = [];
+    let cohortOrderArr = [];
+
+    for (const cohort of cohortArr) {
+      if (cohort.toLowerCase().includes("spring")) {
+        springArr.push(cohort);
+      } else if (cohort.toLowerCase().includes("summer")) {
+        summerArr.push(cohort);
+      } else if (cohort.toLowerCase().includes("fall")) {
+        fallArr.push(cohort);
+      } else if (cohort.toLowerCase().includes("winter")) {
+        winterArr.push(cohort);
+      }
+    }
+
+    cohortOrderArr = springArr.concat(summerArr, fallArr, winterArr);
+
+    const seasons = ["Spring", "Summer", "Fall", "Winter"];
+    const regexp = /(.+)(\d{4})/;
+
+    let cohortdescendingOrder = cohortOrderArr
+      .map((el) => {
+        const [season, year] = regexp.exec(el).slice(1);
+        return [season, year, seasons.indexOf(season[0])];
+      })
+      .sort((firstEle, secondEle) => {
+        return secondEle[1] - firstEle[1] || 0;
+      })
+      .map((el) => el[0] + el[1]);
+
     let keyNum = 0;
 
-    const cohortList = cohortArr.map((cohorts) => {
-      let seasonArr = [];
-
-      let test = cohorts.toLowerCase();
-
-      // console.log(test);
-      // if (cohorts.includes("Winter")) {
-      //   console.log("yes");
-      // }
-      // switch (cohorts) {
-      //   case cohorts.includes()
-      // }
+    const cohortList = cohortdescendingOrder.map((cohorts) => {
+      let readable = cohorts.split(/(\d+)/).join(" ");
 
       return (
         <li
@@ -37,28 +66,26 @@ const CohortList = (props) => {
           className="cohortCodes"
           onClick={() => changeCohortCode(cohorts)}
         >
-          {cohorts}
+          {readable}
         </li>
       );
     });
 
-    return (
-      <ul className="cohortList">
-        <p
-          id="allStudentsCohort"
-          onClick={() => changeCohortCode("All Students")}
-        >
-          All Students
-        </p>
-        {cohortList}
-      </ul>
-    );
+    return cohortList;
   };
 
   return (
     <section className="CohortSection">
       <h1>Choose a Class by Start Date</h1>
-      {renderCohortList()}
+      <ul className="cohortList">
+        <li
+          id="allStudentsCohort"
+          onClick={() => props.changeCohortCode("All Students")}
+        >
+          All Students
+        </li>
+        {getCohorts()}
+      </ul>
     </section>
   );
 };

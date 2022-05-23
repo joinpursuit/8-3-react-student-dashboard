@@ -1,6 +1,7 @@
 import Data from "../../../data/data.json";
 import StudentList from "../../StudentList/StudentList";
 import CohortList from "../../CohortList/CohortList";
+import OneOnOne from "../../OneOnOne/OneOnOne";
 
 import { Component } from "react";
 import "./StudentDashboard.scss";
@@ -29,6 +30,7 @@ class StudentDashboard extends Component {
             studentData={Data}
             changeCohortCode={this.changeCohortCode}
           />
+          <OneOnOne cohortCode={this.state.cohortCode} />
         </section>
       </section>
     );

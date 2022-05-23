@@ -1,8 +1,11 @@
+.studentListSection {
+  width: 100%;
+}
+
 .StudentList {
   border: 5px solid cyan;
-  grid-column: 2;
-  grid-row: 1;
   height: 100vh;
+  width: 100%;
   overflow: auto;
 }
 
@@ -14,16 +17,17 @@
   border: 5px solid red;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 3%;
+  column-gap: 3%;
   margin-bottom: 3%;
 
   .studentPhoto {
+    display: block;
     width: 100%;
     grid-column: 1;
+    grid-row: 1;
   }
 
   .studentInfo {
-    grid-column: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;

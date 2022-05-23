@@ -10,7 +10,7 @@
 
     #allStudentsCohort {
       margin-top: 10%;
-      border-bottom: 3px solid cyan;
+      border-bottom: 3px solid red;
       cursor: pointer;
     }
 
@@ -20,4 +20,8 @@
       cursor: pointer;
     }
   }
+}
+
+.selected {
+  border-bottom: cyan;
 }
