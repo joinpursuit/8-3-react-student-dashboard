@@ -60,13 +60,15 @@ const StudentCard = ({ student, handleComments }) => {
   const { names, profilePhoto, username, dob, certifications } = student;
   return (
     <div className="card">
-      <p className="graduation">{graduationCheck(certifications)}</p>
-      <h4>{`${names.preferredName} ${names.middleName} ${names.surname}`}</h4>
-      <p>{username}</p>
-      <img className="profile" src={profilePhoto} alt={names.preferredName} />
-      <div className="birthday">
-        <p className="green left">Birthday: </p>
-        <p className="dob right">{formatBirthdayText(dob)}</p>
+      <div className="basic-info">
+        <img className="profile" src={profilePhoto} alt={names.preferredName} />
+        <p className="graduation">{graduationCheck(certifications)}</p>
+        <h4>{`${names.preferredName} ${names.middleName} ${names.surname}`}</h4>
+        <p>{username}</p>
+        <div className="birthday">
+          <p className="colored left">Birthday: </p>
+          <p className="dob right">{formatBirthdayText(dob)}</p>
+        </div>
       </div>
       <div>
         <ShowMore student={student} handleComments={handleComments} />

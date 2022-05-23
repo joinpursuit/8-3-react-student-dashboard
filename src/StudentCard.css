@@ -17,12 +17,11 @@
 .right {
     float: right;
 }
-
-.green {
-    color: #6B9473;
+.side {
+    float: right;
 }
-.show-more {
-    text-decoration: underline;
+.colored {
+    color: #6B9473;
 }
 .graduation {
     color: green;

@@ -5,6 +5,8 @@
 .show-more  {
     display: block;
     cursor: pointer;
+    color: #729175;
+    text-decoration: underline;
 }
 .info-container {
     display: grid;

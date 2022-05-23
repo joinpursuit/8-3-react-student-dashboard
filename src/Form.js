@@ -17,7 +17,7 @@ export default class Form extends Component {
     this.setState({ comment: event.target.value });
   };
 
-  handleFormSubmission = (event) => {
+  handleFormSubmission = (event, studentId) => {
     event.preventDefault();
     const { commenterName, comment } = this.state;
     if (commenterName && comment) {
@@ -56,7 +56,11 @@ export default class Form extends Component {
         <ul id="my-list">
           {student.notes.length
             ? student.notes.map((note) => {
-                return <li>{`${note.commenter} says: ${note.comment}`}</li>;
+                return (
+                  <li
+                    key={student.id}
+                  >{`${note.commenter} says: ${note.comment}`}</li>
+                );
               })
             : ""}
         </ul>

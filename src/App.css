@@ -1,8 +1,21 @@
-.main-section {
+.fun {
+    border-radius: 5px;
+    background-color: white;
+    border-color: white;
+    border-style: solid;
+    cursor: pointer;
+}
+.fun:hover {
+    color: white;
+    background-color: black;
+    border-color: black;
+}
+
+.Default .main-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
-header {
+.Default header {
     background-color: #699272;
     text-align: center;
     padding-top: 1em;
@@ -10,8 +23,133 @@ header {
     color: white
 
 }
-
-
-.right-side {
+.Default div {
+    font-family: Trebuchet MS;
+}
+.Default .right-side {
     grid-column: 2 / span 3;
 }
+
+
+.Rose-Gold {
+    background-color: pink;
+}
+.Rose-Gold .main-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.Rose-Gold header {
+    background-color: #E386A9;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 10px;
+    color: white
+
+}
+.Rose-Gold div {
+    font-family: fantasy;
+}
+.Rose-Gold .right-side {
+    grid-column: 2 / span 3;
+}
+.Rose-Gold .All {
+    border-bottom: 2px solid #D68AA8;;
+    cursor: pointer;
+}
+.Rose-Gold .class-item {
+    border-bottom: 2px solid #D68AA8;
+    cursor: pointer;
+}
+.Rose-Gold .graduation {
+    color: #C2587B;
+    float: right;
+    margin-right: 50px;
+}
+.Rose-Gold .colored {
+    color: #C2587B;
+}
+.Rose-Gold .card {
+    border: 2px solid #D68AA8;
+    margin: 10px;
+    padding: 10px;
+}
+.Rose-Gold .show-more  {
+    display: block;
+    cursor: pointer;
+    color: #C2587B;
+    text-decoration: underline;
+}
+.Rose-Gold .notes {
+    border: 2px solid #D68AA8;
+}
+.Rose-Gold .note-button {
+    background-color: #D68AA8;
+    border-color: #D68AA8;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+.Night-Theme {
+    background-color: #141414;
+    text-decoration: white;
+}
+.Night-Theme .main-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: white
+}
+.Night-Theme header {
+    background-color: #1F0243;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 10px;
+    color: white
+}
+.Night-Theme div {
+    font-family: 'Times New Roman', Times, serif;
+}
+.Night-Theme .right-side {
+    grid-column: 2 / span 3;
+}
+.Night-Theme .All {
+    border-bottom: 2px solid #575AA1;;
+    cursor: pointer;
+}
+.Night-Theme .class-item {
+    border-bottom: 2px solid #575AA1;
+    cursor: pointer;
+}
+.Night-Theme .graduation {
+    color: #575AA1;
+    float: right;
+    margin-right: 50px;
+}
+.Night-Theme .colored {
+    color: #575AA1;
+}
+.Night-Theme .card {
+    border: 2px solid #575AA1;
+    margin: 10px;
+    padding: 10px;
+}
+.Night-Theme .show-more  {
+    display: block;
+    cursor: pointer;
+    color: #575AA1;
+    text-decoration: underline;
+}
+.Night-Theme .notes {
+    border: 2px solid #575AA1;
+}
+.Night-Theme .note-button {
+    background-color: #575AA1;
+    border-color: #575AA1;
+    color: white;
+    cursor: pointer;
+}
+
+

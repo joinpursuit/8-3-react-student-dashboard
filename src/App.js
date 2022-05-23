@@ -12,6 +12,7 @@ class App extends React.Component {
       classCode: "All Classes",
       currentCohort: data,
       comments: {},
+      buttonClicked: 0,
     };
   }
 
@@ -31,15 +32,30 @@ class App extends React.Component {
 
   addComments = (commenterName, comment) => {
     const newCommentObj = {};
-    if (commenterName in Object.keys(newCommentObj)) {
-      newCommentObj[commenterName].push(comment);
-    } else {
-      newCommentObj[commenterName] = ` says: ${comment}`;
-    }
+
+    newCommentObj[commenterName] = ` says: ${comment}`;
 
     this.setState({
       comments: newCommentObj,
     });
+  };
+
+  changeTheme = (buttonClicked) => {
+    if (buttonClicked === 0 || buttonClicked % 3 === 0) {
+      return "Default";
+    } else if (buttonClicked % 2 === 0) {
+      return "Night-Theme";
+    } else {
+      return "Rose-Gold";
+    }
+  };
+
+  handleThemeButton = (event, buttonClicked) => {
+    event.preventDefault();
+    this.setState({
+      buttonClicked: (buttonClicked += 1),
+    });
+    this.changeTheme(buttonClicked);
   };
 
   render() {
@@ -48,9 +64,17 @@ class App extends React.Component {
     });
 
     return (
-      <div>
+      <div className={this.changeTheme(this.state.buttonClicked)}>
         <header>
           <h1>Student Dashboard</h1>
+          <button
+            className="fun"
+            onClick={(event) => {
+              this.handleThemeButton(event, this.state.buttonClicked);
+            }}
+          >
+            Change Theme
+          </button>
         </header>
         <section className="main-section">
           <div className="left-side">

@@ -25,18 +25,7 @@ class ShowMore extends React.Component {
   };
 
   passFailImage = (check) => {
-    return check ? (
-      <img
-        src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/check-mark_2714-fe0f.png"
-        alt="pass"
-      />
-    ) : (
-      <img
-        className="float-right"
-        src="https://www.dictionary.com/e/wp-content/uploads/2018/05/cross-mark.png"
-        alt="fail"
-      />
-    );
+    return check ? "✅" : "❌";
   };
 
   checkAssignment = (percent) => {
@@ -93,7 +82,7 @@ class ShowMore extends React.Component {
             <p>GitHub: {this.passFailImage(certifications.mockInterview)}</p>
           </div>
           <div className="form">
-            <Form student={student} handleComments={() => handleComments} />
+            <Form student={student} handleComments={handleComments} />
           </div>
         </div>
       </div>

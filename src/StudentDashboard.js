@@ -1,6 +1,5 @@
 import React from "react";
 import StudentCard from "./StudentCard";
-import CommentList from "./CommentList";
 
 class StudentDashboard extends React.Component {
   constructor() {

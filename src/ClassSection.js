@@ -3,8 +3,15 @@ import "./ClassSection.css";
 import CreateClass from "./CreateClass";
 
 const ClassSection = ({ studentArray, classListArray, handleClick }) => {
-  const cohorts = new Set(classListArray); //this will create a Set of cohortCodes, not allowing repeats
-  //Array.from(cohorts);
+  let cohorts = new Set(classListArray); //this will create a Set of cohortCodes, not allowing repeats
+  cohorts = Array.from(cohorts);
+  cohorts = cohorts.sort();
+  cohorts = cohorts.sort(function (a, b) {
+    return (
+      a.substring(a.length - 4, a.length) - b.substring(b.length - 4, b.length)
+    );
+  });
+  cohorts = new Set(cohorts);
 
   return (
     <div className="list">

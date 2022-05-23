@@ -9,11 +9,19 @@
     align-items: center;
 }
 
+label {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
 .note-button {
     max-width: 100px;
     background-color: #699271;
     border-radius: 5px;
     border-color: #699271;
     border-style: solid;
-    color: white
+    color: white;
+    cursor: pointer;
+}
+.note-button:hover {
+    background-color: cornflowerblue;
 }
