@@ -36,7 +36,7 @@ function CohortBar(props) {
       }
     });
   };
-  const displayCohort = (data, handleClick) => {
+  const cohortDisplay = (data, handleClick) => {
     const cohortArr = data.map((student) => {
       return student.cohort.cohortCode;
     });
@@ -56,7 +56,7 @@ function CohortBar(props) {
     <div className='cohortbar'>
       <h2>Choose a Class by Start Date</h2>
 
-      <section>{displayCohort(data, handleClick)}</section>
+      <section>{cohortDisplay(data, handleClick)}</section>
     </div>
   );
 }
