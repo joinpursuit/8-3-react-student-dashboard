@@ -1,0 +1,26 @@
+
+.sidebar  {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: auto;
+    width: 280px;
+    background-color: rgb(116, 16, 11);
+    padding: 10px;
+    color: #fff;
+    left: 1em;
+
+}
+
+.semester {
+    font-size: 18px;
+    padding: 10px;
+    border-bottom: solid;
+}
+
+.semester:hover {
+    background-color: rgb(239, 239, 230);
+    color: rgb(116, 16, 11);
+    transform: scale(1.1); 
+}
