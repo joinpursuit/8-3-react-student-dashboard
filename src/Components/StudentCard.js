@@ -7,15 +7,21 @@ class StudentCard extends React.Component {
     this.state = {
       formattedDOb: formaDOB(this.props.birthday),
       gradReqs: this.props.gradReqs,
-      codewarsScore: this.props.currentCodewarsScore,
+      assessments: this.props.assessments,
+      codewars: this.props.codewars,
     };
   }
 
   handleMouseOver() {}
 
   render() {
+    console.log(this.state.gradReqs);
     const passedReqs = Object.values(this.state.gradReqs).includes(false);
-    const passedCodewars = this.state.codewarsScore > 600;
+    const passedCodewars = this.state.codewars.current.total > 600;
+
+    let goalPerc = turnToPercent(
+      this.state.codewars.current.total / this.state.codewars.goal.total
+    );
 
     return (
       <div className="student-card">
@@ -26,24 +32,68 @@ class StudentCard extends React.Component {
           </p>
           <p>{this.props.email}</p>
           <p>
-            <span id="birthday-label">Birthday: </span>
+            <span className="green-text">Birthday: </span>
             {this.state.formattedDOb}
           </p>
           <br></br>
-          <p id="show-more">Show More...</p>
+          <p className="green-text underline">Show More...</p>
         </div>
         <div id="grad-message">
           {!passedReqs && passedCodewars ? "On Track to Graduate" : ""}
         </div>
         <section className="show-more-container">
           <div id="codewars-div">
-            <p>CodeWars</p>
+            <h4>CodeWars:</h4>
+            <p>
+              <span className="green-text">Current Total:</span>{" "}
+              {this.state.codewars.current.total}
+            </p>
+            <p>
+              <span className="green-text">Last Week:</span>{" "}
+              {this.state.codewars.current.lastWeek}
+            </p>
+            <p>
+              <span className="green-text">Goal:</span>{" "}
+              {this.state.codewars.goal.total}
+            </p>
+            <p>
+              <span className="green-text">Percent of Goal Achieved:</span>{" "}
+              {goalPerc}%
+            </p>
           </div>
           <div id="scores-div">
-            <p>Scores</p>
+            <h4>Scores:</h4>
+            <p>
+              <span className="green-text">Assigments:</span>{" "}
+              {turnToPercent(this.state.assessments.assignments)}%
+            </p>
+            <p>
+              <span className="green-text">Projects:</span>{" "}
+              {turnToPercent(this.state.assessments.projects)}%
+            </p>
+            <p>
+              <span className="green-text">Assessments:</span>{" "}
+              {turnToPercent(this.state.assessments.assessments)}%
+            </p>
           </div>
           <div id="certs-div">
-            <p>Certifications</p>
+            <h4>Certifications:</h4>
+            <p>
+              <span className="green-text">Resume</span>:{" "}
+              {this.state.gradReqs.resume ? "✅" : "❌"}
+            </p>
+            <p>
+              <span className="green-text">Linked-In:</span>{" "}
+              {this.state.gradReqs.linkedin ? "✅" : "❌"}
+            </p>
+            <p>
+              <span className="green-text">Mock Interview:</span>{" "}
+              {this.state.gradReqs.mockInterview ? "✅" : "❌"}
+            </p>
+            <p>
+              <span className="green-text">Git-Hub:</span>{" "}
+              {this.state.gradReqs.github ? "✅" : "❌"}
+            </p>
           </div>
         </section>
       </div>
@@ -53,6 +103,11 @@ class StudentCard extends React.Component {
 
 // Helper Functions
 
+/**
+ * formaDOB coverts an inputed string representing a date in "dd/mm/yyyy" format and returns a string with "Month Day, Year" format
+ * @param {string} rawDate
+ * @returns {string}
+ */
 function formaDOB(rawDate) {
   let formattedDate = rawDate.split("/");
 
@@ -84,6 +139,11 @@ function formaDOB(rawDate) {
   }
 
   return formattedDate;
+}
+
+function turnToPercent(num) {
+  let res = num * 100;
+  return res.toFixed(0);
 }
 
 export default StudentCard;
