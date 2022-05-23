@@ -7,8 +7,21 @@ import Data from "./data/data.json"
 class App extends React.Component {
   constructor(){
     this.state= {
-      selectedCohortCode: "All Students"
+      selectedCohortCode: "All Students",
+      deets: [],
+      comments: {}
     }
+  }
+
+  selectCohort = (selectedCohort) => {
+    this.setState({
+      selectedCohort: selectedCohort,
+      deets: [],
+    })
+  }
+
+  showDeets = (studentId) => {
+    
   }
 
   handleClick(clickedItem) {
