@@ -39,7 +39,7 @@ class StudentList extends React.Component {
 
     render() {
         const {
-            data,
+            input,
             selectedCohort,
             deets,
             deetsNstuff,
@@ -48,7 +48,7 @@ class StudentList extends React.Component {
         } = this.props
 
         const studentCards = this.displayStudents(
-            data,
+            input,
             selectedCohort,
             deets,
             deetsNstuff,
