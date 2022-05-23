@@ -22,7 +22,7 @@ h1 {
     text-align: left;
 }
 
-.student-countainer{
+.student-countainer {
     padding-bottom: 5px;
 }
 
@@ -35,7 +35,7 @@ img {
 }
 
 
-.inside-student-card{
+.inside-student-card {
     border: 2px solid #283618;
     padding: 5%;
     margin-right: 10px;
@@ -45,21 +45,21 @@ h3 {
     text-align: left;
 }
 
-h4{
+h4 {
     margin-bottom: 5px;
 }
 
-.student-username-p{
+.student-username-p {
     margin-top: 5px;
     margin-bottom: 2px;
 }
 
-.student-dob-p{
+.student-dob-p {
     margin-top: 0px;
 }
 
-.color-text{
-    color:#bc6c25;
+.color-text {
+    color: #bc6c25;
 }
 
 .show-toggle:hover {
@@ -67,7 +67,7 @@ h4{
 }
 
 .onTrack-p {
-    color:#bc6c25; 
+    color: #bc6c25;
     margin: auto;
     text-align: right;
 }
@@ -78,30 +78,51 @@ h4{
     margin-top: 20px;
 }
 
-.show-more-container{
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   width: fit-content;
+.show-more-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: fit-content;
+}
+
+#form-container {
+    grid-column: span 3;
+    margin-top: 5px;
+}
+
+#notes-form {
+    border: 2px solid #283618;
+    padding: 10px;
+    margin-top: 20px;
+}
+input {
+    margin: 4px;
+}
+
+button {
+    background-color: #bc6c25;
+    color: aliceblue;
 }
 
 @media only screen and (max-width: 768px) {
-    img{
+    img {
         float: none;
-        margin: 10px 0px 0px 0px ;
+        margin: 10px 0px 0px 0px;
     }
 
-    .inside-student-card{
+    .inside-student-card {
         margin-top: 0px;
         border: 2px solid #283618;
         padding: 0%;
         text-align: center;
     }
-    .onTrack-p { 
+
+    .onTrack-p {
         margin-top: 5px;
         text-align: center;
     }
-    h4{
+
+    h4 {
         margin-top: 5px;
     }
-    
+
 }

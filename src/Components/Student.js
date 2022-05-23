@@ -17,7 +17,6 @@ class Student extends React.Component {
     }));
   };
 
-
   render() {
     const {
       profilePhoto,
@@ -27,6 +26,7 @@ class Student extends React.Component {
       codewars,
       certifications,
       cohort,
+      notes,
     } = this.props.student;
 
     const { preferredName, middleName, surname } = names;
@@ -56,7 +56,7 @@ class Student extends React.Component {
     }
     return (
       <article className="inside-student-card">
-        <img align="left" src={profilePhoto} alt={preferredName} />
+        <img src={profilePhoto} alt={preferredName} />
         <aside className="student-info-aside">
           {isOnTrackToGraduate(codewars, certifications) ? (
             <p className="onTrack-p">On Track to Graduate</p>
@@ -70,9 +70,10 @@ class Student extends React.Component {
             {day}, {year}
           </p>
           <ShowMore
+            notes={notes}
+            cohort={cohort}
             codewars={codewars}
             certifications={certifications}
-            cohort={cohort}
             showMore={this.state.showMore}
             handleClick={this.toggleShowMore}
           />

@@ -9,23 +9,19 @@ class App extends Component {
     this.state = {
       cohort: 'All Students',
       code: 'AllStudents',
-
     };
-  };
+  }
 
   filterByClass = (cohort, code) => {
     this.setState({
       cohort: cohort,
       code: code,
-      
     });
   };
 
   render() {
     const { allStudents } = this.props;
     const { cohort, code } = this.state;
-
-    console.log(this.state);
 
     return (
       <div className="app-grid">

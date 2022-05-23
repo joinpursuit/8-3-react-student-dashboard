@@ -1,4 +1,13 @@
-function ShowMore({ codewars, certifications, cohort, showMore, handleClick }) {
+import OneOnOne from './OneOnOne';
+
+function ShowMore({
+  codewars,
+  certifications,
+  cohort,
+  notes,
+  showMore,
+  handleClick,
+}) {
   const { current, goal } = codewars;
   const { resume, linkedin, github, mockInterview } = certifications;
   const { assignments, projects, assessments } = cohort.scores;
@@ -63,6 +72,7 @@ function ShowMore({ codewars, certifications, cohort, showMore, handleClick }) {
               {github ? '✅' : '❌'}
             </p>
           </article>
+          <OneOnOne notes={notes} />
         </div>
       </div>
     );
