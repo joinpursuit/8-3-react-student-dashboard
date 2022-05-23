@@ -21,6 +21,8 @@ function StudentList(props) {
               }
               email={element.username}
               birthday={element.dob}
+              gradReqs={element.certifications}
+              currentCodewarsScore={element.codewars.current.total}
             />
           );
         })}

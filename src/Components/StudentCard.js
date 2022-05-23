@@ -6,12 +6,17 @@ class StudentCard extends React.Component {
     super(props);
     this.state = {
       formattedDOb: formaDOB(this.props.birthday),
+      gradReqs: this.props.gradReqs,
+      codewarsScore: this.props.currentCodewarsScore,
     };
   }
 
   handleMouseOver() {}
 
   render() {
+    const passedReqs = Object.values(this.state.gradReqs).includes(false);
+    const passedCodewars = this.state.codewarsScore > 600;
+
     return (
       <div className="student-card">
         <img id="pic" src={this.props.pic} alt="Profile" width="100px" />
@@ -26,6 +31,9 @@ class StudentCard extends React.Component {
           </p>
           <br></br>
           <p id="show-more">Show More...</p>
+        </div>
+        <div id="grad-message">
+          {!passedReqs && passedCodewars ? "On Track to Graduate" : ""}
         </div>
       </div>
     );
