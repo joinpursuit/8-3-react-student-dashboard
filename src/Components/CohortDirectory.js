@@ -9,20 +9,6 @@ const dateFormatter = (str) => {
 	return `${str.substring(0, str.length - 4)} ${year}`; //ret val= Fall 2026
 };
 
-// const sortCohorts = (order, cohorts) => {
-// 	let winter = "12/1/";
-// 	let summer = "6/1/";
-// 	let fall = "9/1/";
-// 	let spring = "3/1";
-// 	let dateList= []
-// 	if (order === "ascending") {
-// 		dateList=cohorts.map((cohort) => {
-// 			 // make Date objects? are those easily sortable?
-// 		});
-// 	} else if (order === "descending") {
-// 	}
-// };
-
 /**
  *  Creates the CohortDirectory Component in App.js.
  * @param {JSX} props  -> info (student array); clicker: event handler to change current cohort
