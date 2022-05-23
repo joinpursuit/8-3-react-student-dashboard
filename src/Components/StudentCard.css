@@ -16,10 +16,15 @@
 }
 
 #student-profile {
-    padding: 32px;
+    padding: 40px;
+    padding-top: 32px;
 }
 
 #show-more {
     color: green;
     text-decoration: underline;
+}
+
+#birthday-label {
+    color: green;
 }

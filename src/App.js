@@ -53,7 +53,11 @@ function createCohortsObj(data) {
       let splitPoint = element.indexOf("2");
       return element.slice(0, splitPoint) + " " + element.slice(splitPoint);
     })
-    .sort();
+    .sort((a, b) => {
+      if (a.includes("2026") && b.includes("2025")) {
+        return -1;
+      }
+    });
 }
 
 export default App;

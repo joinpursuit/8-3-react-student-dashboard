@@ -20,7 +20,10 @@ class StudentCard extends React.Component {
             <strong>{this.props.name}</strong>
           </p>
           <p>{this.props.email}</p>
-          <p>Birthday: {this.state.formattedDOb}</p>
+          <p>
+            <span id="birthday-label">Birthday: </span>
+            {this.state.formattedDOb}
+          </p>
           <br></br>
           <p id="show-more">Show More...</p>
         </div>
