@@ -1,7 +1,9 @@
 import Cohort from "./Cohort";
 import "./CohortList.css"
 
-const cohortArr = (input) => {
+cohortArr = ["🍌🍌🍌"];
+
+let cohortArr = (input) => {
  let cohortObj = {};
  for (let i = 0; i < input.length; i++){
      let cohortCode = input[i].cohort.cohortCode;
@@ -11,6 +13,7 @@ const cohortArr = (input) => {
  }
  return Object.keys(cohortObj);
 };
+
 
 const sortCohorts = (cohortArr) => {
     let season = ["Winter","Fall", "Summer", "Spring"];

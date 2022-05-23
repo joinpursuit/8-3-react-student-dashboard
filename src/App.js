@@ -2,12 +2,13 @@
 import React from "react";
 import StudentList from "./components/StudentList";
 import CohortList from "./components/CohortList";
-import Data from "./data/data.json"
+// import Data from "./data/data.json"
 
 class App extends React.Component {
   constructor(){
+    super();
     this.state= {
-      selectedCohortCode: "All Students",
+      selectedCohort: "All Students",
       deets: [],
       comments: {}
     }
@@ -42,18 +43,17 @@ class App extends React.Component {
       }
       this.setState({comments: copyOfComments,})
     }
-
   }
 
   render() {
-    const cohorts = new Set(data.map((item) => item.cohort.cohortCode));
+    const {selectedCohort, deets, comments} = this.state;
+    // const cohorts = new Set(data.map((item) => item.cohort.cohortCode));
   return (
     <div className="dashBoard">
       <h1>Student Dashboard</h1>
-      <CohortList selectCohort={this.selectCohort} data={Data} garysCustomClickHandler={()=> this.handleClick()} cohorts={cohorts} />
-      <StudentList data={Data} 
+      <CohortList selectCohort={this.selectCohort}  garysCustomClickHandler={()=> this.handleClick()} />
+      <StudentList  
       selectedCohort={selectedCohort}
-      students={students}
       deets={deets}
       deetsNstuff={this.showDeets}
       comments={comments}
