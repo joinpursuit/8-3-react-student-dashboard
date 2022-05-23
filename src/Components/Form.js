@@ -19,10 +19,6 @@ class Form extends React.Component {
     event.target.reset()
   }
 
-//   resetFormFields = () => {
-//     return ''
-//   }
-
   name = (event) => {
     const { value } = event.target
     this.setState({ commenterName: value })
@@ -69,7 +65,7 @@ class Form extends React.Component {
                 {student.notes[0].commenter} says {student.notes[0].comment}
               </li>
             ) : null}
-            {comments.map((comment,ind) => (
+            {comments.map((comment, ind) => (
               <li key={ind}>{comment}</li>
             ))}
           </ul>

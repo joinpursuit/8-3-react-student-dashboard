@@ -1,11 +1,26 @@
 import Form from './Form'
 
-function ShowMoreInfo({ student: { codewars, cohort, certifications }, student }) {
+function ShowMoreInfo({
+  student: { codewars, cohort, certifications },
+  student,
+}) {
+  /**
+   * a convert to percentage for the codewar scores
+   * @param {number} current data codewar.current.total
+   * @param {number} goal data codewar.goal.total
+   * @returns {number}
+   */
   const percentage = (current, goal) => {
     let percent = 0
     percent = ((current / goal) * 100).toFixed(0)
     return percent
   }
+
+  /**
+   * converting the certification if its true or false then replace it with string of img
+   * @param {string} emoji
+   * @returns {string}
+   */
   const emojis = (emoji) => {
     if (!emoji) {
       return '❌'
@@ -13,7 +28,11 @@ function ShowMoreInfo({ student: { codewars, cohort, certifications }, student }
       return '✅'
     }
   }
-
+  /**
+   * converting number into color using classname and css the percentage according to color
+   * @param {number} percent
+   * @returns {string} color
+   */
   const checkPercentage = (percent) => {
     if (percent >= 100) {
       return 'green'

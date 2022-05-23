@@ -10,6 +10,11 @@ class StudentProfile extends React.Component {
     }
   }
 
+  /**
+   * getting the data of certifications of true and codewars over 600 of students on track to graduate
+   * @param {object[]} person array of object data
+   * @returns {boolean } value of true or false
+   */
   onTrack = (person) => {
     let cert = person.certifications
     let certVales = Object.values(cert)
@@ -20,10 +25,17 @@ class StudentProfile extends React.Component {
     }
     return false
   }
+
   clickShowMore = () => {
     const { showMore } = this.state
     this.setState({ showMore: !showMore })
   }
+
+  /**
+   * converting brithday formatting
+   * @param {string} date a string of birthday
+   * @returns {string} string of number
+   */
   formatBirthday = (date) => {
     let formatDate = new Date(date).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -37,6 +49,7 @@ class StudentProfile extends React.Component {
     const { student } = this.props
     const { names, username, profilePhoto, dob } = student
     const { showMore } = this.state
+    
     return (
       <article className='profile'>
         <img src={profilePhoto} alt='student' />
