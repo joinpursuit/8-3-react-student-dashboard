@@ -40,10 +40,10 @@ class Cohorts extends React.Component {
           
           {cohortList.map((cohort, index) => {
             if(cohort.year === '*') {
-              return <li key={index} onClick={() => this.props.getCohort('*')}>All Students</li> 
+              return <li key={index} onClick={() => this.props.getCohort('*')}><i class="fa fa-university" aria-hidden="true"></i>  All Students</li> 
             }
             else {
-              return <li key={index} onClick={() => this.props.getCohort(`${cohort.semester}${cohort.year}`)}>{`${cohort.semester} ${cohort.year}`}</li>
+              return <li key={index} onClick={() => this.props.getCohort(`${cohort.semester}${cohort.year}`)}><i class="fa fa-university" aria-hidden="true"></i>  {`${cohort.semester} ${cohort.year}`}</li>
             }
           })}
         </ul>

@@ -32,6 +32,9 @@ main aside ul {
 main aside ul li {
   padding: 1rem 0;font-size: 1.2rem;font-weight: bold;font-family: 'Open Sans', sans-serif;border-bottom: 1px solid #666;cursor: pointer;
 }
+main aside ul li i {
+  margin-right: 10px;
+}
 main aside ul li:hover {
   color:cadetblue;
 }
@@ -111,10 +114,25 @@ main article ul li .academic-data .container table tr td i {
   font-size: 1.2rem;
 }
 main article ul li .academic-data .container table tr td i.green {
-  color: #2a9d8f
+  color: #2a9d8f;
 }
 main article ul li .academic-data .container table tr td i.red {
-  color: #ef476f
+  color: #ef476f;
+}
+main article ul li .academic-data .goal-achieved {
+  font-size: 1.0rem;line-height: 1.4rem; font-weight: 600;font-family: 'Open Sans', sans-serif;
+}
+main article ul li .academic-data .goal-achieved span {
+  font-size: 1.0rem;line-height: 1.4rem; font-weight: 800;font-family: 'Open Sans', sans-serif;
+}
+main article ul li .academic-data .goal-achieved span.green {
+  color: #2a9d8f;
+}
+main article ul li .academic-data .goal-achieved span.yellow {
+  color: #fee440;
+}
+main article ul li .academic-data .goal-achieved span.red {
+  color: #ef476f;
 }
 /*** C O M M E N T S ***/
 main article ul li .academic-data .comments {
@@ -140,22 +158,22 @@ main article ul li .academic-data .comments form input[type='submit'] {
   color:#FFF;background-color: cadetblue;border: none;border-radius: 3px; cursor: pointer;   
 }
 main article ul li .academic-data .comment-list {
-  padding: 1rem;margin: 1rem 0; border: none;
+  padding: 0rem;margin: 1rem 0; border: none;
 }
 main article ul li .academic-data .comment-list h2 {
-  margin: 0.5rem 0;text-align: center; font-size: 1.4rem;font-weight: bold;font-family: 'Open Sans', sans-serif;  
+  margin: 1.0rem 0;text-align: left; font-size: 1.4rem;font-weight: bold;font-family: 'Open Sans', sans-serif;  
 }
 main article ul li .academic-data .comment-list ul {
   list-style: none;
 }
 main article ul li .academic-data .comment-list ul li {
-  font-size: 1.0rem;line-height: 1.4rem;font-weight: 400;font-family: 'Open Sans', sans-serif;border: none;   
+  padding: 0; font-size: 1.0rem;line-height: 1.4rem;font-weight: 400;font-family: 'Open Sans', sans-serif;border: none;   
 }
 main article ul li .academic-data .comment-list ul li span {
-  font-weight: 600;font-family: 'Open Sans', sans-serif;color: cadetblue;   
+  font-size: 1.0rem;line-height: 1.2rem;font-weight: 600;font-family: 'Open Sans', sans-serif;color: cadetblue;   
 }
 main article ul li .academic-data .comment-list ul li span  {
-  font-size: 1.4rem;   
+  font-size: 1.2rem;   
 }
 /*** H E L P E R S ***/i
 .green {

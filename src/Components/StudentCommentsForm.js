@@ -16,17 +16,17 @@ class StudentCommentsForm extends React.Component {
     event.preventDefault();
     const newObj = {
       "commenter": this.state.name,
-      "comment": this.state.comment,
+      "comment": this.state.comment
     }
     // >> Validating all the fields
-    if(this.state.isValid) {
+    //if(this.state.isValid) {
       (this.props.studentList).map(student => {
         
         
         (student.notes).push(newObj)
       },() => this.handleFormReset())
       
-    }
+    //}
   }
 
   handleFormReset = (event) => {

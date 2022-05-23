@@ -29,7 +29,9 @@ class ToggleButton extends React.Component {
       });
   }
 
-  validateGoal(score) {
+  validateGoal(current, goal) {
+    const score = (((current / goal))*100).toFixed();
+    console.log(score)
     // >> 
     let scoreCheck = '';
     if(score >= 100) {
@@ -41,22 +43,13 @@ class ToggleButton extends React.Component {
     if(score >= 50 && score < 100) {
       this.setState({achieved: 'yellow',})
       scoreCheck = 'yellow';  
-    } else {
+    } 
+    if(score < 50) {
       this.setState({achieved: 'red',})
       scoreCheck = 'red';  
     }
 
-    return <span className={scoreCheck}>{score}</span>
-  }
-
-  getStudentComments(students) {
-    
-    (students).map((student, index) => {
-      console.log(student.notes[index])
-      console.log(student.notes[index].commenter)
-      // console.log(student.notes[0].comment)
-      // return <li key={index}><span>{student.notes[0].commenter}</span> {student.notes[0].comment}</li>;
-    })  
+    return <span className={scoreCheck}>{score}%</span>
   }
 
   getStudentDetails(students, id) {
@@ -64,12 +57,13 @@ class ToggleButton extends React.Component {
     const academicData = studentById.map((e, i) => { 
       
       return <>
-        <div className="container"> 
+        <div>
+          <div className="container"> 
             <div> 
               <h4>Codewars: </h4>
               <table className="data certifications">
                 <tr>
-                  <td><span>Current total:</span></td><td> {this.validateGoal(e.codewars.current.total)}</td>
+                  <td><span>Current total:</span></td><td> {e.codewars.current.total}</td>
                 </tr>
                 <tr>
                   <td><span>Last week:</span></td><td> {e.codewars.current.lastWeek}</td>
@@ -118,7 +112,9 @@ class ToggleButton extends React.Component {
                 </tr>
               </table>
             </div>
-            <div>Percent of Goal Achieved: </div>
+          </div>
+          <div className="goal-achieved">Percent of Goal Achieved: {this.validateGoal(e.codewars.current.total, e.codewars.goal.total)}</div>
+          
         </div>
         <section className="comments">
           <StudentCommentsForm studentList={this.props.studentList}/>  
