@@ -47,6 +47,25 @@ const StudentDetails = ({ student }) => {
         </p>
       </section>
 
+      <section className="certifications">
+        <h4>Certifications</h4>
+        <p>
+          <span className="span">Resume: </span>
+          {student.certifications.resume}
+        </p>
+        <p>
+          <span className="span">LinkedIn: </span>
+          {student.certifications.linkedin}
+        </p>
+        <p>
+          <span className="span">Mock Interview: </span>
+          {student.certifications.mockInterview}
+        </p>
+        <p>
+          <span className="span">GitHub: </span>
+          {student.certifications.github}
+        </p>
+      </section>
       <section className="line-alt" />
       <Comments student={student} />
     </div>
