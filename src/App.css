@@ -53,6 +53,7 @@ main article ul {
 main article ul > li {
   padding: 1rem;margin: 1rem 0;border: 2px solid #a8dadc;
 }
+/*** P E R S O N A L   D A T A ***/
 main article ul li .personal-data {
   display: grid;grid-template-columns: 20% 80%;
 }
@@ -71,36 +72,100 @@ main article ul li .personal-data .container h4 {
 main article ul li .personal-data .container .track-check {
   font-size: 1.0rem;line-height: 1.5rem;font-family: 'Open Sans', sans-serif; font-weight: bold;color:cadetblue;
 }
-main article ul li .personal-data p:nth-child(2) {
-  font-size: 1.0rem;font-weight: 500;font-family: 'Open Sans', sans-serif;
-}
+main article ul li .personal-data p:nth-child(2),
 main article ul li .personal-data p:nth-child(3) {
-  font-size: 1.0rem;font-weight: 800;font-family: 'Open Sans', sans-serif; color:cadetblue;
+  font-size: 1.0rem;font-weight: 500;font-family: 'Open Sans', sans-serif; color:cadetblue;
 }
+main article ul li .personal-data p:nth-child(2) span,
 main article ul li .personal-data p:nth-child(3) span {
   font-size: 1.0rem;font-weight: bold;font-family: 'Open Sans', sans-serif;color:#333;
 }
-/*** Academic data ***/
+/*** A C A D E M i C   D A T A ***/
 main article ul li .academic-data {
   
 }
 main article ul li .academic-data button {
-  padding: 1rem 4rem; margin: auto; display: table; font-size: 1.0rem;font-weight: bold; font-family: 'Open Sans', sans-serif;
+  padding: 1rem 2rem; margin: auto; display: table; font-size: 1.0rem;font-weight: bold; font-family: 'Open Sans', sans-serif;
   color:#FFF;background-color: cadetblue;border: none;border-radius: 3px; cursor: pointer;
 }
 main article ul li .academic-data .container {
   padding: 1rem;margin: 1rem 0;;
   display: grid !important;grid-template-columns: 1fr 1fr 1fr;border: 1px solid cadetblue;
 }
-main article ul li .academic-data .container ul {}
-main article ul li .academic-data .container ul li {
-  padding: 0.5rem 0;  border: none;
-}
-main article ul li .academic-data .container ul li span {
-  font-size: 1.2rem;font-weight: bold;color:cadetblue;
-}
 main article ul li .academic-data .container h4 {
-  margin: 0rem 0; font-size: 1.5rem;font-weight: bold;
+  margin: 0.5rem 0; font-size: 1.4rem;font-weight: bold;font-family: 'Open Sans', sans-serif;
+}
+main article ul li .academic-data .container table {
+  width: 100%;
+}
+main article ul li .academic-data .container table tr {
+  padding: 1.0rem 0;border: none;
+}
+main article ul li .academic-data .container table tr td {
+  font-size: 1.0rem;line-height: 1.4rem; font-weight: 700;font-family: 'Open Sans', sans-serif;
+}
+main article ul li .academic-data .container table tr td span {
+  font-weight: 600;color:cadetblue;
+}
+main article ul li .academic-data .container table tr td i {
+  font-size: 1.2rem;
+}
+main article ul li .academic-data .container table tr td i.green {
+  color: #2a9d8f
+}
+main article ul li .academic-data .container table tr td i.red {
+  color: #ef476f
+}
+/*** C O M M E N T S ***/
+main article ul li .academic-data .comments {
+  padding: 1rem;margin: 1rem 0; border: 1px solid cadetblue;
+}
+main article ul li .academic-data .comments form {
+  width: 60%;margin: auto;
+}
+main article ul li .academic-data .comments form h2 {
+  margin: 0.5rem 0;text-align: center; font-size: 1.4rem;font-weight: bold;font-family: 'Open Sans', sans-serif;  
+}
+main article ul li .academic-data .comments form .form-control {
+  padding: 0.5rem; display: grid;grid-template-columns: 1fr 2fr;gap: 5px;
+}
+main article ul li .academic-data .comments form label {
+  font-size: 1.0rem;line-height: 2.0rem;font-weight: 400;font-family: 'Open Sans', sans-serif;   
+}
+main article ul li .academic-data .comments form input {
+  padding: 0.5rem;font-family: 'Open Sans', sans-serif; border: 1px solid cadetblue; border-radius: 3px;   
+}
+main article ul li .academic-data .comments form input[type='submit'] {
+  padding: 0.5rem 2rem; margin: 1.0rem auto; display: table; font-size: 1.0rem;font-weight: 600; font-family: 'Open Sans', sans-serif;
+  color:#FFF;background-color: cadetblue;border: none;border-radius: 3px; cursor: pointer;   
+}
+main article ul li .academic-data .comment-list {
+  padding: 1rem;margin: 1rem 0; border: none;
+}
+main article ul li .academic-data .comment-list h2 {
+  margin: 0.5rem 0;text-align: center; font-size: 1.4rem;font-weight: bold;font-family: 'Open Sans', sans-serif;  
+}
+main article ul li .academic-data .comment-list ul {
+  list-style: none;
+}
+main article ul li .academic-data .comment-list ul li {
+  font-size: 1.0rem;line-height: 1.4rem;font-weight: 400;font-family: 'Open Sans', sans-serif;border: none;   
+}
+main article ul li .academic-data .comment-list ul li span {
+  font-weight: 600;font-family: 'Open Sans', sans-serif;color: cadetblue;   
+}
+main article ul li .academic-data .comment-list ul li span  {
+  font-size: 1.4rem;   
+}
+/*** H E L P E R S ***/i
+.green {
+  color: #2a9d8f !important;
+}
+.yellow {
+  color: #fee440 !important;
+}
+.red {
+  color: #ef476f !important;
 }
 
 /*CLase que aplica los estilos al elemento a aparecer*/

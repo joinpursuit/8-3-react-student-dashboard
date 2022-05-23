@@ -1,7 +1,6 @@
 import React from "react";
 import ToggleButton from "./ToggleButton";
 import StudentStatus from "./StudentStatus";
-// import StudentDetails from "./StudentDetails";
 
 //const Students = (props) => {
 class Students extends React.Component {
@@ -55,34 +54,15 @@ class Students extends React.Component {
     return `${month} ${e[1]}, ${e[2]}`;  
   }
 
-  checkoutValid = (data) => {
-    console.log(data)
-    if(data) {
-      this.setState({ 
-        
-      });
-    }
-  }
-
   render() {
-    //const hello = 'Say Hello to learning Props/State in React!';
-    //const [mostrarComponente, setMostrarComponente] = useState(true);
-
-    //const childelement = this.ChildElement.current;
-    //const childCompRef = useRef()
-    // const studentList = new Set(
-    //   (this.props.data).map(e => e.names)
-    // )
     const studentList = (this.props.data).map(e => e)
     
     return(
       <>
-        {console.log(studentList.length)}
         <ul>
         {(this.props.data).map(student => {
          return <li key={student.id}>
                   <section className="personal-data">
-                    {/* <div className="container"> */}
                     <img src={student.profilePhoto}/>
                     <div>
                       <div className="container">
@@ -98,9 +78,7 @@ class Students extends React.Component {
                       <p>Birthday: <span>{this.getFormatedDOB(student.dob)}</span></p>
                     </div>
                   </section> 
-                  <section className="academic-data">
-                    <ToggleButton studentList={this.props.data} studentId={student.id} checkoutValid={this.checkoutValid}/>  
-                  </section>
+                  <ToggleButton studentList={this.props.data} studentId={student.id}/>  
                 </li>
         })}
         </ul>

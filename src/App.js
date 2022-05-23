@@ -4,6 +4,7 @@ import Cohorts from "./Components/Cohorts";
 import StudentsByCohort from "./Components/StudentsByCohort";
 import Data from "./data/data.json";
 import "./App.css";
+import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 class App extends React.Component {
   constructor() {
