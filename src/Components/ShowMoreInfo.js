@@ -36,16 +36,16 @@ function ShowMoreInfo({ student: { codewars, cohort, certifications }, student }
           )}
         >
           Percent of Goal Achieved:{' '}
-          {(percentage(codewars.current.total, codewars.goal.total))}%
+          {percentage(codewars.current.total, codewars.goal.total)}%
         </p>
       </div>
-      <div>
+      <div className='scores'>
         <h2>Scores</h2>
         <p>Assignments: {cohort.scores.assignments * 100} %</p>
         <p>Project: {cohort.scores.projects * 100} %</p>
         <p>Assessments: {cohort.scores.assessments * 100} %</p>
       </div>
-      <div>
+      <div className='certifications'>
         <h2>Certifications</h2>
         <p>Resume: {emojis(certifications.resume)}</p>
         <p>LinkedIn: {emojis(certifications.linkedin)}</p>

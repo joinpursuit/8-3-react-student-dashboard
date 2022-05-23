@@ -16,10 +16,12 @@ function CorhortList({ data, clickCohort }) {
   return (
     <div className='cohort-list'>
       <h2>Choose a Class by Start Date</h2>
-      <section>
-        <p onClick={() => clickCohort(null)}>All Students</p>
+      <section className='semester'>
+        <p className='list' onClick={() => clickCohort(null)}>
+          All Students
+        </p>
         {sortSeason.map((list, ind) => (
-          <p key={ind} onClick={() => clickCohort(list)}>
+          <p key={ind} onClick={() => clickCohort(list)} className='list'>
             {list}
           </p>
         ))}

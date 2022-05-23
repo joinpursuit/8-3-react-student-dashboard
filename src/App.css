@@ -7,7 +7,7 @@ h1 {
 div.student-dash {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background-color: #f7f9f7;
+  background-color: #dfe6f6;
 }
 
 article.profile {
@@ -19,13 +19,13 @@ article.profile img {
   height: 200px;
 }
 
-/* div.cohort-list {
+div.cohort-list {
   width: 50%;
   height: 125vh;
   top: 5%;
   position: -webkit-sticky;
   position: sticky;
-} */
+}
 
 .showmore {
   text-decoration: underline;
@@ -52,9 +52,37 @@ section.show-info {
   color: red;
 }
 .yellow {
-  color: #DEC20B;
+  color: #dec20b;
 }
 
 .green {
   color: green;
+}
+
+.scores {
+  position: relative;
+  left: 259px;
+  top: -188px;
+}
+
+.certifications {
+  position: relative;
+  left: 500px;
+  top: -343px;
+}
+
+.form {
+  position: relative;
+  top: -300px;
+}
+
+.ontrack {
+  position: relative;
+  top: -300px;
+  left: 500px;
+}
+
+.list:hover {
+  color: #9a5296;
+  cursor: pointer;
 }

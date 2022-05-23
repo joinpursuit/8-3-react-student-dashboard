@@ -45,7 +45,7 @@ class StudentProfile extends React.Component {
         </p>
         <p>{username}</p>
         <p>Birthday: {this.formatBirthday(dob)}</p>
-        <p>{this.onTrack(student) ? 'On Track to Graduate' : null}</p>
+        <p className='ontrack'>{this.onTrack(student) ? 'On Track to Graduate' : null}</p>
         <p
           className={showMore ? 'visited' : 'showmore'}
           onClick={() => this.clickShowMore()}
