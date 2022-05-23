@@ -108,11 +108,3 @@ export default class ShowMore extends React.Component {
     );
   }
 }
-
-// import React from 'react'
-
-// export default function ShowMore() {
-//   return (
-//     <div>ShowMore</div>
-//   )
-// }

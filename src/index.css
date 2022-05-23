@@ -71,11 +71,11 @@
     font-stretch: expanded;
     font-size: 29px;
     padding-left: 8px;
-    cursor: pointer;
 }
 
 h2 {
     font-family:'Courier New', Courier, monospace;
+    font-size: 29px;
 }
 
 .cohortListHeading {
@@ -87,6 +87,7 @@ h2 {
 .allStudents{
     padding-bottom: 1em;
     border-bottom: 2px solid darkcyan;
+    cursor: pointer;
 }
 
 .eachSemester{

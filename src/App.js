@@ -10,6 +10,7 @@ class App extends React.Component {
     this.state = {
       studentData: data,
       selectedCohortCode: "All Students",
+      comments: {},
     };
   }
 

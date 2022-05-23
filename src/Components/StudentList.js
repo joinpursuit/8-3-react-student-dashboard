@@ -12,7 +12,6 @@ export default function StudentList({
       </div>
     );
   });
-  // console.log(studentInformation[0].notes[0].commenter);
 
   const formatCohortTitle = (string) => {
     if (string !== "All Students") {
