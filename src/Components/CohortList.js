@@ -55,7 +55,7 @@ function CohortList(props) {
 	};
 	return (
 		<div>
-			<h2>Choose a Class by Start Date</h2>
+			<h2><em>Choose a Class by Start Date</em></h2>
 
 			<section>{displayCohort(data, handleClick)}</section>
 		</div>

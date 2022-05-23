@@ -20,7 +20,9 @@ class App extends React.Component {
 		console.log('currentState', this.state.selectedCohortCode);
 		return (
 			<section>
-				<h1>Student Dashboard</h1>
+				<h1>
+					<em>Student Dashboard</em>
+				</h1>
 
 				<div className='student-app'>
 					<CohortList data={data} handleClick={this.handleClick} />
