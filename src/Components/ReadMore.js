@@ -8,8 +8,8 @@ class ReadMore extends Component {
     this.state = {
       isReadMore: false,
       commentsList: [],
-      commentorName:'',
-      commentMessage:'',
+      commentorName: '',
+      commentMessage: '',
     };
     // >> Binding
     this.handleChange = this.handleChange.bind(this);
@@ -38,7 +38,7 @@ class ReadMore extends Component {
 
   render() {
     const { studentData } = this.props;
-    // const {commentorName, commentMessage}= this.state
+
     const codeWarsLastweek = studentData.codewars.current.lastWeek;
     const goalsTotal = studentData.codewars.goal.total;
     const codewarsTotal = studentData.codewars.current.total;
@@ -48,6 +48,11 @@ class ReadMore extends Component {
       this.setState({ isReadMore: !this.state.isReadMore });
     };
 
+    /**
+     *  displays color depending on the percentage value
+     * @param {Number} percentage- value calculated
+     * @returns appropriate color
+     */
     const getColor = (percentage) => {
       return percentage >= 100
         ? 'green'
@@ -56,6 +61,11 @@ class ReadMore extends Component {
         : 'red';
     };
 
+    /**
+     *  checks if they have completed all certifications
+     * @param {[]Object} certified- for resume,linkedin,github,mockinterview
+     * @returns displays x or a chekmark depending on the status of ceritifcation
+     */
     const checkCertifications = (certified) => {
       const certifiedIcon =
         !certified.resume ||
@@ -159,7 +169,6 @@ class ReadMore extends Component {
               <ul>
                 {this.state.commentsList.map((comments, indx) => (
                   <li key={indx}>
-                    {/* {console.log(comments)} */}
                     {comments.commentorName} says '{comments.commentMessage}'
                   </li>
                 ))}

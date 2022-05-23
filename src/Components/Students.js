@@ -6,13 +6,21 @@ class Students extends Component {
   render() {
     const { data, selectedCohortCode } = this.props;
 
+    /**
+     *  removes the space from the SelectedCohortCode
+     * @param {state variable} - selectedCohortCode
+     * @returns the selectedCohortCode with removed spaces
+     */
     const newselectedCohortCode = selectedCohortCode.split(' ').join('');
-    // console.log('p=', newselectedCohortCode);
 
+    /**
+     *  filters the cohortCode
+     * @param {[]Array} data- array
+     * @returns filtered array
+     */
     const cohortStudents = data.filter(
       (ele) => ele.cohort.cohortCode === newselectedCohortCode
     );
-    // console.log('cohortMembers =', cohortStudents);
 
     const cohortSelected =
       selectedCohortCode === 'All Students'

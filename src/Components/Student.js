@@ -3,6 +3,11 @@ import ReadMore from './ReadMore';
 import './Student.css';
 
 class Student extends Component {
+  /**
+   * displays the birthday
+   * @param {Date} - the date from data.json
+   * @returns the birthday to be displayed in dd/mm/yyyy
+   */
   dateConversion = (dob) => {
     const days = [
       'Sunday',
@@ -36,6 +41,14 @@ class Student extends Component {
       now.getFullYear();
     return convertedDate;
   };
+
+  /**
+   * returns a Strign which denotes if the student is eligible to graduate or not
+   * @param {Object} certified-  checking for the student has completed the *
+   * resume,linkedin,github,mockinterview
+   * @param {Number} codewarsTotal- value greater than 600
+   * @returns the selectedCohortCode with removed spaces
+   */
 
   eligibleToGraduate = (certified, codewarsTotal) => {
     if (
