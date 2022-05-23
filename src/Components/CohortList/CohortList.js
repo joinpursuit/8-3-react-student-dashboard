@@ -80,6 +80,7 @@ const CohortList = (props) => {
       <ul className="cohortList">
         <li
           id="allStudentsCohort"
+          className="cohortCodes"
           onClick={() => props.changeCohortCode("All Students")}
         >
           All Students

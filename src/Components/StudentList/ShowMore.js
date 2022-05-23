@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 import check from "../../images/checkmark.png";
 import cross from "../../images/crossmark.png";
@@ -11,13 +11,8 @@ class ShowMore extends Component {
     super();
     this.state = {
       showMore: false,
-      isOpen: false,
     };
   }
-
-  openModal = () => this.setState({ isOpen: true });
-
-  closeModal = () => this.setState({ isOpen: false });
 
   showInfo = () => {
     this.setState({
@@ -50,11 +45,7 @@ class ShowMore extends Component {
     return (
       <section className="showMoreSection">
         <div className="showMoreButton" id={students.id}>
-          <Button
-            variant="dark"
-            onClick={this.showInfo}
-            // onClick={this.openModal}
-          >
+          <Button variant="dark" onClick={this.showInfo}>
             {this.state.showMore ? "Show Less..." : "Show More..."}
           </Button>
           {this.state.showMore ? (
@@ -150,27 +141,6 @@ class ShowMore extends Component {
             </div>
           ) : null}
         </div>
-        <Modal show={this.state.isOpen} onHide={this.closeModal}>
-          <img
-            className="studentPhoto"
-            src={students.profilePhoto}
-            alt="studentPhoto"
-          />
-          <Modal.Header closeButton>
-            <Modal.Title>
-              {students.names.preferredName} {students.names.middleName}{" "}
-              {students.names.surname}
-            </Modal.Title>
-          </Modal.Header>
-
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-
-          <Modal.Footer>
-            <Button variant="secondary" onClick={this.closeModal}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
       </section>
     );
   }

@@ -19,8 +19,8 @@
   column-gap: 3%;
   margin-bottom: 3%;
 
-  .onTrack {
-    grid-column: 3;
+  #onTrack {
+    text-shadow: 0 3px #4361ee, 3px 4px #4361ee;
   }
 
   .studentPhoto {
@@ -58,4 +58,13 @@
 
 .failure {
   color: red;
+}
+
+#searchBox {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+#searchButton {
+  height: 75%;
 }

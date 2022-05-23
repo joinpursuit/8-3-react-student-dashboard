@@ -20,8 +20,8 @@
        column-gap: 3%;
   margin-bottom: 3%;
 }
-.studentCard .onTrack {
-  grid-column: 3;
+.studentCard #onTrack {
+  text-shadow: 0 3px #4361ee, 3px 4px #4361ee;
 }
 .studentCard .studentPhoto {
   display: block;
@@ -53,4 +53,13 @@
 
 .failure {
   color: red;
+}
+
+#searchBox {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+#searchButton {
+  height: 75%;
 }

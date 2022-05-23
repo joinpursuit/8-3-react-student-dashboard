@@ -3,9 +3,22 @@ import "./StudentList.scss";
 import { Component } from "react";
 import moment from "moment";
 
+import { Button, Form } from "react-bootstrap";
+
 import ShowMore from "./ShowMore";
 
+import StudentFound from "./StudentFound";
+
 class StudentList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      searchbox: "",
+      isOpen: false,
+      studentFound: null,
+    };
+  }
+
   checkGraduationStatus = (students) => {
     if (
       students.certifications.github &&
@@ -39,7 +52,7 @@ class StudentList extends Component {
               src={students.profilePhoto}
               alt="studentPhoto"
             />
-            <div className={this.checkGraduationStatus(students)}>
+            <div id="onTrack" className={this.checkGraduationStatus(students)}>
               On Track to Graduate
             </div>
             <section className="studentInfo">
@@ -68,7 +81,7 @@ class StudentList extends Component {
               src={students.profilePhoto}
               alt="studentPhoto"
             />
-            <div className={this.checkGraduationStatus(students)}>
+            <div id="onTrack" className={this.checkGraduationStatus(students)}>
               On Track to Graduate
             </div>
             <section className="studentInfo">
@@ -93,12 +106,25 @@ class StudentList extends Component {
     });
 
     return (
-      <section>
-        <p>
-          Total Students: <strong id="studentCount">{totalStudents}</strong>
-        </p>
+      <>
+        Total Students: <strong id="studentCount">{totalStudents}</strong>
+        <div>
+          <Form id="searchBox" onSubmit={this.handleSubmit}>
+            <Form.Group className="mb-3" controlId="searchbox">
+              <Form.Control
+                type="text"
+                name="searchbox"
+                value={this.state.searchbox}
+                onChange={this.handleChange}
+              ></Form.Control>
+            </Form.Group>
+            <Button id="searchButton" type="submit" variant="primary">
+              SEARCH
+            </Button>
+          </Form>
+        </div>
         <section className="StudentList">{students}</section>
-      </section>
+      </>
     );
   };
 
@@ -106,6 +132,55 @@ class StudentList extends Component {
     const date = new Date(dob);
     const dateFormatted = moment(date).format("MMMM D, Y");
     return dateFormatted;
+  };
+
+  handleChange = (e) => {
+    const { name, value } = e.target;
+
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    this.searchStudents(this.props.studentData);
+  };
+
+  searchStudents = (students) => {
+    const { searchbox } = this.state;
+
+    students.map((student) => {
+      let middleInitial = student.names.middleName.charAt(0).toUpperCase();
+
+      if (
+        student.names.preferredName.toLowerCase() === searchbox.toLowerCase() ||
+        student.names.middleName.toLowerCase() === searchbox.toLowerCase() ||
+        student.names.surname.toLowerCase() === searchbox.toLowerCase() ||
+        middleInitial.toLowerCase() === searchbox.toLowerCase()
+      ) {
+        return this.setState({
+          studentFound: student,
+        });
+      }
+      return this.state.studentFound;
+    });
+
+    this.openModal();
+  };
+
+  openModal = () => {
+    this.setState({
+      isOpen: true,
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      isOpen: false,
+      searchbox: "",
+    });
   };
 
   render() {
@@ -116,6 +191,13 @@ class StudentList extends Component {
       <section className="studentListSection">
         <h1>{readable}</h1>
         {this.renderStudentsAndTotal()}
+        <StudentFound
+          studentFound={this.state.studentFound}
+          isOpen={this.state.isOpen}
+          closeModal={this.closeModal}
+          checkGraduationStatus={this.checkGraduationStatus}
+          convertDOB={this.convertDOB}
+        />
       </section>
     );
   }

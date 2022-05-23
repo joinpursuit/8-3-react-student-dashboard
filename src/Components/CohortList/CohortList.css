@@ -1,22 +1,24 @@
 .CohortSection {
   grid-column: 1;
   grid-row: 1;
+  overflow: auto;
 }
 .CohortSection .cohortList {
   list-style-type: none;
   display: grid;
   gap: 3%;
-  height: 80%;
+  height: 100vh;
 }
 .CohortSection .cohortList #allStudentsCohort {
-  margin-top: 10%;
-  border-bottom: 3px solid red;
-  cursor: pointer;
+  margin-top: 5%;
 }
 .CohortSection .cohortList .cohortCodes {
   border-bottom: 3px solid red;
   margin-bottom: 3%;
   cursor: pointer;
+}
+.CohortSection .cohortList .cohortCodes:hover {
+  color: cyan;
 }
 
 .selected {
