@@ -1,6 +1,8 @@
 
 import React from "react";
-
+import StudentList from "./components/StudentList";
+import CohortList from "./components/CohortList";
+import Data from "./data/data.json"
 
 class App extends React.Component {
   constructor(){
