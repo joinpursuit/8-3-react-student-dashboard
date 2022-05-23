@@ -35,6 +35,17 @@ class StudentCard extends React.Component {
         <div id="grad-message">
           {!passedReqs && passedCodewars ? "On Track to Graduate" : ""}
         </div>
+        <section className="show-more-container">
+          <div id="codewars-div">
+            <p>CodeWars</p>
+          </div>
+          <div id="scores-div">
+            <p>Scores</p>
+          </div>
+          <div id="certs-div">
+            <p>Certifications</p>
+          </div>
+        </section>
       </div>
     );
   }

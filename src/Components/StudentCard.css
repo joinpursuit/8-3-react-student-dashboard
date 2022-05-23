@@ -9,6 +9,22 @@
     display: inline-block;
 }
 
+.show-more-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row: 2;
+    grid-column: 1 / 4;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#codewars-div,
+#scores-div,
+#certs-div {
+    border: 1px solid black;
+    text-align: center;
+}
+
 #pic {
     padding-top: 40px;
     padding-bottom: 32px;
