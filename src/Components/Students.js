@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import ToggleButton from "./ToggleButton";
+import StudentStatus from "./StudentStatus";
 // import StudentDetails from "./StudentDetails";
 
 //const Students = (props) => {
@@ -8,6 +9,7 @@ class Students extends React.Component {
     super(props);
     this.state = {
       showDetails: false,
+      studentStatus: '',
     }
     //this.ChildElement = React.createRef();
     //this.handleClick = this.handleClick.bind(this);
@@ -28,29 +30,38 @@ class Students extends React.Component {
   // };
 
   //const checkoutValid = (data) => {
-  checkoutValid = () => {
+  //validateStudentStatus = (resume, linkedin, mockInterview, github, codewars) => {
+  validateStudentStatus = (resume) => {
     //console.log(data)
-    if(this.state.showDetails === false) {
+    //if(resume && linkedin && mockInterview && github && (codewars > 600)) {
+    if(resume) {
       this.setState({ 
-        showDetails: true,  
+        studentStatus: 'On Track to Graduate',
       });
     } else {
       this.setState({ 
-        showDetails: false,  
+        studentStatus: '',  
       });
     }
   }
 
   getFormatedDOB = (data) => {
-    
     //2/9/1997
-    const d = data.split('/');
-    console.log(d)
-    const date = new Date(`${d[2]}-${d[0]}-${d[1]}`);  // 2009-11-10
+    const e = data.split('/');
+    const date = new Date(`${e[2]}-${e[0]}-${e[1]}`);  
     const month = date.toLocaleString('default', { month: 'long' });
-    console.log(date)
-    console.log(`${month} ${date.getDay()}, ${date.getFullYear()}`)
-    return `${month} ${d[1]}, ${d[2]}`;  
+    // console.log(month)
+    // console.log(`${month} ${date.getDay()}, ${date.getFullYear()}`)
+    return `${month} ${e[1]}, ${e[2]}`;  
+  }
+
+  checkoutValid = (data) => {
+    console.log(data)
+    if(data) {
+      this.setState({ 
+        
+      });
+    }
   }
 
   render() {
@@ -70,19 +81,25 @@ class Students extends React.Component {
         <ul>
         {(this.props.data).map(student => {
          return <li key={student.id}>
-                  <section className="student-personal-data">
+                  <section className="personal-data">
                     {/* <div className="container"> */}
                     <img src={student.profilePhoto}/>
                     <div>
-                      <h4>
-                        {`${student.names['preferredName']} ${(student.names['middleName']).substring(0, 1)} ${student.names['surname']}`}
-                      </h4>
+                      <div className="container">
+                        <h4>{`${student.names['preferredName']} ${(student.names['middleName']).substring(0, 1)} ${student.names['surname']}`}</h4>
+                        <span className="track-check"><StudentStatus  resume={student.certifications.resume} 
+                                              linkedin={student.certifications.linkedin}
+                                              mockInterview={student.certifications.mockInterview}
+                                              github={student.certifications.github}
+                                              codewars={student.codewars.current.total}
+                        /></span>
+                      </div>
                       <p>{student.username}</p>
                       <p>Birthday: <span>{this.getFormatedDOB(student.dob)}</span></p>
                     </div>
                   </section> 
-                  <section>
-                    <ToggleButton checkoutValid={this.checkoutValid} studentList={this.props.data} studentId={student.id}/>  
+                  <section className="academic-data">
+                    <ToggleButton studentList={this.props.data} studentId={student.id} checkoutValid={this.checkoutValid}/>  
                   </section>
                 </li>
         })}

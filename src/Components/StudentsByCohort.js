@@ -26,7 +26,7 @@ class StudentsByCohort extends React.Component {
     const totalStudents = (this.props.data).map(e => e.id);
 
     return(
-      <section>
+      <section className="list-heading">
         <h2>{this.validateCohort(this.props.filter)}</h2>
         <p>Total students: {(totalStudents).length}</p>
       </section>
