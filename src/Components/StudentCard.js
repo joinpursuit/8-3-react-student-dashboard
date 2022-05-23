@@ -16,17 +16,11 @@ class StudentCard extends React.Component {
   constructor() {
     super();
     this.state = {
-      showMore: false,
       person: "",
       comment: "",
       newReviews: [],
     };
   }
-  showMoreHandler = () => {
-    this.setState({
-      showMore: !this.state.showMore,
-    });
-  };
   commentNameHandler = (e) => {
     const { value } = e.target;
     this.setState({
@@ -50,9 +44,9 @@ class StudentCard extends React.Component {
   };
 
   render() {
-    const { student } = this.props;
-    const { names, dob, profilePhoto, username } = student;
-    const { showMore, person, comment, newReviews } = this.state;
+    const { student, showMoreHandler, showMore } = this.props;
+    const { id, names, dob, profilePhoto, username } = student;
+    const { person, comment, newReviews } = this.state;
     const dobFormatted = new Date(dob).toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
@@ -78,10 +72,11 @@ class StudentCard extends React.Component {
             Birthday: {dobFormatted}
             <br />
             <br />
-            <div onClick={() => this.showMoreHandler()}>
-              {showMore ? "Show Less..." : "Show More..."}
+            <div onClick={() => showMoreHandler(id)}>
+              {showMore.includes(id) ? "Show less..." : "Show More..."}
+              {console.log(showMore)}
             </div>
-            {showMore ? (
+            {showMore.includes(id) ? (
               <ExtendedInfo
                 student={student}
                 showMoreHandler={this.showMoreHandler}
@@ -95,7 +90,7 @@ class StudentCard extends React.Component {
             ) : null}
           </div>
         </section>
-        <span class="my-spacer"></span>
+        <span className="my-spacer"></span>
         <div className="track">
           {onTrack(student) ? "On Track To Graduate" : null}
         </div>

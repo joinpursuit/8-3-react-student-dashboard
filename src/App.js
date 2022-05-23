@@ -10,6 +10,7 @@ class App extends React.Component {
     this.state = {
       filteredStudents: [...studentData],
       cohort: "All Students",
+      showMore: [],
     };
   }
   stringTransformer = (string) => {
@@ -31,8 +32,22 @@ class App extends React.Component {
       cohort: date,
     });
   };
+  showMoreHandler = (cardId) => {
+    const { showMore } = this.state;
+    if (showMore.includes(cardId)) {
+      let newShowMore = showMore.filter((e) => e !== cardId);
+      this.setState({
+        showMore: newShowMore,
+      });
+    } else {
+      this.setState({
+        showMore: [...showMore, cardId],
+      });
+    }
+    console.log("hello");
+  };
   render() {
-    const { filteredStudents, cohort } = this.state;
+    const { filteredStudents, cohort, showMore } = this.state;
     return (
       <div className="main">
         <h1 className="heading">Student Dashboard</h1>
@@ -43,7 +58,12 @@ class App extends React.Component {
         />
 
         <div className="gallery">
-          <StudentGallery filteredStudents={filteredStudents} cohort={cohort} />
+          <StudentGallery
+            filteredStudents={filteredStudents}
+            cohort={cohort}
+            showMore={showMore}
+            showMoreHandler={this.showMoreHandler}
+          />
         </div>
       </div>
     );
