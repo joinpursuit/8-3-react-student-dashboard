@@ -1,0 +1,78 @@
+
+.profile-photo {
+    max-width: 100px;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 5px;
+} 
+
+.cohort-title:hover {
+    color: blue;
+}
+
+.total:hover {
+    color: blue;
+}
+
+.show-more {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    color: blue;
+}
+
+.show-more:hover {
+    color: red;
+    font-weight: bold;
+}
+
+.student-dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.student-info {
+    color: black;
+    margin: 20px 20px;
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+}
+
+.student-info:hover, .profile-photo:hover {
+    text-transform: uppercase;
+    border: 1px solid blue;
+}
+
+.cohort-list {
+    width: 100%;
+    height: auto;
+    top: 1%;
+    position: -webkit-sticky;
+    position: sticky;
+    margin: 20px 40px;
+}
+
+.cohort-list:hover {
+    color: blue;
+    text-transform: uppercase;
+    width: 300px;
+    height: auto;
+}
+
+.cohort-code {
+    color: black;
+    text-decoration: underline;
+}
+
+.cohort-code:active {
+    color: green;
+    text-decoration: green;
+}
+
+.ontrack {
+    font-weight: bold;
+    color: green;
+    margin: 10px auto;
+}
