@@ -2,6 +2,15 @@ import React from "react";
 import "./extendedinfo.css";
 import FeedbackForm from "./FeedbackForm.js";
 
+const percentColor = (percent) => {
+  if (percent >= 100) {
+    return "green";
+  } else if (percent >= 50) {
+    return "yellow";
+  } else {
+    return "red";
+  }
+};
 function ExtendedInfo(props) {
   const emoji = (boolean) => (boolean ? "✅" : " ❌");
   const {
@@ -26,7 +35,12 @@ function ExtendedInfo(props) {
           <div>Current Total: {total} </div>
           <div>Last Week: {lastWeek} </div>
           <div>Goal: {goal} </div>
-          <div>Percent of Goal Achieved: {percentAchieved} %</div>
+          <div>
+            Percent of Goal Achieved:
+            <span className={percentColor(percentAchieved)}>
+              {percentAchieved} %
+            </span>
+          </div>
         </section>
         <section className="sec">
           <h4>Scores</h4>

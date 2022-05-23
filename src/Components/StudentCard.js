@@ -43,18 +43,21 @@ class StudentCard extends React.Component {
 
   submitHandler = (e) => {
     e.preventDefault();
-    const review = `${this.state.person} says '${this.state.comment}'`;
+    const review = `${this.state.person} says, '${this.state.comment}'`;
     this.setState({
       newReviews: [...this.state.newReviews, review],
     });
-    console.log(this.state.newReviews);
   };
 
   render() {
     const { student } = this.props;
     const { names, dob, profilePhoto, username } = student;
     const { showMore, person, comment, newReviews } = this.state;
-    const dobFormatted = new Date(dob).toDateString().substring(4);
+    const dobFormatted = new Date(dob).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
     const { preferredName, middleName, surname } = names;
     return (
       <div className="card">
@@ -92,6 +95,7 @@ class StudentCard extends React.Component {
             ) : null}
           </div>
         </section>
+        <span class="my-spacer"></span>
         <div className="track">
           {onTrack(student) ? "On Track To Graduate" : null}
         </div>

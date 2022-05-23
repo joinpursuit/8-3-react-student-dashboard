@@ -35,7 +35,7 @@ function FeedbackForm(props) {
       </form>
       {notes.length ? (
         <li>
-          {notes[0].commenter} says '{notes[0].comment}'{" "}
+          {notes[0].commenter} says '{notes[0].comment}'
         </li>
       ) : null}
       {newReviews.length

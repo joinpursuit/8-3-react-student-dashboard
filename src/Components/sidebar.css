@@ -5,10 +5,11 @@
     top: 0;
     align-self: flex-start;
     height: auto;
-    width: 260px;
+    width: 280px;
     background-color: rgb(116, 16, 11);
     padding: 10px;
     color: #fff;
+    left: 1em;
 
 }
 
@@ -21,5 +22,5 @@
 .semester:hover {
     background-color: rgb(239, 239, 230);
     color: rgb(116, 16, 11);
-    font-size: 22px;
+    transform: scale(1.1); 
 }

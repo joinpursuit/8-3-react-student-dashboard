@@ -12,11 +12,20 @@ class App extends React.Component {
       cohort: "All Students",
     };
   }
+  stringTransformer = (string) => {
+    if (string === "All Students") {
+      return "All Students";
+    }
+    const semesterArr = string.split("");
+    const semesterEnd = semesterArr.splice(-4);
+    return [...semesterArr, " ", ...semesterEnd].join("");
+  };
   filteredByClass = (date) => {
     const selectedClass = studentData.filter(
-      (student) => student.cohort.cohortCode === date
+      (student) => this.stringTransformer(student.cohort.cohortCode) === date
     );
-    const allOrSome = date === "AllStudents" ? [...studentData] : selectedClass;
+    const allOrSome =
+      date === "All Students" ? [...studentData] : selectedClass;
     this.setState({
       filteredStudents: allOrSome,
       cohort: date,
@@ -28,7 +37,10 @@ class App extends React.Component {
       <div className="main">
         <h1 className="heading">Student Dashboard</h1>
 
-        <Sidebar filteredByClass={this.filteredByClass} />
+        <Sidebar
+          filteredByClass={this.filteredByClass}
+          stringTransformer={this.stringTransformer}
+        />
 
         <div className="gallery">
           <StudentGallery filteredStudents={filteredStudents} cohort={cohort} />

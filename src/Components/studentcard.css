@@ -6,8 +6,10 @@
     font-family: Helvetica, sans-serif;
     background-color: whitesmoke(60, 60, 201);
     margin: 5px;
-    width: 700px;
+    width: 850px;
+    gap: 10px;
 }
+
 .other {
     display: flex;
     flex-direction: column;
@@ -17,17 +19,30 @@
     align-self: flex-start;
     padding: 10px;
 }
+
 .info {
-    padding: 20px;
+    padding:2px;
 }
 .name {
     font-size: 24px;
     color: black;
-    line-height: 24px;
+}
+.my-spacer {
+    flex: 1 1 auto;
 }
 
 .track {
-    position:  relative;
-    float: right;
+    flex-flow: row-reverse;
+    padding:5px;
+}
 
+.red{
+    color:red;
+}
+.green{
+    color: green;
+}
+
+.yellow{
+    color:yellow;
 }
