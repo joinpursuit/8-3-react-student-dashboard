@@ -10,8 +10,6 @@ class StudentCard extends React.Component {
       assessments: this.props.assessments,
       codewars: this.props.codewars,
       showMoreClicked: false,
-      comments: "",
-      commenter: "",
       formattedComment: [],
     };
   }
@@ -20,26 +18,20 @@ class StudentCard extends React.Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-    let commentor = e.target.commenterName.value;
+    let commenter = e.target.commenterName.value;
     let comment = e.target.comment.value;
 
+    if (!!commenter && !!comment) {
+      this.setState({
+        formattedComment: this.state.formattedComment.concat(
+          `${commenter} says, "${comment}"`
+        ),
+      });
+    }
+
+    console.log(this.state.formattedComment);
     e.target.commenterName.value = "";
     e.target.comment.value = "";
-
-    this.setState({
-      comments: comment,
-      commenter: commentor,
-    });
-
-    let formattedComment = [];
-    formattedComment.push(
-      `${this.state.commenter} says, "${this.state.comments}"`
-    );
-
-    this.setState({
-      formattedComment: formattedComment,
-    });
-    console.log(this.state.formattedComment);
   }
 
   comparePercentagesColor(Percent) {
@@ -154,7 +146,6 @@ class StudentCard extends React.Component {
               {this.state.gradReqs.github ? "✅" : "❌"}
             </p>
           </div>
-          <br></br>
           <div id="one-on-one-container">
             <h4 id="one-on-one-title">1-on-1 Notes</h4>
             <form onSubmit={(e) => this.handleFormSubmit(e)}>
@@ -166,15 +157,18 @@ class StudentCard extends React.Component {
                 Commenter Notes:{" "}
                 <input name="comment" id="comment" type="text" />
               </label>
-              <br></br>
-              <br></br>
-              <input type="submit" />
+              <input id="submit-button" type="submit" />
             </form>
-            <hr></hr>
             <ul>
-              {this.state.formattedComment.map((comment, i) => {
-                return <li key={i}>{comment}</li>;
-              })}
+              {this.state.formattedComment.length > 0
+                ? this.state.formattedComment.map((comment, i) => {
+                    return (
+                      <li key={i} className="comment">
+                        {comment}
+                      </li>
+                    );
+                  })
+                : ""}
             </ul>
           </div>
         </section>

@@ -17,8 +17,20 @@
     padding: 10px;
 }
 
+.comment {
+    width: 50%;
+}
+
 #one-on-one-container {
+    display: grid;
+    grid-row: 3;
+    grid-column: 1 / 4;
     margin-left: 10px;
+}
+
+form {
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
 }
 
 #codewars-div,
