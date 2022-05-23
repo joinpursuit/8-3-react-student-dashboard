@@ -1,8 +1,8 @@
 import { Component } from "react";
 import { Modal, Button } from "react-bootstrap";
 
-import check from "../../images/checkmark.png";
-import cross from "../../images/crossmark.png";
+import check from "../../../images/checkmark.png";
+import cross from "../../../images/crossmark.png";
 
 import "./StudentFound.scss";
 

@@ -7,7 +7,7 @@ import { Button, Form } from "react-bootstrap";
 
 import ShowMore from "./ShowMore";
 
-import StudentFound from "./StudentFound";
+import StudentFound from "./SearchStudents/StudentFound";
 
 class StudentList extends Component {
   constructor() {
