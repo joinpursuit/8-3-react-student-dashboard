@@ -1,0 +1,16 @@
+.cohort{
+    height: 40px;
+    width: 400px;
+    margin: auto;
+    font-weight: bold;
+    font-family: sans-serif;
+    border-bottom: 2px solid rgb(75,137,101);
+}
+
+.cohort p{
+    margin-bottom: 0px;
+}
+
+.cohort:hover{
+    color:rgb(131, 136, 141);
+}

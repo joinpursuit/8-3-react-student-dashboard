@@ -1,0 +1,14 @@
+nav {
+    background-color: rgb(250, 166, 208);
+    height: 120px;
+    text-align: center;
+}
+
+nav h1{
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 32px;
+    color: black;
+    margin-top:0px;
+    padding: 40px;
+}
