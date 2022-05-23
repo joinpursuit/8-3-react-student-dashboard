@@ -1,0 +1,16 @@
+#student-card{
+border: solid rgb(65,105,65);
+
+text-align: center;
+padding-left: 1%;
+margin: 20px;
+height: fit-content;
+width: 800px;
+}
+
+#profile-photo{
+   height: 100px;
+   height: 100px;
+   position: left;
+
+}

@@ -1,0 +1,13 @@
+.cohort-button {
+    text-align: left;
+    width: 200px;
+  background: transparent;
+ border-left: none;
+ border-right: none;
+  /* border-top: ; */
+ border-top-color: black;
+ border-top-width: 0px;
+}
+/* #cohort-list-section {
+
+} */
