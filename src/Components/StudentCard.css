@@ -18,7 +18,8 @@
 }
 
 .comment {
-    width: 50%;
+    min-width: 50%;
+    max-width: 95%;
 }
 
 #one-on-one-container {
