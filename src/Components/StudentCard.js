@@ -15,7 +15,6 @@ class StudentCard extends React.Component {
   handleMouseOver() {}
 
   render() {
-    console.log(this.state.gradReqs);
     const passedReqs = Object.values(this.state.gradReqs).includes(false);
     const passedCodewars = this.state.codewars.current.total > 600;
 
