@@ -62,7 +62,12 @@ export default class InstructorForm extends React.Component {
                 onChange={this.handleComment}
               ></input>
             </div>
-            <input onClick={this.handleSubmit} type="submit" value="Add Note" />
+            <input
+              className="submitButton"
+              onClick={this.handleSubmit}
+              type="submit"
+              value="Add Note"
+            />
           </form>
           <ul id="commentListItem">
             {semester.notes.length
