@@ -31,6 +31,22 @@ const StudentDetails = ({ student }) => {
         </p>
       </section>
 
+      <section className="scores">
+        <h4>Scores</h4>
+        <p>
+          <span className="span">Assignments: </span>
+          {student.cohort.scores.assignments * 100}%
+        </p>
+        <p>
+          <span className="span">Projects: </span>
+          {student.cohort.scores.projects * 100}%
+        </p>
+        <p>
+          <span className="span">Assessments: </span>
+          {student.cohort.scores.assessments * 100}%
+        </p>
+      </section>
+
       <section className="line-alt" />
       <Comments student={student} />
     </div>
