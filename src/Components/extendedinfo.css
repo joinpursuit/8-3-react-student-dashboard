@@ -9,3 +9,11 @@
 .sec {
     margin: 5px;
 }
+
+
+button {
+    background-color: rgb(108, 21, 39);
+    border: none;
+    color: white;
+    padding: 5px 5px;
+}

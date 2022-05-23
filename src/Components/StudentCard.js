@@ -36,10 +36,13 @@ class StudentCard extends React.Component {
   };
 
   submitHandler = (e) => {
+    const { person, comment, newReviews } = this.state;
     e.preventDefault();
-    const review = `${this.state.person} says, '${this.state.comment}'`;
+    const review = `${person} says, '${comment}'`;
     this.setState({
-      newReviews: [...this.state.newReviews, review],
+      newReviews: [...newReviews, review],
+      person: "",
+      comment: "",
     });
   };
 
@@ -74,7 +77,6 @@ class StudentCard extends React.Component {
             <br />
             <div onClick={() => showMoreHandler(id)}>
               {showMore.includes(id) ? "Show less..." : "Show More..."}
-              {console.log(showMore)}
             </div>
             {showMore.includes(id) ? (
               <ExtendedInfo
