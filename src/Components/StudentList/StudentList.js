@@ -118,7 +118,7 @@ class StudentList extends Component {
                 onChange={this.handleChange}
               ></Form.Control>
             </Form.Group>
-            <Button id="searchButton" type="submit" variant="primary">
+            <Button id="searchButton" type="submit" variant="dark">
               SEARCH
             </Button>
           </Form>
