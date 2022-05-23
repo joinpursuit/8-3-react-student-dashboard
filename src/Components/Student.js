@@ -90,7 +90,7 @@ function Student(props) {
         </div>
         <div className="graduateStatus">
           <p>
-            {checkGraduateStatus(studentInfo) ? "On Track To Graduate" : null}
+            {checkGraduateStatus(studentInfo) ? "On Track To Graduate!" : null}
           </p>
         </div>
         <div
@@ -98,8 +98,8 @@ function Student(props) {
           onClick={() => studentShowDetailHandler(studentInfo.id)}
         >
           {studentShowDetail.includes(studentInfo.id)
-            ? `Show Less...`
-            : `Show More...`}
+            ? `Show less...`
+            : `Show more...`}
 </div>
       {studentShowDetail.includes(studentInfo.id)
         ? showMoreHandler(studentInfo, comments, commentsHandler)

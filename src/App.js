@@ -9,12 +9,12 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      selectedCohort: "AllStudents", //cohortCode
-      studentShowDetail: [], //array contains unique student id
-      comments: {}, // key is the different student ids, value is array of comments
+      selectedCohort: "AllStudents", 
+      studentShowDetail: [],
+      comments: {}, 
     };
   }
-  //update the selected chortCode and hide all student's details
+  
   selectCohortHandler = (selectedCohort) => {
     this.setState({
       selectedCohort: selectedCohort,
@@ -33,12 +33,7 @@ class App extends React.Component {
       studentShowDetail: copyOfStudentShowDetail,
     });
   };
-  //update the comments
-  /*Ex : {
-    "student_id_1" : ["hi" , "how are you"],
-     student_id_2 : ["hello"]
-  }
-  */
+
   commentsHandler = (studentId, commenter, comment) => {
     if (comment !== "" && commenter !== "") {
       const commentRecord = `[${commenter}] says: "${comment}"`;
