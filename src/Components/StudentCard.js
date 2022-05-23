@@ -15,6 +15,16 @@ class StudentCard extends React.Component {
 
   handleMouseOver() {}
 
+  comparePercentagesColor(Percent) {
+    if (Percent < 50) {
+      return "red-text";
+    } else if (Percent >= 50 && Percent < 100) {
+      return "yellow-text";
+    } else if (Percent >= 100) {
+      return "green-text";
+    }
+  }
+
   handleClick(e) {
     this.setState({
       showMoreClicked: !this.state.showMoreClicked,
@@ -78,7 +88,9 @@ class StudentCard extends React.Component {
             </p>
             <p>
               <span className="green-text">Percent of Goal Achieved:</span>{" "}
-              {goalPerc}%
+              <span className={this.comparePercentagesColor(goalPerc)}>
+                {goalPerc}%
+              </span>
             </p>
           </div>
           <div id="scores-div">

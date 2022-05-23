@@ -50,6 +50,14 @@
     color: green;
 }
 
+.red-text {
+    color: red;
+}
+
+.yellow-text {
+    color: yellow;
+}
+
 .visible {
     display: auto;
 }
