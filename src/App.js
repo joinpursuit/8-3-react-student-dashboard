@@ -1,10 +1,11 @@
+import { useState } from "react";
+import SideNav from "./components/SideNav";
+import StudentList from "./components/StudentList";
+import data from "./data/data.json";
 
-function App() {
-  return (
-    <div>
-      <h1>Student Dashboard</h1>
-    </div>
-  );
-}
+const App = () => {
+  const [list, setList] = useState(data);
+  const [cohortName, setTitle] = useState("All Students");
+};
 
 export default App;
