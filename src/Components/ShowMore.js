@@ -38,6 +38,7 @@ class ShowMore extends React.Component {
 
 		return (
 			<div>
+                {/* user can either show all the deets or not */}
 				<button onClick={showMoreButton}>
 					{toggle ? 'Showless' : 'ShowMore'}
 				</button>

@@ -34,7 +34,7 @@ function StudentInfo(props) {
 						<h4>
 							<em>Birthday: {dob}</em>
 						</h4>
-						{OnTrackToGraduate(props.student)}
+						<h5 className="on-track">{OnTrackToGraduate(props.student)}</h5>
 						<ShowMore student={props.student} />
 					</article>
 				</aside>
