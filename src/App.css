@@ -1,0 +1,21 @@
+.App {
+    margin: 0 auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background-color: rgb(71, 122, 75);
+    width: auto;
+    height: 40px;
+    margin: 0 auto;
+    padding: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header:hover{
+    background-color: rgb(155, 45, 45);
+    color: yellow;
+}
