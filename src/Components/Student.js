@@ -55,7 +55,7 @@ class Student extends React.Component {
         </h3>
         <p>Email: {username}</p>
         <p>
-          <span style={{ color: 'black' }}>Birthday:</span> {formatDOB}
+          <span>Birthday:</span> {formatDOB}
         </p>
 
         <button onClick={() => showMoreHandler(studentDeets.id)}>

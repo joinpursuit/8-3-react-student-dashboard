@@ -15,7 +15,7 @@ class App extends React.Component {
   /**
    * updateCohort
    * @param {str} cohort : cohortCode from the data
-   * side effect; updates the state key 'currentCohort'.
+   * side effect; updates the state key 'currentCohort' when a cohort is clicked.
    */
   updateCohort = (cohort) => {
     this.setState({
@@ -27,7 +27,7 @@ class App extends React.Component {
   /**
    *
    * @param {str} id : a students id#.
-   * side effect: updates the state key 'showMore'.
+   * side effect: updates the state key 'showMore' when the show more buton is clicked
    */
   showMoreHandler = (id) => {
     let showMoreCopy = [...this.state.showMore];

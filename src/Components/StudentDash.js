@@ -31,7 +31,7 @@ class StudentDash extends React.Component {
     return this.chooseStudent(data, currentCohort).map((stud) => {
       return (
         <Student
-          key={stud.id} //or idx
+          key={stud.id}
           showMore={showMore}
           showMoreHandler={showMoreHandler}
           studentDeets={stud}

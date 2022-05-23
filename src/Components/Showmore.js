@@ -20,7 +20,7 @@ class Showmore extends React.Component {
    *
    * @param {*} event - info captured on click
    */
-  addNoteHander = (event) => {
+  addCommentHandler = (event) => {
     event.preventDefault();
   };
 
@@ -51,10 +51,7 @@ class Showmore extends React.Component {
     const { resume, linkedin, github, mockInterview } =
       this.props.studentDeets.certifications;
 
-    const percentage = (
-      (codewars.current.total / codewars.goal.total) *
-      100
-    ).toFixed(2);
+    const percentage = ((codewars.current.total / codewars.goal.total) *100).toFixed(2);
 
     return (
       <div className="extra-Deets">
@@ -78,7 +75,7 @@ class Showmore extends React.Component {
         </div>
         <div>
           <h4>Certifications:</h4>
-          <p>Resume: {resume ? '✅' : '❌'}</p>
+          <p>Resume: {resume ? '✅ ' : '❌'}</p>
           <p>Linkedin: {linkedin ? '✅' : '❌'}</p>
           <p>Mock Interview: {mockInterview ? '✅' : '❌'}</p>
           <p>GitHub: {github ? '✅' : '❌'}</p>
@@ -93,7 +90,7 @@ class Showmore extends React.Component {
             <label htmlFor="comment">Comment:</label>
             <input type="text" name="comment" />
 
-            <button onClick={this.addNoteHander}>Add Note</button>
+            <button onClick={this.addNoteHander}>Submit</button>
           </form>
           <div>{this.showComments(studentDeets)}</div>
         </div>
