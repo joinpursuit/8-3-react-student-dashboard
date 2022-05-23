@@ -58,7 +58,7 @@ class StudentList extends React.Component {
         return (
             <div className="studentList">
                 <h2>{this.parseCohort(selectedCohort)}</h2>
-                <h3>Total Students: {studentCards.length}</h3>
+                <h3 className="studentCard">Total Students: {studentCards.length}</h3>
                 {studentCards}
                 <Student />
             </div>
