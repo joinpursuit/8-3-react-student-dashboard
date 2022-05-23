@@ -1,0 +1,17 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    color: white;
+    background-color: green;
+    text-align: center;
+    height: 40px;
+    padding: 30px;
+    margin: 0px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
