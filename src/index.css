@@ -71,7 +71,7 @@
     font-stretch: expanded;
     font-size: 29px;
     padding-left: 8px;
-
+    cursor: pointer;
 }
 
 h2 {
@@ -93,7 +93,7 @@ h2 {
     margin-top: 1.1em;
     padding-bottom: 1em;
     border-bottom: 2px solid darkcyan;
-
+    cursor: pointer;
 }
 
 .studentInformation1 {
@@ -117,4 +117,35 @@ h2 {
 
 .underFifty {
     color: red;
+}
+
+.formSection {
+    border-top: 2px solid darkcyan;
+    margin-top: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 1em;
+}
+
+.submitButton:hover {
+    background: darkcyan
+}
+
+.labels {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.notesHeading {
+    margin-left: 2.1em;
+}
+.commentSection {
+    border-style: solid;
+    border-color: 2px #764f51;
+    margin-top: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    padding-bottom: 24px;
 }

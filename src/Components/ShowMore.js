@@ -1,4 +1,5 @@
 import React from "react";
+import InstructorForm from "./InstructorForm";
 
 export default class ShowMore extends React.Component {
   constructor() {
@@ -84,7 +85,7 @@ export default class ShowMore extends React.Component {
               <p>Current Total: {semester.codewars.current.total}</p>
               <p>Last Week: {semester.codewars.current.lastWeek}</p>
               <p>Goal: {semester.codewars.goal.total}</p>
-              <p>{this.codewarsPercentageComparator(semester)}</p>
+              <div>{this.codewarsPercentageComparator(semester)}</div>
             </aside>
             <div>
               <h4>Scores</h4>
@@ -100,8 +101,18 @@ export default class ShowMore extends React.Component {
               <p>Github: {this.githubAuthenticator(semester)}</p>
             </div>
           </div>
+          <div className="formSection"></div>
+          <InstructorForm semester={semester} />
         </div>
       </div>
     );
   }
 }
+
+// import React from 'react'
+
+// export default function ShowMore() {
+//   return (
+//     <div>ShowMore</div>
+//   )
+// }

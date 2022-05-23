@@ -11,7 +11,6 @@ class App extends React.Component {
       studentData: data,
       selectedCohortCode: "All Students",
     };
-    console.log();
   }
 
   handleSemesterItemClick = (semester) => {

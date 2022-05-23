@@ -8,10 +8,11 @@ export default function StudentList({
   const studentListItem = studentInformation.map((semester) => {
     return (
       <div className="oneStudent" key={semester.id}>
-        <Student semester={semester} studentInformation={studentInformation}/>
+        <Student semester={semester} studentInformation={studentInformation} />
       </div>
     );
   });
+  // console.log(studentInformation[0].notes[0].commenter);
 
   const formatCohortTitle = (string) => {
     if (string !== "All Students") {
