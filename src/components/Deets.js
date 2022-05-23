@@ -1,7 +1,7 @@
 import React from "react";
-import "./Details.css";
+import "./Deets.css";
 
-class Details extends React.Component {
+class Deets extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -24,11 +24,11 @@ class Details extends React.Component {
     });
   };
 
-  formSubmitHandler = (event) => {
+  submitForm = (event) => {
     event.preventDefault();
   };
 
-  displayComments = (comments, id) => {
+  showComments = (comments, id) => {
     if (comments.hasOwnProperty(id)) {
       return comments[id].map((comment, index) => {
         return <li key={index}>{comment}</li>;
@@ -113,7 +113,7 @@ class Details extends React.Component {
         </div>
         <div className="oneToOne">
           <h4>One-on-One Notes</h4>
-          <form onSubmit={this.formSubmitHandler}>
+          <form onSubmit={this.submitForm}>
             <label htmlFor="author">
               author Name:{" "}
               <input
@@ -144,10 +144,10 @@ class Details extends React.Component {
             </button>
           </form>
         </div>
-        <ul>{this.displayComments(comments, id)}</ul>
+        <ul>{this.showComments(comments, id)}</ul>
       </div>
     );
   }
 }
 
-export default Details;
+export default Deets;
