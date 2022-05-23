@@ -1,0 +1,32 @@
+.student-card-box{
+    border: solid green;
+}
+
+#all-students-heading{
+    text-align: left;
+}
+.container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 50px ;
+}
+ .box-one {
+     min-height: 100px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+     grid-row-start: 2;
+     grid-row-end: 3;
+ }
+.box-two{
+    min-height: 200px;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.box.three{
+    min-height: 300px;
+    grid-row-start: 2;
+    grid-row-start:3;
+}
+#whole-section{
+    background-color: rgb(255, 255, 227);
+}
