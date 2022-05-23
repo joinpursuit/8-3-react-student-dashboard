@@ -16,6 +16,7 @@ class Form extends React.Component {
     let { comments, commenterName, comment } = this.state
     let newComment = `${commenterName} says, "${comment}"`
     this.setState({ comments: [...comments, newComment] })
+    this.setState({ comment: '' })
     event.target.reset()
   }
 
