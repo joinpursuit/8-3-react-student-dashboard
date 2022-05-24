@@ -1,37 +1,39 @@
 import React from "react";
-
-class StudentsByCohort extends React.Component {
-  constructor(props) {
-    super(props);
-
-  }
-
-  validateCohort = (filter) => {
+ 
+/**
+ * validateCohort: given a student list and plus a student cohort code, generates a heading title with a respective count
+ * @param {[]String} students -A student list.
+ * @param {String} cohort -A cohort code identifier.
+ * @returns update the students list by cohort
+ */
+const validateCohort = (students, filter) => {
     let cohort = '';
+    // >> Validating the cohort code 
     if(filter !== '*') {
       const cohortList = new Set(
-        (this.props.students).map(e => e.cohort['cohortCode'])
+        (students).map(student => student.cohort['cohortCode'])
       ) 
-      // >> Formating string
+      // >> Formating the cohort identifier in a human readable way
       cohort = [...cohortList].find(e => e === filter);
       cohort = `${cohort.slice(0, -4)}  ${cohort.slice(-4)}`
     } else {
       cohort = 'All Students';
     }
-
     return cohort;
   }
 
-  render() {
-    const totalStudents = (this.props.students).map(e => e.id);
+function StudentsByCohort(props) {
+  const { students, filter } = props;  
+  
+    const totalStudents = (students).map(student => student.id);
 
     return(
       <section className="list-heading">
-        <h2>{this.validateCohort(this.props.filter)}</h2>
+        <h2>{validateCohort(students, filter)}</h2>
         <p>Total students: {(totalStudents).length}</p>
       </section>
     )
-  }
+  
 }
 
 export default StudentsByCohort;
