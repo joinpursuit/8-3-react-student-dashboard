@@ -18,6 +18,11 @@ h1 {
     margin-left: 10px;
 }
 
+.sticky {
+    position: sticky;
+    top: 25px;
+}
+
 .cohort {
     text-align: left;
 }

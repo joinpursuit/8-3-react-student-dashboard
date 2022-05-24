@@ -1,5 +1,5 @@
 function OneOnOne({ notes }) {
-    
+  
   function handleFormSubmit(event) {
     event.preventDefault();
     const newCommenter = event.target.commenter.value;
@@ -9,6 +9,10 @@ function OneOnOne({ notes }) {
       notes.push({ commenter: newCommenter, comment: newComment });
       alert('Your note was accepted!');
       document.getElementById('notes-form').reset();
+
+      const li = document.createElement('li');
+      li.textContent = `${newCommenter} says, ${newComment}`;
+      document.getElementById('new-notes').append(li);
     } else {
       alert('Please include both your name and a comment.');
     }
@@ -29,11 +33,13 @@ function OneOnOne({ notes }) {
         <button type="submit">Add Note</button>
       </form>
       <ul id="new-notes">
-        {notes.map((note) => (
-          <li>
-            {note.commenter} says, {note.comment}
-          </li>
-        ))}
+        {notes.map((note) => {
+          return (
+            <li>
+              {note.commenter} says, {note.comment}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

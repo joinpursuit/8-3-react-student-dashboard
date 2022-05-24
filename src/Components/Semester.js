@@ -24,6 +24,11 @@ function Semester({ handleClick }) {
       <hr></hr>
     </div>
   ));
-  return <section>{displaySemesters}</section>;
+  return (
+    <section className="sticky">
+      <h2>Choose a Class by Start Date</h2>
+      {displaySemesters}
+    </section>
+  );
 }
 export default Semester;

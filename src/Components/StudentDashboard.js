@@ -7,9 +7,9 @@ function StudentDashboard({ code, cohort, allStudents }) {
       : student.cohort.cohortCode === code;
   }
 
-  const students = allStudents.filter(byCohort).map((student, index) => (
+  const students = allStudents.filter(byCohort).map((student) => (
     <div id={student.id} className="student-countainer">
-      <Student key={index} student={student} />
+      <Student key={student.id} student={student} />
     </div>
   ));
 
