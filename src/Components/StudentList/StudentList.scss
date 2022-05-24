@@ -1,0 +1,70 @@
+.studentListSection {
+  width: 100%;
+}
+
+.StudentList {
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+}
+
+#studentCount {
+  color: purple;
+}
+
+.studentCard {
+  border: 3px solid greenyellow;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 3%;
+  margin-bottom: 3%;
+
+  #onTrack {
+    text-shadow: 0 3px #4361ee, 3px 4px #4361ee;
+  }
+
+  .studentPhoto {
+    display: block;
+    width: 100%;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .studentInfo {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+      margin: 0;
+    }
+
+    .studentDOB {
+      font-size: 15px;
+      margin: 0;
+
+      .DOB {
+        color: orange;
+      }
+    }
+  }
+}
+
+.success {
+  color: lightgreen;
+}
+
+.failure {
+  color: red;
+}
+
+#searchBox {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+#searchButton {
+  height: 75%;
+}

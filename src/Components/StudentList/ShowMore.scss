@@ -1,0 +1,30 @@
+.showMoreSection {
+  grid-column: 1 / span 3;
+  text-align: center;
+
+  .ShowMoreInfo {
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    img {
+      width: 10%;
+    }
+
+    .grades {
+      color: rgb(1, 212, 240);
+    }
+  }
+}
+
+.goalReached {
+  color: lightgreen;
+}
+
+.halfway {
+  color: yellow;
+}
+
+.underGoal {
+  color: red;
+}
