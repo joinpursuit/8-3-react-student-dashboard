@@ -31,9 +31,9 @@ class App extends React.Component {
   }
 
   /**
-   * getCohort: get the students cohort
+   * getCohort: get the student cohort code which was selected by means of <Cohorts /> in order to update the sudent list.
    * @param {String} cohort -A cohort identifier.
-   * @returns update the state by students filtered
+   * @returns update the students list by cohort
    */
   getCohort = (cohort) => {
     if(cohort !== '*') {
@@ -58,7 +58,7 @@ class App extends React.Component {
           </aside>
           <article>
             <StudentsByCohort students={this.state.students} filter={this.state.filter}/>
-            <Students students={this.state.students} filter={this.state.filter}/>
+            <Students students={this.state.students}/>
           </article>
         </main>
         <footer></footer>

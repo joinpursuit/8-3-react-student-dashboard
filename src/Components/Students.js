@@ -1,17 +1,17 @@
 import React from "react";
 import ShowDetailsButton from "./ShowDetailsButton";
-import StudentStatus from "./StudentStatus";
-
-
 
 /**
  * validateStudentStatus: validates the student certifications
- * @param {String} resume -A student date of birth.
- * @returns A human readable student date of bith (e.g) February 9, 1979
+ * @param {Boolean} resume -A resume certification.
+ * @param {Boolean} linkedin -A linkedin certification.
+ * @param {Boolean} mockInterview -A mockInterview certification.
+ * @param {Boolean} github -A github certification.
+ * @param {Number} codewars -A Codewars global score.
+ * @returns A string that represents the student status 
  */
 const validateStudentStatus = (resume, linkedin, mockInterview, github, codewars) => {
   return (resume && linkedin && mockInterview && github && (codewars > 600)) ? 'On Track to Graduate' : '';
-  
 }
 
 /**
@@ -20,23 +20,21 @@ const validateStudentStatus = (resume, linkedin, mockInterview, github, codewars
  * @returns A human readable student date of bith (e.g) February 9, 1979
  */
 const getFormatedDOB = (dob) => {
-    const date = new Date(dob);
-    const year = date.getFullYear();
-    const month = date.toLocaleString('default', { month: 'long' });
-    const day = date.getDate();
-  
+  const date  = new Date(dob),
+        month = date.toLocaleString('default', { month: 'long' }),
+        day   = date.getDate(),
+        year  = date.getFullYear();
+        
     return `${month} ${day}, ${year}`; 
   }
 
 function Students(props) {
-  const { students, filter } = props;
-  // >> 
-  const studentList = (students).map(e => e)
-    
+  const { students } = props;
+  
   return(
     <>
       <ul>
-      {(studentList).map(student => {
+      {(students).map(student => {
         return <li key={student.id}>
                 <section className="personal-data">
                   <img src={student.profilePhoto}/>
@@ -55,7 +53,7 @@ function Students(props) {
                     <p>Birthday: <span>{getFormatedDOB(student.dob)}</span></p>
                   </div>
                 </section> 
-                <ShowDetailsButton studentList={studentList} studentId={student.id}/>  
+                <ShowDetailsButton studentList={students} studentId={student.id}/>  
               </li>
       })}
       </ul>
