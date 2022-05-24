@@ -10,7 +10,7 @@ class StudentsByCohort extends React.Component {
     let cohort = '';
     if(filter !== '*') {
       const cohortList = new Set(
-        (this.props.data).map(e => e.cohort['cohortCode'])
+        (this.props.students).map(e => e.cohort['cohortCode'])
       ) 
       // >> Formating string
       cohort = [...cohortList].find(e => e === filter);
@@ -23,7 +23,7 @@ class StudentsByCohort extends React.Component {
   }
 
   render() {
-    const totalStudents = (this.props.data).map(e => e.id);
+    const totalStudents = (this.props.students).map(e => e.id);
 
     return(
       <section className="list-heading">

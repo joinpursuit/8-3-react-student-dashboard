@@ -30,8 +30,7 @@ class ToggleButton extends React.Component {
   }
 
   validateGoal(current, goal) {
-    const score = (((current / goal))*100).toFixed();
-    console.log(score)
+    const score = (((current/goal))*100).toFixed();
     // >> 
     let scoreCheck = '';
     if(score >= 100) {
@@ -92,22 +91,22 @@ class ToggleButton extends React.Component {
               <table>
                 <tr>
                   <td><span>Resume:</span></td><td> 
-                    {e.certifications.resume ? <i className="fa fa-check-circle green"></i> : <i class="fa fa-minus-circle red"></i>}
+                    {e.certifications.resume ? <i className="fa fa-check-circle green"></i> : <i className="fa fa-minus-circle red"></i>}
                   </td>
                 </tr>
                 <tr>
                   <td><span>Linkedin:</span></td><td> 
-                    {e.certifications.linkedin ? <i className="fa fa-check-circle green"></i> : <i class="fa fa-minus-circle red"></i>}
+                    {e.certifications.linkedin ? <i className="fa fa-check-circle green"></i> : <i className="fa fa-minus-circle red"></i>}
                   </td>
                 </tr>
                 <tr>
                   <td><span>Mock Interview:</span></td><td> 
-                    {e.certifications.mockInterview ? <i className="fa fa-check-circle green"></i> : <i class="fa fa-minus-circle red"></i>}
+                    {e.certifications.mockInterview ? <i className="fa fa-check-circle green"></i> : <i className="fa fa-minus-circle red"></i>}
                   </td>  
                 </tr>
                 <tr>
                   <td><span>Github:</span></td><td> 
-                    {e.certifications.github ? <i className="fa fa-check-circle green"></i> : <i class="fa fa-minus-circle red"></i>}
+                    {e.certifications.github ? <i className="fa fa-check-circle green"></i> : <i className="fa fa-minus-circle red"></i>}
                   </td>  
                 </tr>
               </table>
@@ -117,10 +116,7 @@ class ToggleButton extends React.Component {
           
         </div>
         <section className="comments">
-          <StudentCommentsForm studentList={this.props.studentList}/>  
-        </section>
-        <section className="comment-list">
-          <StudentCommentsList student={studentById}/>
+          <StudentCommentsForm student={studentById} comments={e.notes}/>  
         </section>
       </>
     });

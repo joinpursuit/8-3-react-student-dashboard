@@ -8,25 +8,34 @@ class StudentCommentsForm extends React.Component {
     this.state = {
       name: '',
       comment: '',
+      commentList: [],
       isValid: false,
     };
+    // this.setState({
+    //   commentList: this.loadCommentsByStudent(),    
+    // });
   }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    const newObj = {
-      "commenter": this.state.name,
-      "comment": this.state.comment
-    }
-    // >> Validating all the fields
-    //if(this.state.isValid) {
-      (this.props.studentList).map(student => {
-        
-        
-        (student.notes).push(newObj)
-      },() => this.handleFormReset())
-      
-    //}
+    let studentNotes;
+    const formObj = {};
+    formObj["commenter"] = this.state.name;
+    formObj["comment"] = this.state.comment;
+    //Create a notes array shallow copy
+    (this.props.student).map((student) => {
+      studentNotes = [...student.notes];
+      studentNotes.push(formObj)
+
+      this.setState({
+        commentList: studentNotes,    
+      });
+
+    }, () => this.getCommentsByStudent(), 
+       () => this.handleFormReset(),
+    
+    );
+    
   }
 
   handleFormReset = (event) => {
@@ -46,6 +55,7 @@ class StudentCommentsForm extends React.Component {
       });
     }
   }
+
   handleTextCommentChange = (event) => {
     const { value } = event.target;
     if (value !== ''){
@@ -56,7 +66,51 @@ class StudentCommentsForm extends React.Component {
     }
   }
 
-  
+  loadCommentsByStudent = () => {
+    let comments = '';
+    // let studentNotes = [];
+    // const formObj = {};
+    // (this.props.student).map((student, index) => {
+      
+    //   formObj["commenter"] = student.notes[index].commenter;
+    //   formObj["comment"] = student.notes[index].comment;
+      
+    //   studentNotes.push(formObj)
+    //   console.log(studentNotes)
+      
+      
+    // });
+    // //return studentNotes;
+    // this.setState({
+    //   commentList: studentNotes, 
+    // })
+    (this.state.commentList).map((student, index) => {
+      return <li key={student.id}>
+                <span><i className="fa fa-commenting"></i> {student.notes[index].commenter}</span> {student.notes[index].comment}
+              </li>;
+    })
+  }
+
+  /**
+   * Display the comments if the student id exist inside the comments object as a key
+   * @param {[]String} comments // object that contains comments ,key is the different student ids,
+   * value is array of comments
+   * @param {String} id -A unique ID associated with each student.
+   * @returns an array of comments as <li> item
+   */
+  getCommentsByStudent = () => {
+    
+    {console.log(this.state.commentList)}
+    if(this.state.commentList.length === 0){
+      this.setState({
+        commentList: this.props.comments,
+      }, this.loadCommentsByStudent()
+      
+      );
+    }
+
+    
+  }
 
   render() {
     
@@ -86,7 +140,10 @@ class StudentCommentsForm extends React.Component {
           </div>
           <input type="submit" value="Add Note" />
         </form>
-       
+        
+        <ul>
+          {/* {this.getCommentsByStudent()} */}
+        </ul>
       </>
     )
   }
