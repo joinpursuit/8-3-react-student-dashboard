@@ -69,7 +69,7 @@ class OneOnOne extends Component {
 
     return (
       <section className="OneOnOneSection">
-        <h1 id="OneOnOneTitle">1 on 1 Notes</h1>
+        <h1 id="OneOnOneTitle">Notes</h1>
         <Form id="OneOnOneForm" onSubmit={this.handleSubmit}>
           <Form.Group className="mb-3" controlId="form-CommenterName">
             <Form.Label>Commenter Name</Form.Label>

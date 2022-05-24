@@ -116,6 +116,7 @@ class StudentList extends Component {
                 name="searchbox"
                 value={this.state.searchbox}
                 onChange={this.handleChange}
+                placeholder="Type a name"
               ></Form.Control>
             </Form.Group>
             <Button id="searchButton" type="submit" variant="dark">
