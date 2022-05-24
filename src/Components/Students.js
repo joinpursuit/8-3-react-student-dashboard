@@ -52,11 +52,11 @@ class Students extends React.Component {
                       <div className="container">
                         <h4>{`${student.names['preferredName']} ${(student.names['middleName']).substring(0, 1)} ${student.names['surname']}`}</h4>
                         <span className="track-check">
-                          {this.validateStudentStatus(student.certifications.resume,
+                          {/* {this.validateStudentStatus(student.certifications.resume,
                                           student.certifications.linkedin,
                                           student.certifications.mockInterview,
                                           student.certifications.github,
-                                          student.codewars.current.total)}
+                                          student.codewars.current.total)} */}
                           
                         </span>
                       </div>

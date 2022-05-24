@@ -9,6 +9,8 @@ import React from "react";
     const uniqueCohortList = new Set(
       (cohorts).map(e => e.cohort['cohortCode'])
     )
+    
+    // >> Creating a new array that contains an unique value [*] which represents the global cohorts, plus each cohort code. 
     const cohortList = ['*'].concat(Array.from(uniqueCohortList));
     cohortList.map((cohort) => cohortsSorted.push({['semester']: cohort.slice(0, -4), ['year']: cohort.slice(-4)}))
     
