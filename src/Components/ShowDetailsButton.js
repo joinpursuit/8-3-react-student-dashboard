@@ -2,25 +2,26 @@ import React from "react";
 import StudentCommentsForm from "./StudentCommentsForm";
 import StudentCommentsList from "./StudentCommentsList";
 
-class ToggleButton extends React.Component {
+class ShowDetailsButton extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.iconCheck = <i className="fa fa-check-circle green"></i>;
+    this.iconMinus = <i className="fa fa-minus-circle red"></i>;
+
     this.state = {
       isShowMore: false,
       academicData: '',
       onTrack: false,
-      achieved: '',
+      comments: '',
     };
   }
+; 
 
   handleClick() {
     this.setState({
       isShowMore: !this.state.isShowMore,
     }, () => {
-        //this.props.checkoutValid()
-        //console.log(this.state.isShowMore)
-
         if(!this.state.isShowMore){
           this.setState({academicData: ''})
         } else {
@@ -29,22 +30,18 @@ class ToggleButton extends React.Component {
       });
   }
 
+
   validateGoal(current, goal) {
     const score = (((current/goal))*100).toFixed();
-    // >> 
+    // >> Validating score
     let scoreCheck = '';
     if(score >= 100) {
-      this.setState({
-        achieved: 'green',
-      })  
       scoreCheck = 'green';
     }
     if(score >= 50 && score < 100) {
-      this.setState({achieved: 'yellow',})
       scoreCheck = 'yellow';  
     } 
     if(score < 50) {
-      this.setState({achieved: 'red',})
       scoreCheck = 'red';  
     }
 
@@ -52,88 +49,58 @@ class ToggleButton extends React.Component {
   }
 
   getStudentDetails(students, id) {
-    const studentById = students.filter(student => student.id === id);
-    const academicData = studentById.map((e, i) => { 
-      
-      return <>
-        <div>
-          <div className="container"> 
+    const studentById  = students.filter(student => student.id === id),
+          commentsById = [],
+          academicData = studentById.map(e => 
+      <>
+        <div className="container"> 
             <div> 
               <h4>Codewars: </h4>
               <table className="data certifications">
-                <tr>
-                  <td><span>Current total:</span></td><td> {e.codewars.current.total}</td>
-                </tr>
-                <tr>
-                  <td><span>Last week:</span></td><td> {e.codewars.current.lastWeek}</td>
-                </tr>
-                <tr>
-                  <td><span>Goal:</span></td><td> {e.codewars.goal.total}</td>
-                </tr>
+                <tr><td><span>Current total:</span></td><td> {e.codewars.current.total}</td></tr>
+                <tr><td><span>Last week:</span></td><td> {e.codewars.current.lastWeek}</td></tr>
+                <tr><td><span>Goal:</span></td><td> {e.codewars.goal.total}</td></tr>
               </table>
             </div>
             <div>
               <h4>Scores:</h4>
               <table>
-                <tr>
-                  <td><span>Assignments:</span></td><td> {(e.cohort.scores.assignments)*100}%</td>
-                </tr>
-                <tr>
-                  <td><span>Projects:</span></td><td> {(e.cohort.scores.projects)*100}%</td>
-                </tr>
-                <tr>
-                  <td><span>Assessments:</span></td><td> {(e.cohort.scores.assessments)*100}%</td>
-                </tr>
+                <tr><td><span>Assignments:</span></td><td> {(e.cohort.scores.assignments)*100}%</td></tr>
+                <tr><td><span>Projects:</span></td><td> {(e.cohort.scores.projects)*100}%</td></tr>
+                <tr><td><span>Assessments:</span></td><td> {(e.cohort.scores.assessments)*100}%</td></tr>
               </table> 
             </div>
             <div>
               <h4>Certifications:</h4>
               <table>
-                <tr>
-                  <td><span>Resume:</span></td><td> 
-                    {e.certifications.resume ? <i className="fa fa-check-circle green"></i> : <i className="fa fa-minus-circle red"></i>}
-                  </td>
-                </tr>
-                <tr>
-                  <td><span>Linkedin:</span></td><td> 
-                    {e.certifications.linkedin ? <i className="fa fa-check-circle green"></i> : <i className="fa fa-minus-circle red"></i>}
-                  </td>
-                </tr>
-                <tr>
-                  <td><span>Mock Interview:</span></td><td> 
-                    {e.certifications.mockInterview ? <i className="fa fa-check-circle green"></i> : <i className="fa fa-minus-circle red"></i>}
-                  </td>  
-                </tr>
-                <tr>
-                  <td><span>Github:</span></td><td> 
-                    {e.certifications.github ? <i className="fa fa-check-circle green"></i> : <i className="fa fa-minus-circle red"></i>}
-                  </td>  
-                </tr>
+                <tr><td><span>Resume:</span></td><td>{e.certifications.resume ? this.iconCheck : this.iconMinus}</td></tr>
+                <tr><td><span>Linkedin:</span></td><td>{e.certifications.linkedin ? this.iconCheck : this.iconMinus}</td></tr>
+                <tr><td><span>Mock Interview:</span></td><td>{e.certifications.mockInterview ? this.iconCheck : this.iconMinus}</td>  </tr>
+                <tr><td><span>Github:</span></td><td>{e.certifications.github ? this.iconCheck : this.iconMinus}</td></tr>
               </table>
             </div>
           </div>
-          <div className="goal-achieved">Percent of Goal Achieved: {this.validateGoal(e.codewars.current.total, e.codewars.goal.total)}</div>
-          
+        <div className="goal-achieved">Percent of Goal Achieved: {this.validateGoal(e.codewars.current.total, e.codewars.goal.total)}</div>
+        <div className="comments">
+          <StudentCommentsForm comments={e.notes}/>  
         </div>
-        <section className="comments">
-          <StudentCommentsForm student={studentById} comments={e.notes}/>  
-        </section>
-      </>
-    });
-
+      </>);
+    // >> 
     this.setState({
-      academicData: academicData,
+      academicData : academicData,
     })
   }
 
   render() {
-    //const { label = "More", actionToPerform } = this.props;
+    
     const { isShowMore } = this.state;
-    let btnLabel=this.state.isShowMore ? "Show Less" : "Show More...";
+
+    let btnLabel = isShowMore ? "Show Less" : "Show More...";
+    let btnClass = isShowMore ? "less" : "more";
     return (
       <>
         <section className="academic-data">
-          <button onClick={this.handleClick} display={this.state.display}>{btnLabel}</button>
+          <button className={btnClass} onClick={this.handleClick} display={this.state.display}>{btnLabel}</button>
           {this.state.academicData}  
         </section>
       </>
@@ -141,4 +108,4 @@ class ToggleButton extends React.Component {
   }
 }
 
-export default ToggleButton;
+export default ShowDetailsButton;

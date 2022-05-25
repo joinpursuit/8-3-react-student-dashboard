@@ -35,18 +35,20 @@ function Students(props) {
     <>
       <ul>
       {(students).map(student => {
-        return <li key={student.id}>
+        return <li key={student.id} className='student-card'>
                 <section className="personal-data">
                   <img src={student.profilePhoto}/>
                   <div>
                     <div className="container">
                       <h4>{`${student.names['preferredName']} ${(student.names['middleName']).substring(0, 1)} ${student.names['surname']}`}</h4>
                       <span className="track-check">
-                        {validateStudentStatus(student.certifications.resume,
-                                        student.certifications.linkedin,
-                                        student.certifications.mockInterview,
-                                        student.certifications.github,
-                                        student.codewars.current.total)}
+                        {validateStudentStatus( 
+                          student.certifications.resume,
+                          student.certifications.linkedin,
+                          student.certifications.mockInterview,
+                          student.certifications.github,
+                          student.codewars.current.total)
+                        }
                       </span>
                     </div>
                     <p>Username: <span>{student.username}</span></p>

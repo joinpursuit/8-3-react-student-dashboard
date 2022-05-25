@@ -12,17 +12,8 @@ class StudentStatus extends React.Component {
 
   validateStudentStatus = (resume, linkedin, mockInterview, github, codewars) => {
     
-    if(resume && linkedin && mockInterview && github && (codewars > 600)) {
-      // this.setState({ 
-      //   //studentStatus: 'On Track to Graduate',
-      //   onTrack: true,
-      // });
-      return 'On Track to Graduate';
-    } else {
-      // this.setState({ 
-      //   onTrack: false,  
-      // });
-    }
+    (resume && linkedin && mockInterview && github && (codewars > 600)) ? ('On Track to Graduate') : ('');
+    
   }
 
   render() {

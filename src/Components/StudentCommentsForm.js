@@ -2,13 +2,14 @@ import { render } from "@testing-library/react";
 import React from "react";
 
 class StudentCommentsForm extends React.Component {
-  constructor(props, ref) {
+  constructor(props) {
     super(props);
-    
+    this.iconComment = <i className="fa fa-commenting"></i>;
+    this.iconNoComment = <i className="fa fa-exclamation-circle"></i>;
     this.state = {
       name: '',
       comment: '',
-      commentList: [],
+      commentList: this.props.comments,
       isValid: false,
     };
     // this.setState({
@@ -16,27 +17,29 @@ class StudentCommentsForm extends React.Component {
     // });
   }
 
-  handleFormSubmit = (event) => {
+  handleFormSubmit = (event, props) => {
     event.preventDefault();
-    let studentNotes;
-    const formObj = {};
-    formObj["commenter"] = this.state.name;
-    formObj["comment"] = this.state.comment;
-    //Create a notes array shallow copy
-    (this.props.student).map((student) => {
-      studentNotes = [...student.notes];
-      studentNotes.push(formObj)
+
+    // >> Checking field validations
+    if(this.state.isValid) {
+      let commentList = [];
+      const newComment = {};
+
+      // >> Validating if there are any previous comments 
+      if(this.state.commentList.length > 0) {
+        commentList = [...this.state.commentList]
+      }
+      
+      newComment["commenter"] = this.state.name;
+      newComment["comment"] = this.state.comment;
+      commentList.push(newComment)
 
       this.setState({
-        commentList: studentNotes,    
-      });
-
-    }, () => this.getCommentsByStudent(), 
-       () => this.handleFormReset(),
-    
-    );
-    
+        commentList: commentList,    
+      }, () => this.handleFormReset());
+    }
   }
+
 
   handleFormReset = (event) => {
       this.setState({
@@ -98,24 +101,21 @@ class StudentCommentsForm extends React.Component {
    * @param {String} id -A unique ID associated with each student.
    * @returns an array of comments as <li> item
    */
-  getCommentsByStudent = () => {
-    
-    {console.log(this.state.commentList)}
-    if(this.state.commentList.length === 0){
-      this.setState({
-        commentList: this.props.comments,
-      }, this.loadCommentsByStudent()
-      
-      );
+  getCommentsByStudent = (comments) => {
+    // >> Validating if there are previous comments
+    if(comments.length > 0) {
+      return (this.state.commentList).map((comment) =>  
+        <li key={comment.id}><span>{this.iconComment} {comment['commenter']}</span> {comment['comment']}</li>);
+    } else {
+      return <li><span>{this.iconNoComment} </span> {'No previous comments'}</li>;
     }
-
-    
   }
 
   render() {
     
     return(
       <>
+        <div>
         <form onSubmit={this.handleFormSubmit} onReset={this.handleFormReset}>
           <h2>1-on-1 Notes</h2>
           <div className="form-control">
@@ -140,10 +140,13 @@ class StudentCommentsForm extends React.Component {
           </div>
           <input type="submit" value="Add Note" />
         </form>
-        
-        <ul>
-          {/* {this.getCommentsByStudent()} */}
-        </ul>
+        </div>
+        <div className="comment-list">
+          <h2>Last comments</h2>
+          <ul>
+            {this.getCommentsByStudent(this.state.commentList)}
+          </ul>
+        </div>
       </>
     )
   }
