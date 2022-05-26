@@ -1,6 +1,9 @@
 import React from "react";
 import ShowDetailsButton from "./ShowDetailsButton";
 
+let iconGraduate = <i class="fa fa-graduation-cap"></i>;
+const message = 'On Track to Graduate';
+
 /**
  * validateStudentStatus: validates the student certifications
  * @param {Boolean} resume -A resume certification.
@@ -11,7 +14,8 @@ import ShowDetailsButton from "./ShowDetailsButton";
  * @returns A string that represents the student status 
  */
 const validateStudentStatus = (resume, linkedin, mockInterview, github, codewars) => {
-  return (resume && linkedin && mockInterview && github && (codewars > 600)) ? 'On Track to Graduate' : '';
+  return (resume && linkedin && mockInterview && github && (codewars > 600)) ? 
+            <span className="track-check">{message}  {iconGraduate}</span> : '';
 }
 
 /**
@@ -41,15 +45,13 @@ function Students(props) {
                   <div>
                     <div className="container">
                       <h4>{`${student.names['preferredName']} ${(student.names['middleName']).substring(0, 1)} ${student.names['surname']}`}</h4>
-                      <span className="track-check">
-                        {validateStudentStatus( 
-                          student.certifications.resume,
-                          student.certifications.linkedin,
-                          student.certifications.mockInterview,
-                          student.certifications.github,
-                          student.codewars.current.total)
-                        }
-                      </span>
+                      {validateStudentStatus( 
+                        student.certifications.resume,
+                        student.certifications.linkedin,
+                        student.certifications.mockInterview,
+                        student.certifications.github,
+                        student.codewars.current.total)
+                      }
                     </div>
                     <p>Username: <span>{student.username}</span></p>
                     <p>Birthday: <span>{getFormatedDOB(student.dob)}</span></p>

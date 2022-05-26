@@ -63,13 +63,17 @@ main article ul li .personal-data > div {
   padding: 1rem;
 }
 main article ul li .personal-data .container {
-  margin: 0;display: grid;grid-template-columns: 2fr 1fr;
+  margin: 0;display: grid;grid-template-columns: 2fr 1fr;position: relative;
 }
 main article ul li .personal-data .container h4 {
   margin: 0rem 0;font-size: 1.6rem;font-weight: bold;font-family: 'Open Sans', sans-serif;
 }
 main article ul li .personal-data .container .track-check {
-  font-size: 1.0rem;line-height: 1.5rem;font-family: 'Open Sans', sans-serif; font-weight: bold;color:cadetblue;
+ padding: 2px 14px; position: absolute;top: -31px;right: -33px;
+  font-size: 0.8rem;line-height: 1.8rem;font-family: 'Open Sans', sans-serif; font-weight: 500;background-color: #cbf3f0; color: #006d77;
+}
+main article ul li .personal-data .container .track-check i {
+  font-size: 1.2rem;line-height: 1.8rem;font-weight: bold;color:FFF;
 }
 main article ul li .personal-data p:nth-child(2),
 main article ul li .personal-data p:nth-child(3) {
@@ -184,40 +188,34 @@ main article ul li .academic-data .comment-list ul {
   list-style: none;
 }
 main article ul li .academic-data .comment-list ul li {
-  padding: 0;margin: 0.5rem 0; font-size: 1.0rem;line-height: 1.4rem;font-weight: 400;font-family: 'Open Sans', sans-serif;border: none;   
+  padding: 10px 0;margin: 1rem 0; font-size: 1.2rem;line-height: 1.4rem;font-weight: 800;font-family: 'Open Sans', sans-serif;
+  border: none; color: #006d77;  
 }
-main article ul li .academic-data .comment-list ul li span {
-  font-size: 1.0rem;line-height: 1.2rem;font-weight: 600;font-family: 'Open Sans', sans-serif;color: cadetblue;   
+main article ul li .academic-data .comment-list ul li .bubble {
+  padding: 10px 20px;margin: 0 0 0 20px; position: relative;top: 12px; font-size: 1.0rem;line-height: 1.2rem;font-weight: 400;font-family: 'Open Sans', sans-serif;
+  color: #FFF;background-color: #00bfb6;border-radius: 0 10px 10px 0;  
 }
-main article ul li .academic-data .comment-list ul li span  {
-  font-size: 1.2rem;   
+main article ul li .academic-data .comment-list ul li span.bubble:before {
+  content: "";width: 0px;height: 0px;position: absolute;left: -16px;top: 0px;
+  border-left: 15px solid transparent;border-right: 15px solid #00bfb6;
+  border-top: 15px solid #00bfb6;border-bottom: 15px solid transparent;
 }
-/*** H E L P E R S ***/i
-/* .green {
-  color: #2a9d8f !important;
+main article ul li .academic-data .comment-list ul li .no-comments  {
+  font-size: 1.2rem;font-weight: 400;   
 }
-.yellow {
-  color: #fee440 !important;
-}
-.red {
-  color: #ef476f !important;
-} */
-
-/*CLase que aplica los estilos al elemento a aparecer*/
+/*** H E L P E R S ***/
 .show-element {
-  /*duracion de la animacion, puedes variar el tiempo, entre mas grande mas tarda el efecto*/
-  /* animation-duration: 2s;
+  animation-duration: 2s;
   animation-fill-mode: both;
-  /*le indicas que animacion quieres aplicarle, animacion hecha por ti en un keyframe*/
-  /* animation-name: fadeIn;
-  background-color: rgb(225, 225, 255); */
+  animation-name: fadeIn;
+  background-color: rgb(225, 225, 255);
   display: block;
 }
 
 .hide-element {
-  /* animation-duration: 2s;
+  animation-duration: 2s;
   animation-fill-mode: both;
-  animation-name: fadeOut; */
+  animation-name: fadeOut;
   display: none;
 }
 

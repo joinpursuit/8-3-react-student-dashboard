@@ -4,17 +4,16 @@ import React from "react";
 class StudentCommentsForm extends React.Component {
   constructor(props) {
     super(props);
-    this.iconComment = <i className="fa fa-commenting"></i>;
-    this.iconNoComment = <i className="fa fa-exclamation-circle"></i>;
+    this.iconComment       = <i className="fa fa-commenting"></i>;
+    this.iconNoComment     = <i className="fa fa-exclamation-circle"></i>;
+    this.iconCommenQLeft   = <i className="fa fa-quote-left"></i>;
+    this.iconCommentQRight = <i className="fa fa-quote-right"></i>;
     this.state = {
       name: '',
       comment: '',
       commentList: this.props.comments,
       isValid: false,
     };
-    // this.setState({
-    //   commentList: this.loadCommentsByStudent(),    
-    // });
   }
 
   handleFormSubmit = (event, props) => {
@@ -39,7 +38,6 @@ class StudentCommentsForm extends React.Component {
       }, () => this.handleFormReset());
     }
   }
-
 
   handleFormReset = (event) => {
       this.setState({
@@ -69,31 +67,6 @@ class StudentCommentsForm extends React.Component {
     }
   }
 
-  loadCommentsByStudent = () => {
-    let comments = '';
-    // let studentNotes = [];
-    // const formObj = {};
-    // (this.props.student).map((student, index) => {
-      
-    //   formObj["commenter"] = student.notes[index].commenter;
-    //   formObj["comment"] = student.notes[index].comment;
-      
-    //   studentNotes.push(formObj)
-    //   console.log(studentNotes)
-      
-      
-    // });
-    // //return studentNotes;
-    // this.setState({
-    //   commentList: studentNotes, 
-    // })
-    (this.state.commentList).map((student, index) => {
-      return <li key={student.id}>
-                <span><i className="fa fa-commenting"></i> {student.notes[index].commenter}</span> {student.notes[index].comment}
-              </li>;
-    })
-  }
-
   /**
    * Display the comments if the student id exist inside the comments object as a key
    * @param {[]String} comments // object that contains comments ,key is the different student ids,
@@ -105,7 +78,10 @@ class StudentCommentsForm extends React.Component {
     // >> Validating if there are previous comments
     if(comments.length > 0) {
       return (this.state.commentList).map((comment) =>  
-        <li key={comment.id}><span>{this.iconComment} {comment['commenter']}</span> {comment['comment']}</li>);
+        <li key={comment.id}>
+          {comment['commenter']}:  
+          <span className="bubble">{this.iconCommenQLeft} {comment['comment']} {this.iconCommentQRight}</span>
+        </li>);
     } else {
       return <li><span>{this.iconNoComment} </span> {'No previous comments'}</li>;
     }

@@ -1,6 +1,5 @@
 import React from "react";
-import StudentCommentsForm from "./StudentCommentsForm";
-import StudentCommentsList from "./StudentCommentsList";
+import StudentComments from "./StudentComments";
 
 class ShowDetailsButton extends React.Component {
   constructor(props) {
@@ -15,8 +14,7 @@ class ShowDetailsButton extends React.Component {
       onTrack: false,
       comments: '',
     };
-  }
-; 
+  } 
 
   handleClick() {
     this.setState({
@@ -29,7 +27,6 @@ class ShowDetailsButton extends React.Component {
         }
       });
   }
-
 
   validateGoal(current, goal) {
     const score = (((current/goal))*100).toFixed();
@@ -50,7 +47,6 @@ class ShowDetailsButton extends React.Component {
 
   getStudentDetails(students, id) {
     const studentById  = students.filter(student => student.id === id),
-          commentsById = [],
           academicData = studentById.map(e => 
       <>
         <div className="container"> 
@@ -82,7 +78,7 @@ class ShowDetailsButton extends React.Component {
           </div>
         <div className="goal-achieved">Percent of Goal Achieved: {this.validateGoal(e.codewars.current.total, e.codewars.goal.total)}</div>
         <div className="comments">
-          <StudentCommentsForm comments={e.notes}/>  
+          <StudentComments comments={e.notes}/>  
         </div>
       </>);
     // >> 
@@ -92,7 +88,6 @@ class ShowDetailsButton extends React.Component {
   }
 
   render() {
-    
     const { isShowMore } = this.state;
 
     let btnLabel = isShowMore ? "Show Less" : "Show More...";
