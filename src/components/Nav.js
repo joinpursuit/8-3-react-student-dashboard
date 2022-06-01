@@ -7,7 +7,7 @@ const seasoning = (string) => {
     return "All Students";
   }
   const semesterStart = string.split("");
-  const semesterEnd = semesterBeg.splice(-4);
+  const semesterEnd = semesterStart.splice(-4);
   return [...semesterStart, " ", ...semesterEnd].join("");
 };
 
@@ -22,7 +22,7 @@ const startDate = () => {
       two = b.split(" ");
     return one[1] - two[1] || seasons[one[0]] - seasons[two[0]];
   });
-  const semesterEdit = semesterHope.map((sem) =>
+  const semesterEdit = semesterStuff.map((sem) =>
     sem.split(" ").join("")
   );
   return ["AllStudents", ...semesterEdit];
