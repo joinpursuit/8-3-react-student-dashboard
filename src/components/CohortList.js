@@ -14,7 +14,6 @@ let cohortArr = (input) => {
  return Object.keys(cohortObj);
 };
 
-
 const sortCohorts = (cohortArr) => {
     let season = ["Winter","Fall", "Summer", "Spring"];
     let sortedCohorts = cohortArr.sort((cohort1, cohort2) => {
