@@ -20,5 +20,12 @@ class App extends React.Component {
       cohort: date,
     })
   };
-  render()
+  render() {
+    const {studentFilter, cohort} = this.state;
+    return (
+      <div>
+        
+      </div>
+    )
+  }
 }
