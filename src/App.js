@@ -1,8 +1,9 @@
 
 import React from "react";
-import StudentList from "./components/StudentList";
+import StudentGallery from "./components/StudentList";
 import { studentData } from "./data/data.js"
-import "./app.css"
+import Nav from "./components/Nav"
+import "./App.css"
 
 class App extends React.Component {
   constructor(){
@@ -23,9 +24,15 @@ class App extends React.Component {
   render() {
     const {studentFilter, cohort} = this.state;
     return (
-      <div>
-        
+      <div className="main">
+        <h1 className="header"> Student BananaBoard</h1>
+        <Nav classFilter={this.classFilter} />
+        <div className="display">
+          <StudentGallery studentFilter={studentFilter} cohort={cohort} />
+        </div>
       </div>
     )
   }
 }
+
+export default App;
