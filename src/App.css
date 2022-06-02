@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500;600;700;800;900&family=Merriweather+Sans:wght@700;800&family=Open+Sans:wght@400;500;600;700;800&display=swap');
+body {
+  
+}
+
+header {
+  padding: 1rem 0;text-align: center;background-color: #006d77;;
+}
+header h1 {
+  font-size: 3rem;font-weight: bold;font-family: 'Open Sans', sans-serif;letter-spacing: 2px; color: #FFF;
+}
+main {
+  width: 80%; margin: 1rem auto;display: grid;grid-template-columns: 2fr 4fr;gap: 20px;
+}
+main aside {
+  height: 100%;padding: 1rem;display: flex;
+  justify-content: space-between;
+}
+main aside section {
+  width: 100%;height: 125vh;top: 5%;position: -webkit-sticky;position: sticky;
+}
+main aside h2 {
+  margin: 0;font-size: 1.8rem;font-weight: 600;font-family: 'Open Sans', sans-serif;color: #006d77
+}
+main aside ul {
+  padding: 0rem; list-style: none;
+}
+main aside ul li {
+  padding: 1rem 0;font-size: 1.2rem;font-weight: bold;font-family: 'Open Sans', sans-serif;border-bottom: 1px solid #666;cursor: pointer;
+}
+main aside ul li i {
+  margin-right: 10px;
+}
+main aside ul li:hover {
+  color:cadetblue;
+}
+main article {
+
+}
+main article .list-heading {
+
+}
+main article .list-heading h2 {
+  margin: 0.5rem 0;font-size: 1.4rem;font-weight: 800;font-family: 'Open Sans', sans-serif;color: #005f73;
+}
+main article .list-heading p {
+  margin: 0rem 0;font-size: 1.2rem;font-weight: 600;font-family: 'Open Sans', sans-serif;
+}
+main article ul {
+  padding: 0rem; list-style: none;
+}
+main article ul li.student-card {
+  padding: 1rem;margin: 1rem 0;border: 2px solid #a8dadc;box-shadow: 0px 2px 0px 1px #0a9396;
+}
+/*** P E R S O N A L   D A T A ***/
+main article ul li .personal-data {
+  display: grid;grid-template-columns: 20% 80%;
+}
+main article ul li .personal-data img {
+  width: 80%;border: 10px solid #a8dadc;border-radius: 3px;
+}
+main article ul li .personal-data > div {
+  padding: 1rem;
+}
+main article ul li .personal-data .container {
+  margin: 0;display: grid;grid-template-columns: 2fr 1fr;position: relative;
+}
+main article ul li .personal-data .container h4 {
+  margin: 0rem 0;font-size: 1.6rem;font-weight: bold;font-family: 'Open Sans', sans-serif;
+}
+main article ul li .personal-data .container .track-check {
+ padding: 2px 14px; position: absolute;top: -31px;right: -33px;
+  font-size: 0.8rem;line-height: 1.8rem;font-family: 'Open Sans', sans-serif; font-weight: 500;background-color: #cbf3f0; color: #006d77;
+}
+main article ul li .personal-data .container .track-check i {
+  font-size: 1.2rem;line-height: 1.8rem;font-weight: bold;color:FFF;
+}
+main article ul li .personal-data p:nth-child(2),
+main article ul li .personal-data p:nth-child(3) {
+  font-size: 1.0rem;font-weight: 500;font-family: 'Open Sans', sans-serif; color:cadetblue;
+}
+main article ul li .personal-data p:nth-child(2) span,
+main article ul li .personal-data p:nth-child(3) span {
+  font-size: 1.0rem;font-weight: bold;font-family: 'Open Sans', sans-serif;color:#333;
+}
+/*** A C A D E M i C   D A T A ***/
+main article ul li .academic-data {
+  
+}
+main article ul li .academic-data button {
+  padding: 1rem 2rem; margin: auto; display: table; font-size: 1.0rem;font-weight: bold; font-family: 'Open Sans', sans-serif;
+  color:#FFF;background-color: cadetblue;border: none;border-radius: 3px;
+}
+main article ul li .academic-data button {
+  cursor: pointer;
+}
+main article ul li .academic-data button.more {
+    
+}
+main article ul li .academic-data button.more:hover {
+  background-color: #2a9d8f;
+}
+main article ul li .academic-data button.less {
+  background-color: #457b9d;    
+}
+main article ul li .academic-data button.less:hover {
+  background-color: #1d3557;    
+}
+main article ul li .academic-data .container {
+  padding: 0rem;margin: 1rem 0;
+  display: grid !important;grid-template-columns: 1fr 1fr 1fr;gap: 5px; border: 0px solid cadetblue;
+}
+main article ul li .academic-data .container h4 {
+  padding: 0.5rem; margin: 0rem 0;text-align: center; font-size: 1.4rem;font-weight: bold;font-family: 'Open Sans', sans-serif;
+  background-color: #a8dadc;color: #006d77;
+}
+main article ul li .academic-data .container table {
+  width: 100%;
+}
+main article ul li .academic-data .container table tr {
+  border: none;
+}
+main article ul li .academic-data .container table tr td {
+  font-size: 1.0rem;line-height: 1.8rem; font-weight: 700;font-family: 'Open Sans', sans-serif;
+}
+main article ul li .academic-data .container table tr td span {
+  font-weight: 600;color:cadetblue;
+}
+main article ul li .academic-data .container table tr td i {
+  font-size: 1.4rem;
+}
+main article ul li .academic-data .container table tr td i.green {
+  color: #2a9d8f;
+}
+main article ul li .academic-data .container table tr td i.red {
+  color: #ef476f;
+}
+main article ul li .academic-data .goal-achieved {
+  padding: 1rem 0; font-size: 1.0rem;line-height: 1.4rem; font-weight: 600;font-family: 'Open Sans', sans-serif;color: #006d77;
+}
+main article ul li .academic-data .goal-achieved span {
+  padding: 5px;margin: 0 2px; display: inline-block; font-size: 1.0rem;line-height: 1.4rem; font-weight: 800;
+  font-family: 'Open Sans', sans-serif;color: #FFF;border-radius: 2px;
+}
+main article ul li .academic-data .goal-achieved span.green {
+  background-color: #2a9d8f;
+}
+main article ul li .academic-data .goal-achieved span.yellow {
+  background-color: #fee440;
+}
+main article ul li .academic-data .goal-achieved span.red {
+  background-color: #ef476f;
+}
+/*** C O M M E N T S ***/
+main article ul li .academic-data .comments {
+  padding: 0rem;margin: 0rem 0; border: 0px solid cadetblue;
+}
+main article ul li .academic-data .comments form {
+  width: 100%;padding: 1rem 4rem; margin: auto;box-sizing: border-box; background-color: #eaf4f4;
+}
+main article ul li .academic-data .comments form h2 {
+  margin: 1.0rem 0;text-align: center; font-size: 1.4rem;font-weight: 800;font-family: 'Open Sans', sans-serif;color: #006d77; 
+}
+main article ul li .academic-data .comments form h2 span {
+  padding: 10px;margin: 0.5rem 0;text-align: center; font-size: 1.8rem;font-weight: 800;font-family: 'Open Sans', sans-serif;
+  background-color: #006d77;color: #FFF;border-radius: 3px;
+}
+main article ul li .academic-data .comments form .form-control {
+  padding: 0.5rem; display: grid;grid-template-columns: 1fr 2fr;gap: 5px;
+}
+main article ul li .academic-data .comments form label {
+  font-size: 1.0rem;line-height: 2.0rem;font-weight: 400;font-family: 'Open Sans', sans-serif;   
+}
+main article ul li .academic-data .comments form input {
+  padding: 0.5rem;font-family: 'Open Sans', sans-serif; border: 1px solid cadetblue; border-radius: 3px;   
+}
+main article ul li .academic-data .comments form input[type='submit'] {
+  padding: 0.5rem 2rem; margin: 1.0rem auto; display: table; font-size: 1.0rem;font-weight: 600; font-family: 'Open Sans', sans-serif;
+  color:#FFF;background-color: cadetblue;border: none;border-radius: 3px; cursor: pointer;   
+}
+main article ul li .academic-data .comment-list {
+  padding: 0rem;margin: 1rem 0; border: none;
+}
+main article ul li .academic-data .comment-list h2 {
+  margin: 1.5rem 0;text-align: left; font-size: 1.5rem;font-weight: 800;font-family: 'Open Sans', sans-serif;color: #006d77;
+}
+main article ul li .academic-data .comment-list ul {
+  list-style: none;
+}
+main article ul li .academic-data .comment-list ul li {
+  padding: 10px 0;margin: 1rem 0; font-size: 1.2rem;line-height: 1.4rem;font-weight: 800;font-family: 'Open Sans', sans-serif;
+  border: none; color: #006d77;  
+}
+main article ul li .academic-data .comment-list ul li .bubble {
+  padding: 10px 20px;margin: 0 0 0 20px; position: relative;top: 12px; font-size: 1.0rem;line-height: 1.2rem;font-weight: 400;font-family: 'Open Sans', sans-serif;
+  color: #FFF;background-color: #00bfb6;border-radius: 0 10px 10px 0;  
+}
+main article ul li .academic-data .comment-list ul li span.bubble:before {
+  content: "";width: 0px;height: 0px;position: absolute;left: -16px;top: 0px;
+  border-left: 15px solid transparent;border-right: 15px solid #00bfb6;
+  border-top: 15px solid #00bfb6;border-bottom: 15px solid transparent;
+}
+main article ul li .academic-data .comment-list ul li .no-comments  {
+  font-size: 1.2rem;font-weight: 400;   
+}
+/*** H E L P E R S ***/
+.show-element {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+  background-color: rgb(225, 225, 255);
+  display: block;
+}
+
+.hide-element {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-name: fadeOut;
+  display: none;
+}
+
+/*KeyFrames*/
+/*La animacion hecha por ti, puedes ponerle cualquier nombre, solo es para identificarlo*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*Puedes hacer mas animaciones personalizadas con todo lo que pueda hacer css*/
+@keyframes otherAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes animationTranslateIn {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes animationTranslateOut {
+  from {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-200px);
+  }
+}
