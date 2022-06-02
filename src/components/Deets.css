@@ -1,15 +1,3 @@
-.green{
-    color:green;
-}
-
-.yellow{
-    color:yellow;
-}
-
-.red{
-    color:red;
-}
-
 .feedback{
     display: grid;
     grid-column: .25;
