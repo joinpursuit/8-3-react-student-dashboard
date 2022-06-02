@@ -1,11 +1,11 @@
-.dashBoard {
+.display {
     display: grid; grid-template-columns: 1fr 1fr;
 }
 
-.cohortList{
+header {
     grid-column: .5;
 }
 
-.studentList{
+.main {
     grid-column: .33;
 }
