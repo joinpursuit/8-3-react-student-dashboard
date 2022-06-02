@@ -48,24 +48,24 @@ class StudentList extends React.Component {
         const { names, dob, profilePhoto, username } = student;
         const { show, person, comment, newSubmission } = this.state;
         const dobFormat = new Date(dob).toDateString().substring(4);
-        const { preferredName, middleName, surname } = names;
+        const { firstName, middleName, surname } = names;
         return (
           <div className="card">
             <img
               className="pic"
-              alt={preferredName}
+              alt={firstName}
               src={profilePhoto}
               width={120}
               height={120}
             />
             <section className="info">
               <div className="name">
-                {preferredName} {middleName[0]}. {surname}
+                {firstName} {middleName[0]}. {surname}
               </div>
               <div className="other">
                 {username} 📧
                 <br />
-                Birthday: {dobFormatted}
+                Birthday: {dobFormat}
                 <br />
                 <br />
                 <div onClick={() => this.showMore()}>
@@ -93,4 +93,4 @@ class StudentList extends React.Component {
       }
     }
     
-    export default StudentDirectory;
+    export default StudentList;
