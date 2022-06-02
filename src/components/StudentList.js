@@ -48,19 +48,19 @@ class StudentList extends React.Component {
         const { names, dob, profilePhoto, username } = student;
         const { show, person, comment, newSubmission } = this.state;
         const dobFormat = new Date(dob).toDateString().substring(4);
-        const { firstName, middleName, surname } = names;
+        const { preferredName, middleName, surname } = names;
         return (
           <div className="card">
             <img
               className="pic"
-              alt={firstName}
+              alt={preferredName}
               src={profilePhoto}
               width={120}
               height={120}
             />
             <section className="info">
               <div className="name">
-                {firstName} {middleName[0]}. {surname}
+                {preferredName} {middleName[0]}. {surname}
               </div>
               <div className="other">
                 {username} 📧

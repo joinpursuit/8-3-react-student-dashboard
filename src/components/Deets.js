@@ -3,14 +3,14 @@ import React from "react";
 function Deets(props) {
   const {
     person,
-    author,
+    authorStuff,
     comment,
     commentStuff,
     notes,
     submission,
     newSubmission,
   } = props;
-  
+
   return (
     <section className="feedback">
       <h4>1-on-1 Notes</h4>
@@ -20,7 +20,7 @@ function Deets(props) {
           type="text"
           name="name"
           value={person}
-          onChange={author}
+          onChange={authorStuff}
         />
         <br />
         <label htmlFor="comment">Comment: </label>
