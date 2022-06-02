@@ -45,10 +45,10 @@ class StudentList extends React.Component {
 
     render() {
         const { student } = this.props;
-        const { names, dob, profilePhoto, username } = student;
+        const {  dob, profilePhoto, username } = student;
         const { show, person, comment, newSubmission } = this.state;
         const dobFormat = new Date(dob).toDateString().substring(4);
-        const { preferredName, middleName, surname } = names;
+        const { preferredName, middleName, surname } = student.names;
         return (
           <div className="card">
             <img

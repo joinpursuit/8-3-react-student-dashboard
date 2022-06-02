@@ -1,6 +1,5 @@
-
 import React from "react";
-import StudentGallery from "./components/StudentList";
+import StudentGallery from "./components/StudentGallery";
 import { studentData } from "./data/data.js"
 import Nav from "./components/Nav"
 import "./App.css"
@@ -9,10 +8,11 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      studentFilter: [...studentData],
+      studentFilter: [...studentData], 
       cohort: "All Students",
     }
   }
+
   classFilter = (date) => {
     const classSelect = studentData.filter( (student) => student.cohort.cohortCode === date);
     const howMany = date === "AllStudents" ? [...studentData] : classSelect;
@@ -21,6 +21,7 @@ class App extends React.Component {
       cohort: date,
     })
   };
+
   render() {
     const {studentFilter, cohort} = this.state;
     return (
