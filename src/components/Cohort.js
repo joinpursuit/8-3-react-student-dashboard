@@ -1,20 +1,15 @@
-import "./Cohort.css"
+import React from "react";
 
-const cohortStuff = (cohortCode) => {
-    if (cohortCode === "All Students") return "All Students";
-
-    return `${cohortCode.substring(0, cohortCode.length -4)}
-            ${cohortCode.substring(cohortCode.length -4)}`
-};
-
-function Cohort(props) {
-    const {cohortCode, selectCohort} = props;
-
-    return(
-        <div className="cohort" onClick={()=> selectCohort(cohortCode)}>
-            {cohortStuff(cohortCode)}
-        </div>
-    )
+class Cohort extends React.Component {
+    render(){
+        const { studentFilter, cohort } = this.props;
+        return (
+            <div>
+                <h2>{cohort}</h2>
+                Total Students: {studentFilter.length}
+            </div>
+        )
+    }
 };
 
 export default Cohort;

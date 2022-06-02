@@ -10,6 +10,7 @@ function Deets(props) {
     submission,
     newSubmission,
   } = props;
+  
   return (
     <section className="feedback">
       <h4>1-on-1 Notes</h4>

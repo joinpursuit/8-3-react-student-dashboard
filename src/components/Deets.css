@@ -10,7 +10,7 @@
     color:red;
 }
 
-.details{
+.feedback{
     display: grid;
     grid-column: .25;
     grid-template-columns: 1fr 1fr 1fr;
