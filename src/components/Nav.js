@@ -40,8 +40,7 @@ class Nav extends React.Component {
             <button
               className="semester"
               onClick={() => classFilter(date)}
-              key={date}
-            >
+              key={date}>
               {seasoning(date)}
             </button>
           ))}

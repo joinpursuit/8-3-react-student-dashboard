@@ -1,5 +1,5 @@
 * {
-    cursor: url("../Images/banana-cursor.png"), auto;
+    cursor: url("../Images/banana-cursor1.png"), auto;
 }
 
 h3 .card {
@@ -7,9 +7,12 @@ h3 .card {
 }
 
 .card {
-    display: grid; grid-template-columns: 2fr 2fr;
+    display: grid; 
+    grid-template-columns: 3fr 2fr;
     padding-right: 100px;
     padding-left: 50px;
+    padding-bottom: 50px;
+    justify-content: center;
 }
 
 .clicky {
@@ -18,11 +21,13 @@ h3 .card {
     color: purple;
     border-radius: 15px;
     width: 35%;
+    cursor: url("../Images/banana-cursor2.png"), auto;
 }
 
 button:hover {
     color:red;
     box-shadow: 0 4px 4px 0 pink, 0 4px 4px 0 red;
+    cursor: url("../Images/banana-cursor2.png"), auto;
 }
 
 .name {
