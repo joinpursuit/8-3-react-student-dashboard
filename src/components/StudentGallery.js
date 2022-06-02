@@ -1,6 +1,7 @@
 import React from "react";
 import Cohort from "./Cohort";
 import StudentList from "./StudentList";
+import "./StudentGallery.css";
 
 class StudentGallery extends React.Component {
   render() {
@@ -11,7 +12,7 @@ class StudentGallery extends React.Component {
     return (
       <div>
         <Cohort studentFilter={studentFilter} cohort={cohort} />
-        <div>{gallery}</div>
+        <div className="gallery">{gallery}</div>
       </div>
     );
   }

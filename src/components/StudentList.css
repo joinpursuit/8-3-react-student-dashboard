@@ -1,3 +1,19 @@
 h3 .card {
     color: #ffe135; /* banana yellow */
 }
+
+.card {
+    display: grid; grid-template-columns: 2fr 2fr;
+    padding-right: 100px;
+    padding-left: 50px;
+}
+
+.clicky {
+    background-color: pink;
+    color: purple;
+    border-radius: 15px;
+}
+
+button:hover {
+    color:red;
+}

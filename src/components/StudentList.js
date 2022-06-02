@@ -1,5 +1,6 @@
 import React from "react";
 import Show from "./Show.js";
+import "./StudentList.css";
 
 const Graduating = (student) => {
      const certifications = Object.values(student.certifications);
@@ -68,9 +69,9 @@ class StudentList extends React.Component {
                 Birthday: {dobFormat}
                 <br />
                 <br />
-                <div onClick={() => this.showMore()}>
+                <button className="clicky" onClick={() => this.showMore()}>
                   {show ? "Show Less..." : "Show More..."}
-                </div>
+                </button>
                 {show ? (
                   <Show
                     student={student}

@@ -26,7 +26,7 @@ class App extends React.Component {
     const {studentFilter, cohort} = this.state;
     return (
       <div className="main">
-        <h1 className="header"> Student BananaBoard</h1>
+        <h1 className="header">🍌Student BananaBoard🍌</h1>
         <Nav classFilter={this.classFilter} />
         <div className="display">
           <StudentGallery studentFilter={studentFilter} cohort={cohort} />

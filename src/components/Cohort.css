@@ -5,4 +5,5 @@ h2 {
     font-weight: bold italic;
     font-family: Helvetica;
     border-bottom: 2px solid pink;
+    display: grid; grid-template-columns: 2fr 2fr;
 }

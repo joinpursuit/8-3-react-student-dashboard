@@ -1,5 +1,6 @@
 import React from "react";
 import { studentData } from "../data/data";
+import "./Nav.css"
 
 
 const seasoning = (string) => {
@@ -36,13 +37,13 @@ class Nav extends React.Component {
         <h3 className="title"> Choose a Class by Start Date </h3>
         <section className="dates">
           {startDate().map((date) => (
-            <div
+            <button
               className="semester"
               onClick={() => classFilter(date)}
               key={date}
             >
               {seasoning(date)}
-            </div>
+            </button>
           ))}
         </section>
       </article>
