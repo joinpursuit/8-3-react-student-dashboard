@@ -1,4 +1,5 @@
 import ExpandInfo from './ExpandInfo';
+import commentGenerator from './Comments';
 import './AStudent.css';
 import React from 'react';
 
@@ -28,7 +29,7 @@ class AStudent extends React.Component {
   render() {
     const { student } = this.props;
     const { showMore } = this.state;
-    const { names, username, profilePhoto, dob } = this.props.student;
+    const { names, username, profilePhoto, dob, notes } = this.props.student;
 
     const dateFormat = new Date(dob).toDateString().substring(4);
     return (
@@ -64,6 +65,7 @@ class AStudent extends React.Component {
                   cohort={this.props.student.cohort}
                   showMore={this.state.showMore}
                   toggleExpandInfo={this.toggleExpandInfo}
+                  notes={notes}
                 />
               ) : null}
             </h4>

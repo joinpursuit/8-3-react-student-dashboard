@@ -1,5 +1,6 @@
 import AStudent from './AStudent';
 import App from '../App';
+import Comments from './Comments';
 
 const percentColor = (percent) => {
   if (percent >= 100) {
@@ -17,9 +18,11 @@ function ExpandInfo({
   cohort,
   showMore,
   handleClick,
+  notes,
 }) {
   const { assignments, projects, assessments } = cohort.scores;
   const { linkedin, github, mockInterview, resume } = certifications;
+
   const { current, goal } = codewars;
   if (showMore === true) {
     return (
@@ -30,6 +33,7 @@ function ExpandInfo({
         <section>
           <br />
           <h3> Codewars:</h3>
+
           <p>
             <span className='moreInfoBlurb'>Current Total:</span>
             {current.total}
@@ -43,25 +47,27 @@ function ExpandInfo({
             {goal.total}
           </p>
           <p>
-            <span className='moreInfoBlurb'>Percent of Goal Achieved:</span>
+            <span className='moreInfoBlurb'>Percent of Goal Achieved: </span>
             {Math.round((current.total / goal.total) * 100).toFixed()} %
           </p>
         </section>
         <section>
           <br />
-          <h3>Scores:</h3>
-          <p>
-            <span className='moreInfoBlurb'> Assignments:</span>
-            {assignments * 100}%
-          </p>
-          <p>
-            <span className='moreInfoBlurb'> Projects:</span>
-            {projects * 100}%
-          </p>
-          <p>
-            <span className='moreInfoBlurb'>Assessments:</span>
-            {assessments * 100}%
-          </p>
+          <section>
+            <h3>Scores:</h3>
+            <p>
+              <span className='moreInfoBlurb'> Assignments:</span>
+              {assignments * 100}%
+            </p>
+            <p>
+              <span className='moreInfoBlurb'> Projects:</span>
+              {projects * 100}%
+            </p>
+            <p>
+              <span className='moreInfoBlurb'>Assessments:</span>
+              {assessments * 100}%
+            </p>
+          </section>
           <br />
           <h3>Certifications:</h3>
           <section>
@@ -81,6 +87,9 @@ function ExpandInfo({
               <span className='moreInfoBlurb'> GitHub:</span>
               {github ? `\u2705` : `\u274c`}
             </p>
+            <section>
+              <Comments notes={notes} />
+            </section>
           </section>
         </section>
       </div>
