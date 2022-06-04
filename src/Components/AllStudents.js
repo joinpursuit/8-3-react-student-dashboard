@@ -14,7 +14,7 @@ function AllStudents(props) {
     });
     return filteredStudentArr.map((student) => {
       return (
-        <li key={student.id}>
+        <li className='AStudent' key={student.id}>
           <AStudent student={student} />
         </li>
       );

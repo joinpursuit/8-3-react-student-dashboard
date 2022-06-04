@@ -2,19 +2,32 @@ import ExpandInfo from './ExpandInfo';
 import './AStudent.css';
 import React from 'react';
 
+const graduationStatus = (student) => {
+  const hasAllCerts = Object.values(student.certifications);
+  const hasReqCodewarsScore = student.codewars.current.total;
+  if (hasReqCodewarsScore > 600 && hasAllCerts.includes(true)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 class AStudent extends React.Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
-      ExpandInfo: false,
+      showMore: false,
     };
   }
+
   toggleExpandInfo = () => {
-    this.setState((showLess) => ({
-      ExpandInfo: !showLess.ExpandInfo,
-    }));
+    this.setState({
+      showMore: !this.state.showMore,
+    });
   };
   render() {
+    const { student } = this.props;
+    const { showMore } = this.state;
     const { names, username, profilePhoto, dob } = this.props.student;
 
     const dateFormat = new Date(dob).toDateString().substring(4);
@@ -29,6 +42,9 @@ class AStudent extends React.Component {
               width={100}
               height={100}
             />
+            <aside className='graduate'>
+              {graduationStatus(student) ? 'On Track To Graduate' : null}
+            </aside>
             <h4 className='fullname'>
               {names.preferredName} {names.middleName[0]}. {names.surname}
               <h4>
@@ -39,14 +55,14 @@ class AStudent extends React.Component {
                 </h4>
               </h4>
               <div onClick={() => this.toggleExpandInfo()}>
-                {ExpandInfo ? 'Show Less' : 'Show More'}
+                {showMore ? 'Show Less' : 'Show More'}
               </div>
-              {ExpandInfo ? (
+              {showMore ? (
                 <ExpandInfo
                   codewars={this.props.student.codewars}
                   certifications={this.props.student.certifications}
                   cohort={this.props.student.cohort}
-                  showMore={this.state.ExpandInfo}
+                  showMore={this.state.showMore}
                   toggleExpandInfo={this.toggleExpandInfo}
                 />
               ) : null}

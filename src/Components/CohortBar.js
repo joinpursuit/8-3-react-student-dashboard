@@ -49,7 +49,10 @@ function CohortBar(props) {
           key={index}
           onClick={() => handleClick(cohortCode)}
         >
-          {cohortCode === 'All Students' ? 'All Students' : `${cohortCode}`}
+          {cohortCode === 'All Students'
+            ? 'All Students'
+            : `${cohortCode.substring(0, cohortCode.length - 4)}
+          ${cohortCode.substring(cohortCode.length - 4)}`}
         </li>
       );
     });
