@@ -22,9 +22,19 @@ function AllStudents(props) {
   };
   return (
     <div className='class-roster'>
-      <h1> {cohortCode}</h1>
-      <p className='total'>Total:{displayStudentList(students).length}</p>
-      <ul className='student-panel'>{displayStudentList(students)}</ul>;
+      <h1>
+        {cohortCode === 'All Students'
+          ? 'All Students'
+          : `${cohortCode.substring(
+              0,
+              cohortCode.length - 4,
+            )} ${cohortCode.substring(cohortCode.length - 4)}`}
+        <p className='total'>
+          Total:
+          {' ' + displayStudentList(students).length}
+          <ul className='student-panel'>{displayStudentList(students)}</ul>
+        </p>
+      </h1>
     </div>
   );
 }

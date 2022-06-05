@@ -1,6 +1,7 @@
 import AStudent from './AStudent';
 import App from '../App';
 import Comments from './Comments';
+import './ExpandInfo.css';
 
 const percentColor = (percent) => {
   if (percent >= 100) {
@@ -27,33 +28,31 @@ function ExpandInfo({
   if (showMore === true) {
     return (
       <div className='expandlistener'>
-        <p className='toggle' onClick={handleClick}></p>
-        <div className='expandedinfo' />
+        <br />
+        <div className='expandedinfo'>
+          <section className='ExpandCodeWars'>
+            <h3> Codewars:</h3>
 
-        <section>
-          <br />
-          <h3> Codewars:</h3>
+            <p>
+              <span className='moreInfoBlurb'>Current Total:</span>
+              {current.total}
+            </p>
+            <p>
+              <span className='moreInfoBlurb'> Last Week:</span>
+              {current.lastWeek}
+            </p>
+            <p>
+              <span className='moreInfoBlurb'> Goal: </span>
+              {goal.total}
+            </p>
+            <p>
+              <span className='moreInfoBlurb'>Percent of Goal Achieved: </span>
+              {Math.round((current.total / goal.total) * 100).toFixed()} %
+            </p>
+          </section>
 
-          <p>
-            <span className='moreInfoBlurb'>Current Total:</span>
-            {current.total}
-          </p>
-          <p>
-            <span className='moreInfoBlurb'> Last Week:</span>
-            {current.lastWeek}
-          </p>
-          <p>
-            <span className='moreInfoBlurb'> Goal: </span>
-            {goal.total}
-          </p>
-          <p>
-            <span className='moreInfoBlurb'>Percent of Goal Achieved: </span>
-            {Math.round((current.total / goal.total) * 100).toFixed()} %
-          </p>
-        </section>
-        <section>
-          <br />
-          <section>
+          <section className='ExpandScores'>
+            <br />
             <h3>Scores:</h3>
             <p>
               <span className='moreInfoBlurb'> Assignments:</span>
@@ -67,10 +66,11 @@ function ExpandInfo({
               <span className='moreInfoBlurb'>Assessments:</span>
               {assessments * 100}%
             </p>
+            <br />
           </section>
-          <br />
-          <h3>Certifications:</h3>
-          <section>
+
+          <section className='ExpandCerts'>
+            <h3>Certifications:</h3>
             <p>
               <span className='moreInfoBlurb'> Resume:</span>
               {resume ? `\u2705` : `\u274c`}
@@ -87,11 +87,13 @@ function ExpandInfo({
               <span className='moreInfoBlurb'> GitHub:</span>
               {github ? `\u2705` : `\u274c`}
             </p>
-            <section>
-              <Comments notes={notes} />
-            </section>
+            <section></section>
           </section>
-        </section>
+
+          <section>
+            <Comments notes={notes} />
+          </section>
+        </div>
       </div>
     );
   } else {

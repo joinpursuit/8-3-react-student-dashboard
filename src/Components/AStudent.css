@@ -1,10 +1,11 @@
+
 .student-info{
     border: 2px solid teal;
     font-family: Cambria;
-    
-    display: flex;
-    flex-direction: row;
-
+    border-spacing: 20px;
+}
+.AStudent{
+    border-spacing: 20px;
 }
 .profilepic {
     align-self: top;
@@ -15,14 +16,16 @@
     line-height: 20px;
 }
 .alias {
-    display: flex;
-    flex-direction: column;
     color: black;
 }
+.graduate {
+    color: green;
+    margin: auto;
+    text-align: right,
 
+}
 .expandedinfo {
-    display: flex;
-    flex-direction: column;
+
     color: black;
 }
 .total {

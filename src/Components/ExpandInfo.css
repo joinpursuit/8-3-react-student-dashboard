@@ -1,0 +1,17 @@
+.expandedinfo{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: fit-content;
+}
+.ExpandCodeWars {
+    border: 2px solid green;
+ 
+}
+.ExpandScores{
+    border: 2px solid green;
+   
+}
+.ExpandCerts{
+    border: 2px solid green;
+ 
+}

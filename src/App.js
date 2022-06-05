@@ -22,16 +22,17 @@ class App extends React.Component {
     return (
       <main className='main'>
         <h1 className='student-dashboard'>Student Dashboard</h1>
-
-        <CohortBar
-          className='cohort'
-          data={data}
-          handleClick={this.handleClick}
-        />
-        <AllStudents
-          students={data}
-          cohortCode={this.state.selectedCohortCode}
-        />
+        <div className='dashboard-layout'>
+          <CohortBar
+            className='cohort'
+            data={data}
+            handleClick={this.handleClick}
+          />
+          <AllStudents
+            students={data}
+            cohortCode={this.state.selectedCohortCode}
+          />
+        </div>
       </main>
     );
   }

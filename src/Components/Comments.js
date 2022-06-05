@@ -1,4 +1,5 @@
 import React from 'react';
+import './Comments.css';
 
 function commentGenerator({ notes }) {
   const submitCommentHandler = (event) => {
@@ -19,6 +20,8 @@ function commentGenerator({ notes }) {
   };
   return (
     <section className='comment-section'>
+      <br />
+      <br />
       <strong>
         <h3> 1 - on - 1 Notes</h3>
       </strong>

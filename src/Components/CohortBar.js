@@ -60,9 +60,11 @@ function CohortBar(props) {
 
   return (
     <div className='cohortbar'>
-      <h2>Choose a Class by Start Date</h2>
-
-      <section>{cohortDisplay(data, handleClick)}</section>
+      <h2>
+        Choose a Class by Start Date
+        <br />
+        <section>{cohortDisplay(data, handleClick)}</section>
+      </h2>
       <br />
     </div>
   );
