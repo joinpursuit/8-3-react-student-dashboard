@@ -1,0 +1,60 @@
+* {
+    cursor: url("../Images/banana-cursor1.png"), auto;
+}
+
+h3 .card {
+    color: #ffe135; /* banana yellow */
+}
+
+.card {
+    display: grid; 
+    grid-template-columns: 3fr 2fr;
+    padding-right: 100px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    justify-content: center;
+}
+
+.clicky {
+    display: inline-block;
+    background-color: pink;
+    color: purple;
+    border-radius: 15px;
+    width: 35%;
+    cursor: url("../Images/banana-cursor2.png"), auto;
+}
+
+button:hover {
+    color:red;
+    box-shadow: 0 4px 4px 0 pink, 0 4px 4px 0 red;
+    cursor: url("../Images/banana-cursor2.png"), auto;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.clicky span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .clicky span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .clicky:hover span {
+    padding-right: 25px;
+  }
+  
+  .clicky:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

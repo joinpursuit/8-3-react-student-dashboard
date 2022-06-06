@@ -1,0 +1,15 @@
+h2 {
+    margin:auto;
+    height: 38px;
+    width: 300px;
+    font-weight: bold italic;
+    font-family: Helvetica;
+    border-bottom: 2px solid pink;
+    display: grid; grid-template-columns: 2fr 2fr;
+}
+
+.cohort-total {
+    justify-content: center;
+    padding-bottom: 20px;
+    text-align:center;
+}

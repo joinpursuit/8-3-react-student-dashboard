@@ -1,0 +1,12 @@
+.Nav {
+    grid-template-rows: 80px auto 80px;
+    padding-right: 10px;
+}
+
+.dates {
+    color: Red;
+}
+
+.semester {
+    color: pink;
+}
