@@ -1,59 +1,72 @@
+
+
 import React from 'react';
-import './Student.css';
 import ShowMore from './ShowMore';
+
 class Student extends React.Component {
-constructor() {
-  super();
-  this.state = {
-    displayshowMore: false,
-  }
-}
+  /**
+   * willGraduate- checks each student's certifications and codewar score to see if they meet requirements to graduate
+   * @param {object} studentDeets - students info object
+   * @returns a string that will display atop a student card
+   */
 
-updateShowMore = () => {
-  let copyOfShowMore = this.state.showMore
-   if(copyOfShowMore === true ) {
-    copyOfShowMore = false;
-   }
-   else {
-    copyOfShowMore = true;
-   }
-  
-  
-  console.log("currentstate", this.state.displayshowMore)
-  this.setState({
-    displayshowMore: copyOfShowMore
-    //Makes it true then it makes it false
+  willGraduate = (studentDeets) => {
+    const { resume, linkedin, github, mockInterview } =
+      studentDeets.certifications;
+    const studentCodewarsScore = studentDeets.codewars.current.total;
+    if (
+      resume &&
+      linkedin &&
+      github &&
+      mockInterview &&
+      studentCodewarsScore > 600
+    ) {
+      return '****On Track to Graduate****';
+    } else {
+      return null;
+    }
+  };
 
-  })
-}
+  /**
+   *
+   * @param {object} studentDeets - students info object
+   * @returns passes student info prop down to Showmore component
+   */
+  showMoreButtonHandler = (studentDeets) => {
+    return <ShowMore studentDeets={studentDeets} />;
+  };
 
   render() {
-    const {
-      stuCard: {
-        username,
-        names,
-        dob,
-        profilePhoto,
-        codewars,
-        certifications,
-        cohort,
-      },
-    } = this.props;
+    const { studentDeets, showMore, showMoreHandler } = this.props;
+    //console.log(studentDeets)
 
-    const dobFormatted = new Date(dob).toDateString().substring(4);
+    const { profilePhoto, username, dob } = studentDeets;
+    const { preferredName, middleName, surname } = studentDeets.names;
+
+    const formatDOB = new Date(dob).toDateString().substring(4);
+
     return (
-      <article className="stucard">
-        <img src={profilePhoto} alt="student" />
-        <h3>
-          {names.preferredName} {names.middleName[0]}. {names.surname}
-        </h3>
-        <p>{username}</p>
-        <p> Birthday: {dobFormatted}</p>
-        <button onClick={ this.updateShowMore} href="#"> {this.state.displayshowMore ? "Show Less" : "Show More" }</button>
-        
-       {this.state.displayshowMore ? <ShowMore stuObject = {this.props.stuCard}    /> :null}
+      <div className="stucard">
+        <h4 style={{ color: 'rgb(21, 62, 21' }}>
+          {this.willGraduate(studentDeets)}
+        </h4>
 
-      </article>
+        <img src={profilePhoto} alt="headshot" />
+        <h3>
+          {preferredName} {middleName[0]}. {surname}
+        </h3>
+        <p>Email: {username}</p>
+        <p>
+          <span>Birthday:</span> {formatDOB}
+        </p>
+
+        <button onClick={() => showMoreHandler(studentDeets.id)}>
+          {showMore.includes(studentDeets.id) ? 'Show Less' : 'Show More'}
+        </button>
+        {showMore.includes(studentDeets.id)
+          ? this.showMoreButtonHandler(studentDeets)
+          : null}
+      </div>
     );
   }
 }
