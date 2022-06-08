@@ -77,5 +77,5 @@ class StudentDash extends React.Component {
     );
   }
 }
-
+// This renders everything for the student
 export default StudentDash;
