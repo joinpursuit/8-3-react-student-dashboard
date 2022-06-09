@@ -1,9 +1,9 @@
-import AStudent from './AStudent';
-import App from '../App';
+//import AStudent from './AStudent';
+//import App from '../App';
 import Comments from './Comments';
 import './ExpandInfo.css';
 
-const percentColor = (percent) => {
+/*const percentColor = (percent) => {
   if (percent >= 100) {
     return 'U+1F7E9';
   } else if (percent >= 50) {
@@ -11,7 +11,7 @@ const percentColor = (percent) => {
   } else if (percent < 50) {
     return 'U+1F534';
   }
-};
+}; */
 
 function ExpandInfo({
   codewars,

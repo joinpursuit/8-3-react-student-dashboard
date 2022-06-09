@@ -4,10 +4,10 @@ import './CohortBar.css';
 function CohortBar(props) {
   const { data, handleClick } = props;
 
-  const ListOfStartingDates = () => {
+  /*const ListOfStartingDates = () => {
     const startDates = data.map((student) => student.cohort.cohortCode);
     return [...new Set(startDates)];
-  };
+  }; */
 
   const filterByCohort = (cohortArr) => {
     let obj = {};

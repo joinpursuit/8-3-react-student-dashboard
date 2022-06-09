@@ -1,5 +1,5 @@
 import ExpandInfo from './ExpandInfo';
-import commentGenerator from './Comments';
+
 import './AStudent.css';
 import React from 'react';
 
