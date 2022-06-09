@@ -1,8 +1,7 @@
-img{
-    height: 150px;
-    width: 150px;
+.student{
+    border: 2px solid rgb(75,137,101);
 }
 
-article{
-    border: 1px solid green;
+.student img{
+    height: 120px;
 }
