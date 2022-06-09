@@ -1,6 +1,7 @@
 import Student from "./Student";
 import { parseCohortCode } from "./Cohort.js";
 import "./StudentList.css";
+import SwitchPage from "./SwitchPage.js";
 
 /**
  * Filter the given student array based on the given cohortCode
@@ -29,6 +30,8 @@ function StudentList(props) {
     studentShowDetailHandler,
     comments,
     commentsHandler,
+    updatePageNum,
+    pageNum,
   } = props;
 
   const selectedStudents = selectedCohortStudent(data, selectedCohort);
@@ -42,6 +45,7 @@ function StudentList(props) {
         studentShowDetailHandler={studentShowDetailHandler}
         comments={comments}
         commentsHandler={commentsHandler}
+        index={index}
       />
     );
   });
@@ -53,7 +57,19 @@ function StudentList(props) {
         Total Students:{" "}
         <span className="studentNum">{studentCards.length}</span>
       </h3>
-      {studentCards}
+      <SwitchPage
+        updatePageNum={updatePageNum}
+        studentListArrayLength={studentCards.length}
+        pageNum={pageNum}
+      />
+      {studentCards.filter((selectedStudent, index) => {
+        return index >= (pageNum - 1) * 20 && index <= pageNum * 20 - 1;
+      })}
+      <SwitchPage
+        updatePageNum={updatePageNum}
+        studentListArrayLength={studentCards.length}
+        pageNum={pageNum}
+      />
     </div>
   );
 }

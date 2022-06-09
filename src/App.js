@@ -12,6 +12,7 @@ class App extends React.Component {
       selectedCohort: "AllStudents", //cohortCode
       studentShowDetail: [], //array contains unique student id
       comments: {}, // key is the different student ids, value is array of comments
+      pageNum: 1,
     };
   }
 
@@ -20,6 +21,7 @@ class App extends React.Component {
     this.setState({
       selectedCohort: selectedCohort,
       studentShowDetail: [],
+      pageNum: 1,
     });
   };
 
@@ -62,6 +64,23 @@ class App extends React.Component {
     }
   };
 
+  //switch the page num
+  updatePageNum = (operation, studentListArrayLength) => {
+    console.log("Hello");
+    let currentPage = this.state.pageNum;
+    if (operation === "prevPage") {
+      if (currentPage - 1 >= 1) {
+        currentPage--;
+      }
+    } else if (operation === "nextPage") {
+      if (currentPage * 20 < studentListArrayLength) {
+        currentPage++;
+      }
+    }
+
+    this.setState({ pageNum: currentPage });
+  };
+
   render() {
     const { selectedCohort, studentShowDetail, comments } = this.state;
 
@@ -79,6 +98,8 @@ class App extends React.Component {
           studentShowDetailHandler={this.studentShowDetailHandler}
           comments={comments}
           commentsHandler={this.commentsHandler}
+          updatePageNum={this.updatePageNum}
+          pageNum={this.state.pageNum}
         />
       </div>
     );
