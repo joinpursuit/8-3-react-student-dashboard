@@ -1,0 +1,15 @@
+.cohort{
+    height: 40px;
+    width: 300px;
+    margin: auto;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    border-bottom: 2px solid rgb(75,137,101);
+}
+
+.cohort:hover{
+    color:rgb(33, 72, 110);
+}
+.cohort p{
+    margin-bottom: 10px;
+}
+

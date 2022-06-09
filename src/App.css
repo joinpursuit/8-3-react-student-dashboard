@@ -1,0 +1,15 @@
+.dashBoard{
+    display: grid;grid-template-columns: 1fr 1.5fr;
+}
+
+nav{
+    grid-column: 1/3;
+}
+
+.cohortList{
+    grid-column: 1/2;
+}
+
+.studentList{
+    grid-column: 2/3;
+}
