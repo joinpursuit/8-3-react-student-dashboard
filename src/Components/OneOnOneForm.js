@@ -6,6 +6,7 @@ export default class OneOnOneForm extends React.Component {
 		this.state = {
 			commenter: "",
 			comment: "",
+			student: "",
 		};
 	}
 	/**
