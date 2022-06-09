@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import Data from './data/data'
+import StudentDash from './Components/StudentDash'
 import StudentList from './Components/StudentList'
 import CorhortList from './Components/CorhortList'
 
@@ -33,7 +34,7 @@ class App extends React.Component {
 
     return (
       <section className='whole-class'>
-        <h1>Student Dashboard</h1>
+        <StudentDash/>
         <div className='student-dash'>
           <CorhortList data={Data} clickCohort={this.clickCohort} />
           <StudentList
