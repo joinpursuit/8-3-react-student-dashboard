@@ -25,9 +25,9 @@ class App extends React.Component {
   };
 
   /**
-   *
+   *showMoreHandler- toggles showMore state key to contain or remove students id
    * @param {str} id : a students id#.
-   * side effect: updates the state key 'showMore' when the show more buton is clicked
+   * side effect: updates the state key 'showMore' with an id # when the show more buton is clicked. reverses when clicked again.
    */
   showMoreHandler = (id) => {
     let showMoreCopy = [...this.state.showMore];
@@ -40,6 +40,9 @@ class App extends React.Component {
       showMore: showMoreCopy,
     });
   };
+
+  
+  
 
   render() {
     const { data } = this.props;
