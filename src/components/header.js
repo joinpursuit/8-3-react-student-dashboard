@@ -1,6 +1,6 @@
-import Header from "./header.css";
+// import Header from "./header.css";
 
-function header() {
-  return <h1 id="header">Student Dashboard</h1>;
-}
-export default header;
+// function header() {
+//   return <h1 id="header">Student Dashboard</h1>;
+// }
+// export default header;

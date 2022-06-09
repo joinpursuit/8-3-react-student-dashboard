@@ -1,6 +1,6 @@
 import { Component } from "react";
 import data from "./data/data.json";
-import Header from "./components/header";
+// import Header from "./components/header";
 import StudentList from "./components/studentList";
 import CohortList from "./components/cohortList";
 import OneOnOne from "./components/oneOnOne";
@@ -27,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
         <h1>All Students</h1>
         <CohortList click={this.changeCohort} />
         <StudentList array={this.state.currentStudents} />
