@@ -38,7 +38,7 @@ const formatBirthdayText = (birthday) => {
     case "11":
       month = "November";
       break;
-    case "12":
+    default:
       month = "December";
       break;
   }
