@@ -6,20 +6,21 @@ export default class OneOnOneForm extends React.Component {
 		this.state = {
 			commenter: "",
 			comment: "",
+			student: "",
 		};
 	}
-    /**
-     * update this.state.commenter with form's current value
-     * @param {Object} event 
-     */
+	/**
+	 * update this.state.commenter with form's current value
+	 * @param {Object} event
+	 */
 	handleCommenter = (event) => {
 		const { value } = event.target;
 		this.setState({ commenter: value });
 	};
-    /**
-     * update this.state.comment with form's current value
-     * @param {Object} event 
-     */
+	/**
+	 * update this.state.comment with form's current value
+	 * @param {Object} event
+	 */
 	handleComment = (event) => {
 		const { value } = event.target;
 		this.setState({ comment: value });
@@ -67,7 +68,7 @@ export default class OneOnOneForm extends React.Component {
 					<br />
 					<input type="submit" value="Add Note" />
 				</form>
-				<div className="submissions">
+				<div className="submissions" id={`form-${studentInfo.id}`}>
 					{studentInfo.notes.length
 						? studentInfo.notes.map((note) => {
 								return `${note.commenter} says: ${note.comment}`;

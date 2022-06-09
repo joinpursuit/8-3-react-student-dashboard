@@ -17,7 +17,7 @@ class App extends React.Component {
 		return (
 			<section>
 				<header className="header">
-					<h1 className="title">Student Dashboard</h1>
+					<h1 className="title">The Student Dashboard!</h1>
 				</header>
 				<main>
 					<CohortDirectory info={this.props.object} clicker={this.changeCohort} />
