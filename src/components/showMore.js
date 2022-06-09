@@ -1,21 +1,17 @@
 import React, { Component } from "react";
+import "./showMore.css";
 
-export default class showMore extends Component {
+export default class ShowMore extends Component {
   constructor() {
     super();
     this.state = {
       showMore: true,
     };
   }
-  requirements = () => {
+  requirements = (event) => {
     this.setState({ showMore: !this.state.showMore });
+    event.preventDefault();
   };
-  codewars(object) {
-    let currentTotal = object.codewars.current.total;
-    let previousTotal = object.codewars.current.lastWeek;
-    let goal = object.codewars.goal.total;
-    let percentAchieved = ((currentTotal / goal) * 100).toFixed(2);
-  }
   resume = (object) => {
     let icon = "❌";
     if (object.certifications.resume) {
@@ -45,33 +41,37 @@ export default class showMore extends Component {
     return icon;
   };
   render() {
-    const { semester } = this.props;
+    const { student } = this.props;
     return (
       <div>
-        <button id="showMore" onClick={this.requirements}>
+        <button
+          id="showMore"
+          onClick={(event) => {
+            this.requirements(event);
+          }}
+        >
           {this.state.showMore ? "Show More..." : "Show Less..."}
         </button>
         <div>
-          <div className="bio">
+          <div className={this.state.showMore ? "hidden" : "visible"}>
             <aside>
               <h4>Codewars</h4>
-              <p>Current Total: {semester.codewars.current.total}</p>
-              <p>Last Week: {semester.codewars.current.lastWeek}</p>
-              <p>Goal: {semester.codewars.goal.total}</p>
-              <div>{this.codewars(semester)}</div>
+              <p>Current Total: {student.codewars.current.total}</p>
+              <p>Last Week: {student.codewars.current.lastWeek}</p>
+              <p>Goal: {student.codewars.goal.total}</p>
             </aside>
             <div>
               <h4>Scores</h4>
-              <p>Assignments: {semester.cohort.current.total}</p>
-              <p>Projects: {semester.cohort.scores.projects * 100}%</p>
-              <p>Assessments: {semester.cohort.scores.assessments * 100}%</p>
+              <p>Assignments: {student.cohort.scores.assignments}</p>
+              <p>Projects: {student.cohort.scores.projects * 100}%</p>
+              <p>Assessments: {student.cohort.scores.assessments * 100}%</p>
             </div>
             <div>
               <h4>Certifications</h4>
-              <p>Resume: {this.resume(semester)}</p>
-              <p>LinkedIn: {this.linkedin(semester)}</p>
-              <p>Mock Interview: {this.interview(semester)}</p>
-              <p>Github: {this.github(semester)}</p>
+              <p>Resume: {this.resume(student)}</p>
+              <p>LinkedIn: {this.linkedin(student)}</p>
+              <p>Mock Interview: {this.interview(student)}</p>
+              <p>Github: {this.github(student)}</p>
             </div>
           </div>
           <div></div>

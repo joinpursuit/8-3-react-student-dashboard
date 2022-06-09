@@ -1,4 +1,5 @@
 import React from "react";
+import ShowMore from "./showMore";
 
 function oneStudent({ student }) {
   const { names, username, profilePhoto, dob } = student;
@@ -8,7 +9,7 @@ function oneStudent({ student }) {
       <p>{username}</p>
       <p>Birthday: {dob}</p>
       <img src={profilePhoto} alt={names.preferredName} />
-      <a href="url">Show More...</a>
+      <ShowMore student={student} />
     </article>
   );
 }

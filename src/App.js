@@ -32,7 +32,6 @@ class App extends Component {
         <CohortList click={this.changeCohort} />
         <StudentList array={this.state.currentStudents} />
         <OneOnOne />
-        <showMore />
       </div>
     );
   }
