@@ -1,5 +1,6 @@
 .dashBoard{
-    display: grid;grid-template-columns: 1fr 1.5fr;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
 }
 
 nav{
