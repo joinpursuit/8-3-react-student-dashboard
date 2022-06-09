@@ -32,7 +32,7 @@ class App extends React.Component {
     return (
       <section className="Dashboard">
         <div className="h1">
-          <h1>Student Dashboard</h1>
+          <h1>Student Dashboard App</h1>
         </div>
         <div className="leftSide">
           <CohortList Data={Data} handleClick={this.handleClick} />
