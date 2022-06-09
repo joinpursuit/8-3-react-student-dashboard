@@ -29,6 +29,7 @@ class App extends Component {
       <div>
         {/* <Header /> */}
         <h1>All Students</h1>
+        <p>deployment test</p>
         <CohortList click={this.changeCohort} />
         <StudentList array={this.state.currentStudents} />
         <OneOnOne />
