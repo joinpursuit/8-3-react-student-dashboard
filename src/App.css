@@ -11,8 +11,9 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-column-gap: 50px;
-    background-image: url('https://html.sammy-codes.com/images/background.jpg');
-  background-size: auto;
+    background-color: white;
+    /* background-image: url('https://html.sammy-codes.com/images/background.jpg');
+  background-size: auto; */
 }
 
 img{
