@@ -78,13 +78,14 @@ function Student(props) {
     studentShowDetailHandler,
     comments,
     commentsHandler,
+    index,
   } = props;
 
   return (
     <div className="student">
       <img src={imgSrc} alt={name} />
       <div>
-        <p className="bold largeSize">{name}</p>
+        <p className="bold largeSize">{`${name} #${index + 1}`}</p>
         <p>{email}</p>
         <p>
           <span className="green">Birthday:</span> {parseBirthday(Birthday)}
