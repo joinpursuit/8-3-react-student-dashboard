@@ -1,8 +1,7 @@
-import data from '../data/data.json';
-
 function Semester({ handleClick }) {
   const allSemesters = [
     'All Students',
+    'On Track To Graduate',
     'Winter 2026',
     'Fall 2026',
     'Summer 2026',
@@ -13,14 +12,11 @@ function Semester({ handleClick }) {
     'Spring 2025',
   ];
 
-  // Interesting idea to work on in the future:
-  // const cohortCode = data.map( (student) => student.cohort.cohortCode )
-  // const deduplicate = new Set(cohortCode)
-  // const allSemesters = ["AllStudent", ...deduplicate]
-
   const displaySemesters = allSemesters.map((semester) => (
     <div key={semester}>
-      <h3 onClick={handleClick}>{semester}</h3>
+      <h3 className="cohort" onClick={handleClick}>
+        {semester}
+      </h3>
       <hr></hr>
     </div>
   ));

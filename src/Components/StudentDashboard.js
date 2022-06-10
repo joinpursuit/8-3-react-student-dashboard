@@ -4,11 +4,15 @@ function StudentDashboard({ code, cohort, allStudents }) {
   function byCohort(student) {
     return code === 'AllStudents'
       ? student
+      : code === 'OnTrackToGraduate'
+      ? Object.values(student.certifications).every(
+          (certificate) => certificate === true
+        ) && student.codewars.current.total > 600
       : student.cohort.cohortCode === code;
   }
 
   const students = allStudents.filter(byCohort).map((student) => (
-    <div id={student.id} className="student-countainer">
+    <div key={student.id} className="student-countainer">
       <Student key={student.id} student={student} />
     </div>
   ));

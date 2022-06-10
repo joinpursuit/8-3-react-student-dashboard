@@ -25,7 +25,7 @@ class App extends Component {
 
     return (
       <div className="app-grid">
-        <h1>Student Dashboard -on feature branch</h1>
+        <h1>Student Dashboard</h1>
         <Cohorts filterByClass={this.filterByClass} />
         <StudentDashboard
           code={code}
