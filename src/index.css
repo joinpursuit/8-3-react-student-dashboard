@@ -1,0 +1,152 @@
+#header {
+    background-color:#764f51;
+    padding-top: 1em
+}
+
+#title {
+    font-family:'Courier New', Courier, monospace;
+    color:white;
+    text-align: center;
+    padding-bottom: 1em;
+    font-size: 40px
+}
+
+#main {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.profilePic {
+    max-width: 200px;
+    height: auto;
+    padding: 3em;
+}
+
+.studentBio {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    border: #764f51;
+}
+
+.studentGraduationStats {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    border: #764f51;
+}
+
+.oneStudent {
+    border-style: solid;
+    margin-right: 1em;
+    margin-bottom: 0.75em;
+    border-color: #764f51;
+}
+
+.StudentList {
+    position: relative;
+    right: 37px;
+}
+
+#classSize {
+    color: darkcyan;
+}
+
+#showMore {
+    color: darkcyan;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    position: relative;
+    left: 260px;
+    bottom: 75px;
+}
+
+#cohortList {
+    margin-right: 5em;
+}
+
+#cohortListTitle {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-stretch: expanded;
+    font-size: 29px;
+    padding-left: 8px;
+}
+
+h2 {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 29px;
+}
+
+.cohortListHeading {
+    font-weight: bold;
+    font-size: large;
+    border-bottom: 2px, solid, darkcyan;
+}
+
+.allStudents{
+    padding-bottom: 1em;
+    border-bottom: 2px solid darkcyan;
+    cursor: pointer;
+}
+
+.eachSemester{
+    margin-top: 1.1em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid darkcyan;
+    cursor: pointer;
+}
+
+.studentInformation1 {
+    padding-top: 4em;
+}
+
+#graduationTracker {
+    color: darkcyan;
+    background: none;
+    text-align: center;
+    margin-top: 4.8em;
+}
+
+.greaterThanOneHundred {
+    color: green;
+}
+
+.betweenFiftyAndHundred {
+    color:#BDB76B
+}
+
+.underFifty {
+    color: red;
+}
+
+.formSection {
+    border-top: 2px solid darkcyan;
+    margin-top: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 1em;
+}
+
+.submitButton:hover {
+    background: darkcyan
+}
+
+.labels {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.notesHeading {
+    margin-left: 2.1em;
+}
+.commentSection {
+    border-style: solid;
+    border-color: 2px #764f51;
+    margin-top: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    padding-bottom: 24px;
+}
