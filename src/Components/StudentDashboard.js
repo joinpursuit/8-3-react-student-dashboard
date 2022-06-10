@@ -1,0 +1,31 @@
+import Student from './Student';
+
+function StudentDashboard({ code, cohort, allStudents }) {
+  function byCohort(student) {
+    return code === 'AllStudents'
+      ? student
+      : code === 'OnTrackToGraduate'
+      ? Object.values(student.certifications).every(
+          (certificate) => certificate === true
+        ) && student.codewars.current.total > 600
+      : student.cohort.cohortCode === code;
+  }
+
+  const students = allStudents.filter(byCohort).map((student) => (
+    <div key={student.id} className="student-countainer">
+      <Student key={student.id} student={student} />
+    </div>
+  ));
+
+  return (
+    <section className="student dashboard">
+      <h2>{cohort}</h2>
+      <p>
+        Total Students: <span className="color-text">{students.length}</span>
+      </p>
+      {students}
+    </section>
+  );
+}
+
+export default StudentDashboard;

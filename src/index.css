@@ -1,0 +1,122 @@
+.app-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+h1 {
+    grid-column: span 2;
+    margin-top: 0%;
+    text-align: center;
+    background-color: #283618;
+    color: aliceblue;
+    padding: 45px;
+}
+
+.filter-class {
+    text-align: center;
+    margin-left: 10px;
+}
+
+.sticky {
+    position: sticky;
+    top: 25px;
+}
+
+.cohort {
+    text-align: left;
+}
+
+.student-countainer {
+    padding-bottom: 5px;
+}
+
+img {
+    float: left;
+    margin: 5px 0px;
+    margin-right: 10px;
+    height: 125px;
+    width: 125px;
+}
+
+.inside-student-card {
+    border: 2px solid #283618;
+    padding: 5%;
+    margin-right: 10px;
+}
+
+.student-username-p {
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+.student-dob-p {
+    margin-top: 0px;
+}
+
+.show-toggle:hover,
+.cohort:hover,
+.color-text,
+.onTrack-p {
+    color: #bc6c25;
+}
+
+.onTrack-p {
+    margin: auto;
+    text-align: right;
+}
+
+.show-toggle {
+    color: blue;
+    text-decoration: underline;
+    margin-top: 20px;
+}
+
+.show-more-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: fit-content;
+}
+
+#form-container {
+    grid-column: span 3;
+    margin-top: 5px;
+}
+
+#notes-form {
+    border: 2px solid #283618;
+    padding: 10px;
+    margin-top: 20px;
+}
+input {
+    margin: 4px;
+}
+
+button {
+    background-color: #bc6c25;
+    color: aliceblue;
+}
+
+@media only screen and (max-width: 768px) {
+    img {
+        float: none;
+        margin: 10px 0px 0px 0px;
+    }
+
+    .inside-student-card {
+        margin-top: 0px;
+        border: 2px solid #283618;
+        padding: 0%;
+        text-align: center;
+    }
+
+    .onTrack-p {
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    h4 {
+        margin-top: 5px;
+    }
+
+}
