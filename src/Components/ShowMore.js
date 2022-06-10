@@ -7,6 +7,7 @@ function ShowMore({
   notes,
   showMore,
   handleClick,
+  key,
 }) {
   const { current, goal } = codewars;
   const { resume, linkedin, github, mockInterview } = certifications;
@@ -72,7 +73,7 @@ function ShowMore({
               {github ? '✅' : '❌'}
             </p>
           </article>
-          <OneOnOne notes={notes} />
+          <OneOnOne key={key} notes={notes} />
         </div>
       </div>
     );

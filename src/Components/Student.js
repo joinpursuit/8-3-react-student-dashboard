@@ -45,14 +45,10 @@ class Student extends React.Component {
     function isOnTrackToGraduate(codewars, certifications) {
       const isCertificateAcquired = (certificate) => certificate === true;
 
-      if (
-        codewars.current.total > 600 &&
+      return codewars.current.total > 600 &&
         Object.values(certifications).every(isCertificateAcquired)
-      ) {
-        return true;
-      } else {
-        return false;
-      }
+        ? true
+        : false;
     }
     return (
       <article className="inside-student-card">

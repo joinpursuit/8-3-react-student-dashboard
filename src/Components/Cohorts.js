@@ -3,7 +3,7 @@ import Semester from './Semester';
 function Cohorts({ filterByClass }) {
   return (
     <section className="filter-class">
-      <Semester 
+      <Semester
         handleClick={(event) =>
           filterByClass(
             event.target.textContent,
