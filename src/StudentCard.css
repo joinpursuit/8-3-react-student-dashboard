@@ -1,0 +1,30 @@
+.card {
+    border: 2px solid green;
+    margin: 10px;
+    padding: 10px;
+}
+.profile {
+    width: 150px;
+    height: 150px;
+}
+.birthday {
+    display: flex;
+    justify-content: baseline;
+}
+.left{
+    float: left;
+}
+.right {
+    float: right;
+}
+.side {
+    float: right;
+}
+.colored {
+    color: #6B9473;
+}
+.graduation {
+    color: green;
+    float: right;
+    margin-right: 50px;
+}

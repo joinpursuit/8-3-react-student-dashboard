@@ -1,0 +1,7 @@
+.class-item {
+    border-bottom: 2px solid #699272;
+    cursor: pointer;
+}
+.class-item:hover {
+    color: red;
+}
