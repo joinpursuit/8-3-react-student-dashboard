@@ -59,7 +59,7 @@ class StudentDash extends React.Component {
   };
 
   render() {
-    const { data, currentCohort, showMore, showMoreHandler, formatCohort } =
+    const { data, currentCohort, showMore, showMoreHandler } =
       this.props;
 
     const cards = this.showCohortStudents(
