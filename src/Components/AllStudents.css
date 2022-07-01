@@ -1,0 +1,8 @@
+.class-roster{
+    display:grid; 
+    grid-auto-flow: column;
+    grid-column: 2 / span 3;
+}
+.student-panel {
+    width: auto;
+}

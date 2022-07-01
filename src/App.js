@@ -1,10 +1,40 @@
+import AllStudents from './Components/AllStudents';
+import CohortBar from './Components/CohortBar';
+import './Components/App.css';
 
-function App() {
-  return (
-    <div>
-      <h1>Student Dashboard</h1>
-    </div>
-  );
+import React from 'react';
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedCohortCode: 'All Students',
+    };
+  }
+
+  handleClick = (event) => {
+    this.setState({ selectedCohortCode: event });
+  };
+
+  render() {
+    const { data } = this.props;
+
+    return (
+      <main className='main'>
+        <h1 className='student-dashboard'>Student Dashboard</h1>
+        <div className='dashboard-layout'>
+          <CohortBar
+            className='cohort'
+            data={data}
+            handleClick={this.handleClick}
+          />
+          <AllStudents
+            students={data}
+            cohortCode={this.state.selectedCohortCode}
+          />
+        </div>
+      </main>
+    );
+  }
 }
-
 export default App;
