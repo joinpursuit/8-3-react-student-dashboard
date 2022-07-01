@@ -1,9 +1,9 @@
 import { Component } from "react";
+import Header from "./components/header";
 import data from "./data/data.json";
-// import Header from "./components/header";
 import StudentList from "./components/studentList";
 import CohortList from "./components/cohortList";
-import OneOnOne from "./components/oneOnOne";
+import oneOnOne from "./components/oneOnOne";
 
 class App extends Component {
   constructor() {
@@ -26,13 +26,11 @@ class App extends Component {
   };
   render() {
     return (
-      <div>
-        {/* <Header /> */}
-        <h1>All Students</h1>
-        <p>deployment test #1</p>
+      <div id="main">
+        <Header />
         <CohortList click={this.changeCohort} />
         <StudentList array={this.state.currentStudents} />
-        <OneOnOne />
+        <oneOnOne cohort={this.state.currentStudents} />
       </div>
     );
   }

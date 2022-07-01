@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./showMore.css";
+import oneOnOne from "./oneOnOne";
 
 export default class ShowMore extends Component {
   constructor() {
@@ -73,6 +74,7 @@ export default class ShowMore extends Component {
               <p>Mock Interview: {this.interview(student)}</p>
               <p>Github: {this.github(student)}</p>
             </div>
+            <oneOnOne studentInfo={student} key={student.id} />
           </div>
           <div></div>
         </div>

@@ -1,7 +1,15 @@
-// import Header from "./header.css";
+import React from "react";
 
-// function header() {
-//   return <h1 id="header">Student Dashboard</h1>;
-// }
-// export default header;
-// i wish my header worked
+class Header extends React.Component {
+  render() {
+    return (
+      <header id="header">
+        <div>
+          <h1 id="title">Student Dashboard App</h1>
+        </div>
+      </header>
+    );
+  }
+}
+
+export default Header;

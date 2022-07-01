@@ -1,0 +1,30 @@
+#header {
+    background-color:#00b925;
+    padding-top: 1em
+}
+#main {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+#title {
+    font-family: serif;
+    color:white;
+    text-align: center;
+    padding-bottom: 1em;
+    font-size: 40px
+}
+.pfp{
+    max-width: 200px;
+    height: auto;
+    padding: 3em;
+}
+.sbio{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    border: #c11922;
+}
+.stats{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    border: #eb1722;
+}
