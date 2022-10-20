@@ -1,0 +1,52 @@
+.student{
+    border: 2px solid rgb(75,137,101);
+    margin-bottom: 20px;
+    width: 800px;
+    display: grid;
+    grid-template-columns: 180px 1fr 1fr;
+}
+
+.student img{
+    height: 120px;
+    margin:auto;
+    margin-top: 30px;
+}
+
+.button{
+    height: 20px;
+    text-decoration: underline;
+    color: rgb(75,137,101);
+    grid-column: 2/3;
+}
+
+.oneToOne{
+    grid-column: 1/4;
+}
+
+.oneToOne label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.green{
+    color:rgb(75,137,101)
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.largeSize{
+    font-size: large;
+}
+
+.graduateStatus{
+    color:rgb(75,137,101);
+}
+
+button{
+    background-color: rgb(75,137,101);
+    color: white;
+    height:40px;
+    width: 100px;
+}
