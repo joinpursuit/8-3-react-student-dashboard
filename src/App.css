@@ -1,0 +1,93 @@
+h1 {
+  text-align: center;
+  background-color: #d8b9c2;
+  margin: auto;
+}
+nav {
+  background: var(--primary);
+  border-bottom: 3px solid var(--dark);
+  text-align: center;
+}
+
+div.student-dash {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #dfe6f6;
+}
+
+article.profile {
+  border: 2px solid black;
+}
+
+article.profile img {
+  width: 200px;
+  height: 200px;
+}
+
+div.cohort-list {
+  width: 50%;
+  height: 125vh;
+  top: 5%;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.showmore {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+.visited {
+  text-decoration: underline;
+  color: purple;
+  cursor: pointer;
+}
+
+/* .profile {
+  padding-right: 500px;
+} */
+
+section.show-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.red {
+  color: red;
+}
+.yellow {
+  color: #dec20b;
+}
+
+.green {
+  color: green;
+}
+
+.scores {
+  position: relative;
+  left: 259px;
+  top: -188px;
+}
+
+.certifications {
+  position: relative;
+  left: 500px;
+  top: -343px;
+}
+
+.form {
+  position: relative;
+  top: -300px;
+}
+
+.ontrack {
+  position: relative;
+  top: -300px;
+  left: 500px;
+}
+
+.list:hover {
+  color: #9a5296;
+  cursor: pointer;
+}
